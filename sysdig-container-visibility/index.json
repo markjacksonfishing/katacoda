@@ -1,0 +1,61 @@
+{
+    "title": "Sysdig Container Visibility",
+    "description": "Learn how Sysdig delivers container visibility",
+    "difficulty": "beginner",
+    "time": "10-15 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Step 1 - Setup",
+                "courseData": "simulate-load.sh",
+                "text": "step1.md"
+            },
+            {
+                "title": "Step 2 - Launch Sysdig",
+                "courseData": "simulate-load.sh",
+                "text": "step2.md"
+            },
+            {
+                "title": "Step 3 - Container CPU Visibility",
+                "courseData": "simulate-load.sh",
+                "text": "step3.md"
+            },
+            {
+                "title": "Step 4 - Container Network Visibility",
+                "courseData": "simulate-load.sh",
+                "text": "step4.md"
+            },
+            {
+                "title": "Step 5 - Container Disk I/O Visibility",
+                "courseData": "simulate-load.sh",
+                "text": "step5.md"
+            },
+            {
+                "title": "Step 6 - Tailing Logs from Multiple Containers",
+                "courseData": "simulate-load.sh",
+                "text": "step6.md"
+            },
+            {
+                "title": "Step 7 - Observing The Flow of Application Requests Across Containers",
+                "courseData": "simulate-load.sh",
+                "text": "step7.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "credits": "Based on https://sysdig.com/blog/let-light-sysdig-adds-container-visibility"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+        }
+    },
+    "environment": {
+        "uilayout": "terminal",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "docker"
+    }
+}

@@ -1,0 +1,1 @@
+`docker run sysdig`{{execute}}
