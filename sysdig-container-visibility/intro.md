@@ -1,13 +1,13 @@
-This scenario will walk you through the Hot R.O.D. Golang demo. The Golang application stores tracing information within Jaeger via the OpenTracing API.
+Containers are becoming increasingly popular as building blocks for deploying applications. But there is a catch: monitoring and troubleshooting.  Many common Linux tools – the same visibility tools we’ve all been using for decades – are now failing to perform as expected. We’re suddenly flying blind.
 
-## OpenTracing
+In this scenario, you will learn how to add container visibility without modifying existing container-based deployments. This scenario will explain how to identify containers:
 
-OpenTracing is part of the cloud-native foundation...
+* Utilising High CPU load
 
+* Utilising High Network Activity
 
-## Hot R.O.D.
-[Hot R.O.D.](https://github.com/uber/jaeger/tree/master/examples/hotrod) is a mock ride-sharing system built on top of gRPC. As requests for rides are created by users the system creates traces that are stored within Jaeger.
+* Utilising High Disk IO
 
-## Jaeger
+* Logging Across Multiple Containers
 
-Jaeger is an open source tracing system created by Uber. Jaeger enables developers to visualise OpenTracing data.
+* Network Traffic and Communication Between Multiple Containers

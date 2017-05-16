@@ -1,1 +1,1 @@
-Learn more at https://medium.com/opentracing/take-opentracing-for-a-hotrod-ride-f6e3141f7941
+This is done without having to attach to the containers and/or install anything in them.

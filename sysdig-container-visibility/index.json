@@ -7,7 +7,6 @@
         "steps": [
             {
                 "title": "Step 1 - Setup",
-                "courseData": "simulate-load.sh",
                 "text": "step1.md"
             },
             {
@@ -36,7 +35,7 @@
                 "text": "step6.md"
             },
             {
-                "title": "Step 7 - Observing The Flow of Application Requests Across Containers",
+                "title": "Step 7 - Observing Requests Across Containers",
                 "courseData": "simulate-load.sh",
                 "text": "step7.md"
             }
@@ -53,9 +52,9 @@
     },
     "environment": {
         "uilayout": "terminal",
-        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
     },
     "backend": {
-        "imageid": "docker"
+        "imageid": "sysdig"
     }
 }
