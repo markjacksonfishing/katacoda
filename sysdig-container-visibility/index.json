@@ -30,12 +30,12 @@
                 "text": "step5.md"
             },
             {
-                "title": "Step 6 - Tailing Logs from Multiple Containers",
+                "title": "Step 6 - Observing Requests Across Containers",
                 "courseData": "simulate-load.sh",
                 "text": "step6.md"
             },
             {
-                "title": "Step 7 - Observing Requests Across Containers",
+                "title": "Step 7 - Tailing Logs from Multiple Containers",
                 "courseData": "simulate-load.sh",
                 "text": "step7.md"
             }
