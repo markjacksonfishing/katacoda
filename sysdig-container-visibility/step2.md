@@ -1,6 +1,8 @@
-Sysdig can be deployed as a container onto a Docker Host to provide additional visibility and debugging information.
+To identify how the cluster is operating, you'll need to use Sysdig.
 
 ## Task
+
+Sysdig can be deployed as a container onto a Docker Host to provide additional visibility and debugging information.
 
 `docker run -it --rm --name=sysdig --privileged=true \
    --volume=/var/run/docker.sock:/host/var/run/docker.sock \
@@ -13,6 +15,6 @@ Sysdig can be deployed as a container onto a Docker Host to provide additional v
 
 ## List all available chisels
 
-Describe chisel
+When running, Sysdig can capture information about all the commands executing on a system. This information would be too much for an individual to process, and so Sysdig has created chisels. A chisel enables users to take the stream of data captured by Sysdig and only display the relevant, aggregated data.
 
-`sysdig -cl`{{execute}}
+To view all the chisels available, run the command `sysdig -cl`{{execute}}
