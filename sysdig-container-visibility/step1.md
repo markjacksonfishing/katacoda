@@ -12,6 +12,7 @@ To begin, execute the following commands to create a load balanced Wordpress dep
 docker run --name wp1 -e VIRTUAL_HOST=wp --link mysql:mysql -d wordpress
 docker run --name wp2 -e VIRTUAL_HOST=wp --link mysql:mysql -d wordpress
 docker run --name proxy -p 80:80 -e DEFAULT_HOST=wp -v /var/run/docker.sock:/tmp/docker.sock:ro -d jwilder/nginx-proxy:alpine
+sleep 2
 docker exec -i mysql mysql -ppassword wordpress < wp.sql 2>/dev/null`{{execute}}
 
 Once started, all HTTP requests to our Docker host will be responded to by Wordpress.
