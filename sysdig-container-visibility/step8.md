@@ -14,7 +14,7 @@ Like before, this can be stopped with <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
 Once the data has been captured, it's possible to replay it as if the data was generated from a live system.
 
-The following command outputs all the data collected,  `sysdig -r capture.scap`{{execute}}
+The following command outputs all the data collected,  `sysdig -r capture.scap | head -n250`{{execute}}
 
 The captured data becomes powerful when combined with the chisels described previously. For example, based on the collected data it's possible to list which containers were running at the time.
 
@@ -26,4 +26,4 @@ As all system calls are received, the HTTP traffic is viewable for a particular 
 
 The data can also be filtered down, only showing the data collected for an individual process.
 
-`sysdig -r capture.scap proc.name=mysql`{{execute}}
+`sysdig -r capture.scap proc.name=apache2 | head -n20`{{execute}}
