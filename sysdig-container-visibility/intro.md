@@ -8,6 +8,4 @@ In this scenario, you will learn how to add container visibility without modifyi
 
 * Utilising High Disk IO
 
-* Logging Across Multiple Containers
-
 * Network Traffic and Communication Between Multiple Containers

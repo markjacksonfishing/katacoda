@@ -35,9 +35,14 @@
                 "text": "step6.md"
             },
             {
-                "title": "Step 7 - Tailing Logs from Multiple Containers",
+                "title": "Step 7 - Capture Sysdig Metrics To File",
                 "courseData": "simulate-load.sh",
-                "text": "step7.md"
+                "text": "step8.md"
+            },
+            {
+                "title": "Step 8 - Using Sysdig UI",
+                "courseData": "simulate-load.sh",
+                "text": "step9.md"
             }
         ],
         "intro": {
@@ -48,6 +53,7 @@
             "text": "finish.md"
         },
         "assets": {
+          "host01": ["wp.sql"]
         }
     },
     "environment": {
