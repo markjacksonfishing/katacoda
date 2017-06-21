@@ -53,7 +53,7 @@
             "text": "finish.md"
         },
         "assets": {
-          "host01": [{"file": "wp.sql", "target": "~/"}]
+          "host01": [{"file": "wp.sql", "target": "/home/ubuntu/"}]
         }
     },
     "environment": {
