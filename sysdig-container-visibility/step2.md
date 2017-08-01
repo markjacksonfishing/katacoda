@@ -1,8 +1,10 @@
-To identify how the cluster is operating, you'll need to use Sysdig.
+Sysdig works by capturing system calls being made within the Linux Kernel. This provides Sysdig with unique visibility into how applications are operating even inside containers and highlight key metrics to aid system debugging and monitoring. Think of wireshark for your entire system, and not only network activity, that understands the Docker containers and other orchestration tools that you use.
+
+Sysdig can operate both on the real-time data from a system, or on previously captured data. This allows users to debug in real-time, but also capture data that can be processed at a later date or shared with other members of the team.
 
 ## Task
 
-Sysdig can be deployed as a container onto a Docker Host to provide additional visibility and debugging information.
+Sysdig can be installed as a package but also deployed as a container onto the Docker host:
 
 `docker run -it --rm --name=sysdig --privileged=true \
    --volume=/var/run/docker.sock:/host/var/run/docker.sock \
@@ -13,8 +15,8 @@ Sysdig can be deployed as a container onto a Docker Host to provide additional v
    --volume=/usr:/host/usr:ro \
    sysdig/sysdig`{{execute}}
 
-## List all available chisels
+Once we run Sysdig, will capture and show information about all system calls and events on the system. This includes timestamp, CPU where it was executed, process name, thread ID, event type and all the relevant arguments. This is what can be seen when running `sysdig`{{execute}} inside of the Sysdig container.
 
-When running, Sysdig can capture information about all the commands executing on a system. This information would be too much for an individual to process, and so Sysdig has created chisels. A chisel enables users to take the stream of data captured by Sysdig and only display the relevant, aggregated data.
+_Note: (finish it with <kbd>CTRL</kbd>+<kbd>C</kbd>)._
 
-To view all the chisels available, run the command `sysdig -cl`{{execute}}
+All this information can be too much for an individual to process, that's why Sysdig offers filters and little reporting and aggregation scripts known as chisels. Let's learn how to use them with a few examples!

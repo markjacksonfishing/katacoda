@@ -1,11 +1,17 @@
-Sysdig is a simple tool for deep system visibility, with native support for containers. Think about sysdig as strace + tcpdump + htop + iftop + lsof + ...awesome sauce.
+Sysdig is a simple tool for deep system visibility that comes with container native support.
 
-In this scenario, you will learn how to add container visibility without modifying existing container-based deployments. This scenario will explain how to identify containers:
+Think of all the system health and performance monitoring tools you used for troubleshooting but now working all together and container aware:
+- strace
+- tcpdump
+- htop
+- iftop
+- lsof
+and way more... awesome sauce.
 
-* Utilising High CPU load
+In this scenario, you will learn with some basic and cool examples how to add container visibility without modifying existing container-based deployments:
 
-* Utilising High Network Activity
+* Which containers and processes have higher CPU usage?
 
-* Utilising High Disk IO
+* What is the network network activity between containers and processes?
 
-* Network Traffic and Communication Between Multiple Containers
+* Which containers and processes have bottlenecks on disk IO?

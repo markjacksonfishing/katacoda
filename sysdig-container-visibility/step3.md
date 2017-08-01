@@ -1,27 +1,17 @@
-Under the covers, the Wordpress instance has started to receive traffic. To complete the task, identify which containers are executing workload and processing the responses.
+Sysdig has filters that allow you to distill specific system calls (information) in a similar fashion to tcpdump.
 
-## List All Containers
+## Task
 
-To gain a top-level view of which containers are executing data we first need to know which containers are currently running. The _lscontainers_ chisel can be used to check what containers are running on your system. This works across multiple container runtimes, for example, both Docker and Rkt.
+## List all available filters
 
-`sysdig -c lscontainers`{{execute}}
+You can filter using information from different sources: system calls and events, file descriptors (not only files or sockets but higher level concepts like file names, directories or IP addresses), process name, uid, pid, latency and many more. You can get the full list running `sysdig -l`{execute}.
 
-## List CPU Usage Per Container
+What makes Sysdig special is the ability to filter based on Docker container information using filters like like container.id, container.name, container.mounts. But can also understand Kubernetes resources like (namespaces, services, deployments or pods), Mesos tasks and Marathon apps or groups.
 
-To identify which containers are processing workload, the _topcontainers_cpu_ chisel lists CPU usage per container.
+## List all available chisels
 
-`sysdig -c topcontainers_cpu`{{execute}}
+Because all the system calls information would be too much for an individual to process, Sysdig has created chisels. A chisel enables users to take the stream of data captured by Sysdig and only display the relevant, aggregated data.
 
-## Top CPU Processes Running
+You have available chisels to report on system state, applications protocols like HTTP or memcached, CPU usage, errors, I/O activity, logging (file or syslog), network activity, performance bottlenecks or security.
 
-While the _topcontainers_cpu_ chisel command lists the CPU of a total container, the _topprocs_cpu_ chisel outputs the CPU usage of each process running inside of all the containers. This allows you to identify which processes could be causing high CPU spikes and their associated parent container.
-
-`sysdig -pc -c topprocs_cpu`{{execute}}
-
-_Note: The -pc flag makes sysdig tell us which container each connection belongs to._
-
-## Query Only Certain Containers
-
-Chisels can be combined with filters to only certain container information to be displayed. The command below will only output the CPU usage for containers that have _wp_ within the name.
-
-`sysdig -pc -c topprocs_cpu container.name contains wp`{{execute}}
+To view all the chisels available, run the command `sysdig -cl`{{execute}}
