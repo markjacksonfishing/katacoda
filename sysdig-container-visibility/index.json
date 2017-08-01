@@ -15,34 +15,24 @@
                 "text": "step2.md"
             },
             {
-                "title": "Step 4 - Container CPU Visibility",
+                "title": "Step 3 - Sysdig filters and chisels",
+                "courseData": "simulate-load.sh",
+                "text": "step3.md"
+            },
+            {
+                "title": "Step 4 - Sysdig usage: container exploration",
                 "courseData": "simulate-load.sh",
                 "text": "step4.md"
             },
             {
-                "title": "Step 5 - Container Network Visibility",
+                "title": "Step 5 - Sysdig usage: troubleshooting real examples",
                 "courseData": "simulate-load.sh",
                 "text": "step5.md"
             },
             {
-                "title": "Step 6 - Container Disk I/O Visibility",
+                "title": "Step 6 - csysdig",
                 "courseData": "simulate-load.sh",
                 "text": "step6.md"
-            },
-            {
-                "title": "Step 7 - Observing Requests Across Containers",
-                "courseData": "simulate-load.sh",
-                "text": "step7.md"
-            },
-            {
-                "title": "Step 8 - Capture Sysdig Metrics To File",
-                "courseData": "simulate-load.sh",
-                "text": "step9.md"
-            },
-            {
-                "title": "Step 9 - Using Sysdig UI",
-                "courseData": "simulate-load.sh",
-                "text": "step10.md"
             }
         ],
         "intro": {
