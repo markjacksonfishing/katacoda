@@ -1,7 +1,7 @@
 One of the hardest things to do when troubleshooting Linux systems in general and container-based infrastructures in particular is observing the data that processes and/or containers are exchanging, not only at the network level but also at the file level. Because now we know what we have executing, we have an approximate idea where we want to dig deeper. Let's see a few examples:
 
 ## Tasks
-O
+
 ## Configuration files read under /etc
 
 `sysdig "fd.name contains /etc"`{{execute}}
