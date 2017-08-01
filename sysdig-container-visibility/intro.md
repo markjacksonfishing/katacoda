@@ -10,8 +10,8 @@ and way more... awesome sauce.
 
 In this scenario, you will learn with some basic and cool examples how to add container visibility without modifying existing container-based deployments:
 
-* Which containers and processes have higher CPU usage?
+* How Sysdig works, using filters and chisels.
 
-* What is the network network activity between containers and processes?
+* Basic container and containerized processes exploration: monitoring CPU, network, file I/O, etc.
 
-* Which containers and processes have bottlenecks on disk IO?
+* Troubleshooting use cases in a real Wordpress scenario.
