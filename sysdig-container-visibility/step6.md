@@ -19,4 +19,4 @@ Launch the UI by running the command `csysdig`{{execute}}. Driven by keyboard sh
 
 On each view you will be able to see different columns explained as you browse between the views, for example on the 'Containers' view you can see CPU, process count, memory, file I/O or network by container name and id. You can always select any of the rows and you will start filtering by that container, inside you will see the processes.
 
-To learn more about `csysdig` we recommend (csysdig explained visually)[https://sysdig.com/blog/csysdig-explained-visually/].
+To learn more about `csysdig` we recommend [csysdig explained visually](https://sysdig.com/blog/csysdig-explained-visually/).
