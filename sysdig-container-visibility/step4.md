@@ -12,7 +12,7 @@ Under the covers, the Wordpress instances have started to receive traffic. To be
 
 ## Top CPU usage processes running
 
-But we drill deeper to look at the CPU usage of each process running inside the containers:
+But we can drill deeper to look at the CPU usage of each process running inside the containers:
 
 `sysdig -pc -c topprocs_cpu`{{execute}}
 
@@ -38,4 +38,4 @@ _Note: The -pc flag makes sysdig tell us which container each connection belongs
 
 `sysdig -pc -c topprocs_file`{{execute}}
 
-But how to use these to resolve real life performance and error troubleshooting issues? Let's bring filters!
+But how to use these to resolve real life performance and error troubleshooting issues? Let's use filters!

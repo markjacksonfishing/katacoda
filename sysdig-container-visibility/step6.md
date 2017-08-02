@@ -17,6 +17,6 @@ The previous steps have focused on using full output and chisels together with f
 
 Launch the UI by running the command `csysdig`{{execute}}. Driven by keyboard shortcuts, the views menu can be accessed using <kbd>F2</kbd>. Select the option using arrow keys and press <kbd>Enter</kbd> to select the required view.
 
-On each view you will be able to see different columns explained as you browse between the views, for example on the 'Containers' view you can see CPU, process count, memory, file I/O or network by container name and id. You can always select any of the rows and you will start filtering by that container, inside you will see the processes.
+On each view you will be able to see different columns explained as you browse between the views, for example on the 'Containers' view you can see CPU, process count, memory, file I/O or network by container name and id. You can always select any of the rows and you will start filtering by that container, you will then see the processes inside them.
 
-To learn more about `csysdig` we recommend [csysdig explained visually](https://sysdig.com/blog/csysdig-explained-visually/).
+To learn more about `csysdig` we recommend checking out [csysdig explained visually](https://sysdig.com/blog/csysdig-explained-visually/).

@@ -1,6 +1,6 @@
-Sysdig is a simple tool for deep system visibility that comes with container native support.
+Sysdig is an open source tool for deep system visibility that comes with container native support.
 
-Think of all the system health and performance monitoring tools you used for troubleshooting but now working all together and container aware:
+Think of all the system health and performance monitoring tools you used for troubleshooting but but working together and container-aware:
 - strace
 - tcpdump
 - htop
@@ -8,7 +8,7 @@ Think of all the system health and performance monitoring tools you used for tro
 - lsof
 and way more... awesome sauce.
 
-In this scenario, you will learn with some basic and cool examples how to add container visibility without modifying existing container-based deployments:
+In this scenario, you will learn with some basic and cool examples of how to add container visibility without modifying existing container-based deployments:
 
 * How Sysdig works, using filters and chisels.
 

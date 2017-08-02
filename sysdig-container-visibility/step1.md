@@ -1,4 +1,4 @@
-In this scenario, you will take on the role of a DevOps team member who is responsible of identifying how a Wordpress service performs running in two Docker containers with a MySQL database also in a container. An HAproxy will sit in front of the Wordpress containers balancing the requests between both. 
+In this scenario, you will take on the role of a DevOps team member who is responsible of identifying how a Wordpress service performs running in two Docker containers with a MySQL database also in a container. An HAproxy will sit in front of the Wordpress containers balancing the requests between them. 
 
 ## Task
 
@@ -21,4 +21,4 @@ And finally, initialize the MySQL database:
 
 `docker exec -i mysql mysql -ppassword wordpress < wp.sql 2>/dev/null`{{execute}}
 
-Once started, all HTTP requests to our Docker host will be forwarded by HAproxy to by one of the Wordpress instances. Automatically, a background script on this scenario will start making requests against the Wordpress load balancer so we can simulate some live connections and traffic.
+Once started, all HTTP requests to our Docker host will be forwarded by HAproxy to either one of the Wordpress instances. Automatically, a background script on this scenario will start making requests against the Wordpress load balancer so we can simulate some live connections and traffic.
