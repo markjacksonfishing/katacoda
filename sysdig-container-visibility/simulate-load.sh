@@ -1,3 +1,29 @@
+while [ ! "$(docker ps -q -f name=proxy)" ]
+do
+    sleep 2
+done
+
+curl 'http://docker/wp-admin/install.php?step=1' \
+-H 'Pragma: no-cache' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept-Language: en-US,en;q=0.8,it;q=0.6' \
+-H 'Upgrade-Insecure-Requests: 1' \
+-H 'User-Agent: sysdig-init' \
+-H 'Content-Type: application/x-www-form-urlencoded' \
+-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' \
+-H 'Connection: keep-alive' --data 'language=' --compressed
+
+sleep 2
+
+curl 'http://docker/wp-admin/install.php?step=2' \
+-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' \
+-H 'Upgrade-Insecure-Requests: 1' \
+-H 'Content-Type: application/x-www-form-urlencoded' \
+--data 'weblog_title=test&user_name=test&admin_password=eB4Ooh8Mui7Kieseic3ti&pass1-text=eB4Ooh8Mui7Kieseic3ti&admin_password2=eB4Ooh8Mui7Kieseic3ti&admin_email=no-reply%40sysdig.com&Submit=Install+WordPress&language=' \
+--compressed
+
+sleep 2
+
 curl docker
 sleep 1
 curl docker/2017/06/21/hello-world/

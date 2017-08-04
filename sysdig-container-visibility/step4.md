@@ -1,10 +1,4 @@
-Under the covers, the Wordpress instances have started to receive traffic. To begin with, let's explore what is currently running, identify which containers are executing workload and processing the responses.
-
-## Tasks
-
-## List all containers
-
-`sysdig -c lscontainers`{{execute}}
+To begin with, let's explore what is currently happening, identify which containers are executing workload and processing the responses.
 
 ## List CPU usage per container
 
@@ -38,4 +32,4 @@ _Note: The -pc flag makes sysdig tell us which container each connection belongs
 
 `sysdig -pc -c topprocs_file`{{execute}}
 
-But how to use these to resolve real life performance and error troubleshooting issues? Let's use filters!
+But how to use these to resolve real life performance and error troubleshooting issues? Let's use filters too!
