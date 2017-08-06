@@ -1,4 +1,3 @@
-echo 127.0.0.1 docker | sudo tee -a /etc/hosts
 curl docker
 sleep 1
 curl docker/2017/06/21/hello-world/
