@@ -23,7 +23,7 @@ _Note: -s 2048 incrases the buffer size to print all the information._
 ## Traffic Between Two Containers
 
 `MYSQL=172.18.0.2 WP=172.18.0.3
-sysdig -pc -A s 2048 -c echo_fds "fd.ip=$MYSQL and fd.ip=$WP"`{{execute}}
+sysdig -pc -A -s 2048 -c echo_fds "fd.ip=$MYSQL and fd.ip=$WP"`{{execute}}
 
 ## Analyze MySQL and Apache activity
 
