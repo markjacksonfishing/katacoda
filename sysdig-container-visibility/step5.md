@@ -4,7 +4,7 @@ One of the hardest things to do when troubleshooting Linux systems in general an
 
 *cecho_fds* is one of the most useful chisels, allows to trace the data sent on the filtered file descriptors, either network or file system activity:
 
-`sysdig -c echo_fds "fd.filename=resolv.conf and container.name=wp1"`{{execute}}
+`sysdig -c echo_fds "container.name=wp1"`{{execute}}
 
 ## Watch HTTP requests to one of the containers
 
