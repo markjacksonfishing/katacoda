@@ -45,8 +45,7 @@
             "text": "finish.md"
         },
         "assets": {
-          "host01": [{"file": "wp.sql", "target": "/home/ubuntu/"},
-                    {"file": "simulate-load.sh", "target": "/home/ubuntu/", "chmod": "+x"}]
+          "host01": [{"file": "wp.sql", "target": "/home/ubuntu/"}]
         }
     },
     "environment": {
