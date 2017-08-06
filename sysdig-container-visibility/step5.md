@@ -2,7 +2,7 @@ One of the hardest things to do when troubleshooting Linux systems in general an
 
 ## Reconstruct the resolv.conf used by Apache
 
-_cecho_fds_ is one of the most useful chisels, allows to trace the data sent on the filtered file descriptors, either network or file system activity:
+*cecho_fds* is one of the most useful chisels, allows to trace the data sent on the filtered file descriptors, either network or file system activity:
 
 `sysdig -c echo_fds "fd.filename=resolv.conf and container.name=wp1"`{{execute}}
 
@@ -32,4 +32,3 @@ System calls run by Apache and MySQL processes, filtering out some noise calls w
 `sysdig -v "proc.name=apache2 and proc.name=mysqld and evt.type!=gettimeofday and evt.type!=switch and evt.type!=io_getevents and evt.type!=futex and evt.type!=clock_gettime and evt.type!=epoll_wait and evt.type!=getsockopt and evt.type!=wait4 and evt.type!=select and evt.type!=semop"`{{execute}}
 
 _Note: -v makes output verbose, full content of buffers is printed on the screen._
-
