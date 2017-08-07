@@ -1,2 +1,0 @@
-docker exec -it mysql mysqldump -ppassword wordpress > ~/wp.sql
-docker exec -i mysql mysql -ppassword wordpress < wp.sql
