@@ -24,11 +24,15 @@ HTTP requests come through, DNS resolutions works, but is the webserver actually
 
 If we want to look at the SQL protocol, we can find it filtering the network traffic between the containers:
 
-`MYSQL=172.18.0.2 WP=172.18.0.3 sysdig -c echo_fds "fd.ip=$MYSQL and fd.ip=$WP"`{{execute}}
+`sysdig -c echo_fds fd.ip=172.18.0.2 and fd.ip=172.18.0.3`{{execute}}
+
+## Looking inside the system calls
 
 But what if we want to filter out only SQL queries to the `wp_posts` table? We can filter on the buffer content too.
 
-`sysdig -c echo_fds "proc.name=mysqld and evt.buffer contains wp_post"`{{execute}}
+`sysdig -s 2048 -c echo_fds "proc.name=mysqld and evt.buffer contains wp_post"`{{execute}}
+
+_Note: -s 2048 incrases the buffer size to capture all the information._
 
 ## Analyze MySQL and Apache activity at the lowest level
 
@@ -36,5 +40,4 @@ Can we go even deeper? This will show all system calls run by Apache and MySQL p
 
 `sysdig -v -A -s 2048 "(proc.name=apache2 or proc.name=mysqld) and evt.type!=gettimeofday and evt.type!=switch and evt.type!=io_getevents and evt.type!=futex and evt.type!=clock_gettime and evt.type!=epoll_wait and evt.type!=getsockopt and evt.type!=wait4 and evt.type!=select and evt.type!=semop"`{{execute}}
 
-_Note: -s 2048 incrases the buffer size to capture all the information._
 _Note: -v makes output verbose, full content of buffers is printed on the screen._
