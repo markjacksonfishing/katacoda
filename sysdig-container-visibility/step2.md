@@ -1,5 +1,7 @@
 Sysdig works by capturing system calls being made within the Linux Kernel. This provides Sysdig with unique visibility into how applications are operating even inside containers. Think of wireshark for your entire system, not only network activity, that understands the Docker containers and other orchestration tools that you use.
 
+![Sysdig architecture](https://github.com/katacoda-scenarios/sysdig-scenarios/raw/master/assets/sysdig_diagram.png)
+
 Sysdig can operate both on the real-time data from a system, or on previously captured data. This allows users to debug in real-time, but also capture data that can be analyzed later on, when a container doesn't exist anymore, or shared with other members of the team.
 
 ## Install and run Sysdig
