@@ -1,4 +1,4 @@
-HOST=localhost
+HOST=HOST_SUBDOMAIN-80-KATACODA_HOST.environments.katacoda.com
 until $(docker ps -a | grep proxy &> /dev/null); do sleep 1; done
 
 curl "http://$HOST/wp-admin/install.php?step=1" \
@@ -9,7 +9,7 @@ curl "http://$HOST/wp-admin/install.php?step=1" \
 -H 'User-Agent: sysdig-init' \
 -H 'Content-Type: application/x-www-form-urlencoded' \
 -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' \
--H 'Connection: keep-alive' --data 'language=' --compressed
+-H 'Connection: keep-alive' --data 'language=' --compressed -o /dev/null
 
 sleep 1
 
@@ -18,7 +18,7 @@ curl "http://$HOST/wp-admin/install.php?step=2" \
 -H 'Upgrade-Insecure-Requests: 1' \
 -H 'Content-Type: application/x-www-form-urlencoded' \
 --data 'weblog_title=test&user_name=test&admin_password=eB4Ooh8Mui7Kieseic3ti&pass1-text=eB4Ooh8Mui7Kieseic3ti&admin_password2=eB4Ooh8Mui7Kieseic3ti&admin_email=no-reply%40sysdig.com&Submit=Install+WordPress&language=' \
---compressed
+--compressed -o /dev/null
 
 sleep 1
 
