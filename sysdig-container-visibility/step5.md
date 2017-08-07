@@ -1,34 +1,40 @@
-One of the hardest things to do when troubleshooting Linux systems in general and container-based infrastructures in particular is observing the data that processes and/or containers are exchanging, not only at the network level but also at the file level. Because now we know what we have executing, we have an approximate idea where we want to dig deeper. Let's see a few examples:
+One of the hardest things to do when troubleshooting Linux systems in general and container-based infrastructures in particular is observing the data that processes and/or containers are exchanging, not only at the network level but also at the file level. Let's see a few examples:
 
-## Reconstruct the resolv.conf used by Apache
+## Watch HTTP requests to each of the containers
 
-*cecho_fds* is one of the most useful chisels, allows to trace the data sent on the filtered file descriptors, either network or file system activity:
+When trying to inspect network traffic, we might be used to `tcpdump`, but what if we could filter easily by container name? Here we have a load-balanced scenario and we want to look at the HTTP requests to each of the Wordpress servers. Sysdig has a chisel to pretty print them :).
 
-`sysdig -c echo_fds "container.name=wp1"`{{execute}}
+`sysdig -pc -c httplog`{{execute}}
 
-## Watch HTTP requests to one of the containers
+## Reconstruct the /etc/hosts file used by Apache
 
-`sysdig -s 2048 -A -c echo_fds "fd.port=80 and container.name=wp1"`{{execute}}
+Sometimes we need to troubleshoot DNS resolution inside containers. Because `/etc/resolv.conf` and `/etc/hosts` are generated at run time, these might change without our control. Let's use Sysdig to find out what Apache reads from the `/etc/hosts` file.
 
-_Note: -s 2048 incrases the buffer size to print all the information._
+*cecho_fds* is one of the most useful chisels, allows to trace the data sent on the filtered file descriptors, either network or file system activity.
 
-## Find out the files being read and written by Apache
+`sysdig -c echo_fds "container.name=wp1 and fd.name=/etc/hosts"`{{execute}}
 
-`sysdig -c topfiles_bytes "fd.type=file and container.name=wp1 and proc.name=apache2"`{{execute}}
+## Find out the files being open by Apache under /var/www
 
-## List the clients connected to MySQL, by established connections
+HTTP requests come through, DNS resolutions works, but is the webserver actually opening the files we expect it to do? This is how we can find out.
 
-`sysdig -c fdcount_by fd.cip "evt.type=accept and container.name=mysql and proc.name=mysql"`{{execute}}
+`sysdig "container.name=wp1 and fd.type=file and evt.type=open and fd.name contains /var/www and proc.name=apache2"`{{execute}}
 
-## Traffic Between Two Containers
+## Traffic between two containers
 
-`MYSQL=172.18.0.2 WP=172.18.0.3
-sysdig -pc -A -s 2048 -c echo_fds "fd.ip=$MYSQL and fd.ip=$WP"`{{execute}}
+If we want to look at the SQL protocol, we can find it filtering the network traffic between the containers:
 
-## Analyze MySQL and Apache activity
+`MYSQL=172.18.0.2 WP=172.18.0.3 sysdig -c echo_fds "fd.ip=$MYSQL and fd.ip=$WP"`{{execute}}
 
-System calls run by Apache and MySQL processes, filtering out some noise calls we are not interested in:
+But what if we want to filter out only SQL queries to the `wp_posts` table? We can filter on the buffer content too.
 
-`sysdig -v "proc.name=apache2 and proc.name=mysqld and evt.type!=gettimeofday and evt.type!=switch and evt.type!=io_getevents and evt.type!=futex and evt.type!=clock_gettime and evt.type!=epoll_wait and evt.type!=getsockopt and evt.type!=wait4 and evt.type!=select and evt.type!=semop"`{{execute}}
+`sysdig -c echo_fds "proc.name=mysqld and evt.buffer contains wp_post"`{{execute}}
 
+## Analyze MySQL and Apache activity at the lowest level
+
+Can we go even deeper? This will show all system calls run by Apache and MySQL processes, filtering out some noise calls we are not interested in:
+
+`sysdig -v -A -s 2048 "(proc.name=apache2 or proc.name=mysqld) and evt.type!=gettimeofday and evt.type!=switch and evt.type!=io_getevents and evt.type!=futex and evt.type!=clock_gettime and evt.type!=epoll_wait and evt.type!=getsockopt and evt.type!=wait4 and evt.type!=select and evt.type!=semop"`{{execute}}
+
+_Note: -s 2048 incrases the buffer size to capture all the information._
 _Note: -v makes output verbose, full content of buffers is printed on the screen._

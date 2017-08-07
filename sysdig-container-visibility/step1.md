@@ -10,5 +10,3 @@ docker run --name wp2 -e VIRTUAL_HOST=wp --link mysql:mysql -d wordpress
 docker run --name proxy -p 80:80 -e DEFAULT_HOST=wp -v /var/run/docker.sock:/tmp/docker.sock:ro -d jwilder/nginx-proxy:alpine`{{execute}}
 
 Automatically, a background script will setup Wordpress and start making requests against the Wordpress load balancer so we can simulate some live connections and traffic.
-
-_Note: you can access yourself to this Wordpress installation here:_ https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
