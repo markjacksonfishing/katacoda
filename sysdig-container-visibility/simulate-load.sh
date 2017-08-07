@@ -1,1 +1,1 @@
-ssh root@host01 "for i in {1..20}; do /home/ubuntu/simulate-load.sh && break || sleep 1; done"
+ssh root@host01 "until \$(docker ps -a | grep proxy &> /dev/null); do sleep 1; done; /home/ubuntu/simulate-load.sh"
