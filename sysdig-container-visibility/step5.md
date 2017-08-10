@@ -41,3 +41,5 @@ Can we go even deeper? This will show all system calls run by Apache and MySQL p
 `sysdig -v -A -s 2048 "(proc.name=apache2 or proc.name=mysqld) and evt.type!=gettimeofday and evt.type!=switch and evt.type!=io_getevents and evt.type!=futex and evt.type!=clock_gettime and evt.type!=epoll_wait and evt.type!=getsockopt and evt.type!=wait4 and evt.type!=select and evt.type!=semop"`{{execute}}
 
 _Note: -v makes output verbose, full content of buffers is printed on the screen._
+
+If you are hungry for more Sysdig usage examples, have a look at [Sysdig Wiki > Examples](https://www.sysdig.org/wiki/sysdig-examples/).
