@@ -19,8 +19,8 @@ Sysdig can be installed as a package but also deployed as a container onto the D
 
 Once we run Sysdig, will capture and display information about all system calls and events on the system. This includes timestamp, CPU where it was executed, process name, thread ID, event type and all the relevant arguments.
 
-Run `sysdig`{{execute}} to see all these events in your Wordpress deployment.
+Run `sysdig -M 3`{{execute}} to see all these events in your Wordpress deployment.
 
-_Note: (finish it with <kbd>CTRL</kbd>+<kbd>C</kbd>)._
+_Note: (-M will finish Sysdig after 3 seconds, otherwise you can finish it with <kbd>CTRL</kbd>+<kbd>C</kbd>)._
 
 All this information can be too much for an individual to process, that's why Sysdig offers filters and aggregation scripts known as chisels.
