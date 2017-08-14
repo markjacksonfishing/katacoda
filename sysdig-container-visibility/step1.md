@@ -1,4 +1,4 @@
-In this scenario, you will explore a two instances Wordpress with an HAproxy load-balancer and a MySQL database. All services will be deployed using Docker containers.
+In this scenario, you will explore a two instances Wordpress deployment with an HAproxy load-balancer and a MySQL database. All services will be deployed using Docker containers.
 
 ## Setup scenario
 

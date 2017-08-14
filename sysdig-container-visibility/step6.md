@@ -1,6 +1,6 @@
 The previous steps have focused on using full output and chisels together with filters to gain insight into the system activity. It's also possible to use the Sysdig console interface called `csysdig`, a powerful but simple and intuitive curses UI for sysdig.
 
-`csysdig` can be understood as a combination of popular tools like `strace`, `tcpdump`, `lsof`, etc with a UI similar to `htop`. Unlike `htop`, `csysdig` has multiple views available for different troubleshooting scenarios:
+`csysdig` can be understood as a combination of popular tools like `strace`, `tcpdump`, `lsof`, etc with a UI similar to `htop`. On top of that, `csysdig` has multiple views available for different troubleshooting scenarios:
 
 - Containers
 - Container Errors
