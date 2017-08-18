@@ -2,7 +2,7 @@ Sysdig works by capturing system calls being made within the Linux Kernel. This 
 
 ![Sysdig architecture](https://github.com/katacoda-scenarios/sysdig-scenarios/raw/master/sysdig-container-visibility/assets/sysdig_diagram.png)
 
-Sysdig can operate both on the real-time data from a system, or on previously captured data. This allows users to debug in real-time, but also capture data that can be analyzed later on, when a container doesn't exist anymore, or shared with other members of the team.
+Sysdig can operate both on the real-time data from a system, or on previously captured data. This allows users to debug in real-time (as well as capture data that can be analyzed later on when a container doesn't exist anymore), or share with other members of the team.
 
 ## Install and run Sysdig
 

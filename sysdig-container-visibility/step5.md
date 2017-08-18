@@ -1,4 +1,4 @@
-One of the hardest things to do when troubleshooting Linux systems in general and container-based infrastructures in particular is observing the data that processes and/or containers are exchanging, not only at the network level but also at the file level. Let's see a few examples:
+One of the hardest things to do when troubleshooting Linux systems in general and container-based infrastructures in particular, is observing the data that processes and/or containers are exchanging. Not only at the network level but also at the file level. Let's see a few examples:
 
 ## Watch HTTP requests to each of the containers
 

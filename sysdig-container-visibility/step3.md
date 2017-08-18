@@ -12,9 +12,9 @@ Example: list all running containers (identifies executed system calls in differ
 
 ## Understanding Sysdig filters
 
-You can filter using information from different sources: system calls and events, file descriptors (not only files or sockets but higher level concepts like file names, directories or IP addresses), process name, uid, pid, latency and many more. You can get the full list running `sysdig -l`{{execute}}. No need to go through all the events now, just keep it in mind of reference.
+You can filter using information from different sources: system calls and events, file descriptors (not only files or sockets but higher level concepts like file names, directories or IP addresses), process name, uid, pid, latency and many more. You can get the full list running `sysdig -l`{{execute}}. No need to go through all the events now, just keep it in mind for reference.
 
-What makes Sysdig special is the ability to filter based on Docker container information using filters like like container.id, container.name, container.mounts. But can also understand Kubernetes resources like (namespaces, services, deployments or pods), Mesos tasks and Marathon apps or groups.
+What makes Sysdig special is the ability to filter based on Docker container information, using filters like like container.id, container.name, container.mounts. Sysdig can also understand Kubernetes resources (like namespaces, services, deployments or pods), Mesos tasks, and Marathon apps or groups.
 
 ## Understanding Sysdig chisels
 

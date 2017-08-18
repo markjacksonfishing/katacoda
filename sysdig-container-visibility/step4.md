@@ -6,7 +6,7 @@ To begin with, let's explore what is currently happening, identify which contain
 
 ## Top CPU usage processes running
 
-But we can drill deeper to look at the CPU usage of each process running inside the containers:
+We can then drill deeper to look at the CPU usage of each process running inside the containers:
 
 `sysdig -pc -c topprocs_cpu`{{execute}}
 
