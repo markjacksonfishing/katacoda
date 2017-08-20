@@ -18,8 +18,8 @@ What makes Sysdig special is the ability to filter based on Docker container inf
 
 ## Understanding Sysdig chisels
 
-Because all the system calls information would be too much for an individual to process, Sysdig has created chisels. A chisel enables users to take the stream of data captured by Sysdig and only display the relevant, aggregated data.
+Because all the system calls information would be too verbose and complex to interpret, Sysdig has created chisels. A chisel enables users to take the stream of data captured by Sysdig and only display the relevant, aggregated data.
 
 You have available chisels to report on system state, applications protocols like HTTP or memcached, CPU usage, errors, I/O activity, logging (file or syslog), network activity, performance bottlenecks or security.
 
-To view all the chisels available, run the command `sysdig -cl`{{execute}}.
+To view all the available chisels, run the command `sysdig -cl`{{execute}}.

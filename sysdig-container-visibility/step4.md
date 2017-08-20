@@ -1,4 +1,4 @@
-To begin with, let's explore what is currently happening, identify which containers are executing workload and processing the responses.
+To get started, let's explore what is currently happening and identify which containers are executing workload and processing the responses.
 
 ## List CPU usage per container
 
@@ -14,7 +14,7 @@ _Note: The -pc flag makes sysdig tell us which container each connection belongs
 
 ## List network traffic per container
 
-`sysdig -pc -c topcontainers_net`{{execute}} 
+`sysdig -pc -c topcontainers_net`{{execute}}
 
 ## Top network traffic processes running
 
