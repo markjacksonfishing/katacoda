@@ -1,6 +1,6 @@
 Sysdig is an open source tool for deep system visibility that comes with container native support.
 
-Think of all the system health and performance monitoring tools you used for troubleshooting but but working together and container-aware:
+Think of all the system health and performance monitoring tools you used for troubleshooting but working together and container-aware:
 - strace
 - tcpdump
 - htop
@@ -8,7 +8,7 @@ Think of all the system health and performance monitoring tools you used for tro
 - lsof
 and way more... awesome sauce.
 
-This means that you can gain visibility inside the containers, filter or aggregate metrics using container names/ids or your orchestration tool resources (Kubernetes pods, deployments, etc or Mesos tasks and Marathon apps and groups).
+This means that you can gain visibility inside the containers, and filter or aggregate metrics using container names/ids or your orchestration tool resources (Kubernetes pods, deployments, etc or Mesos tasks and Marathon apps and groups).
 
 In this scenario, you will learn with some basic and cool examples of how to add container visibility on a simple Wordpress deployment using Docker. We are going to cover:
 
