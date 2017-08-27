@@ -6,7 +6,7 @@
     "details": {
         "steps": [
             {
-                "title": "Step 1 - Setup Scenario",
+                "title": "Step 1 - Setup scenario",
                 "courseData": "simulate-load.sh",
                 "text": "step1.md"
             },
