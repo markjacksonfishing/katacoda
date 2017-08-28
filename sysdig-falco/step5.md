@@ -41,4 +41,4 @@ If we look at the log with `tail /var/log/falco_events.log`{{execute}} you will 
 13:32:41.070491862: Informational Container with sensitive mount started (user=root command=sh -g daemon off; example4 (id=c46fa3bf0651))
 ```
 
-The Sysdig Falco notification shows that recognized a sensitive mount.
+The Sysdig Falco notification shows that it detected a sensitive mount.
