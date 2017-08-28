@@ -7,7 +7,7 @@ Let's download a new version of the configuration file for this example:
 `
 sudo -s
 cd /etc/falco
-curl https://raw.githubusercontent.com/mateobur/katacoda-scenarios/master/falco/assets/falco_rules_step3.yaml -o falco_rules.yaml
+curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/sysdig-falco/assets/falco_rules_step3.yaml -o falco_rules.yaml
 `{{execute}}
 
 Now, pay attention to the following rule in the file:

@@ -4,7 +4,7 @@ Let's download a new version of the configuration file for this example:
 
 `sudo -s
 cd /etc/falco
-curl https://raw.githubusercontent.com/mateobur/katacoda-scenarios/master/falco/assets/falco_rules_step4.yaml -o falco_rules.yaml
+curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/sysdig-falco/assets/falco_rules_step4.yaml -o falco_rules.yaml
 `{{execute}}
 
 Pay attention to the macro that defines the write-allowed directories that we customized for *Nginx*:

@@ -3,8 +3,8 @@ First, we will download some working configuration files built for this course a
 `sudo -s
 mkdir /etc/falco
 cd /etc/falco
-curl https://raw.githubusercontent.com/mateobur/katacoda-scenarios/master/falco/assets/falco.yaml -o falco.yaml
-curl https://raw.githubusercontent.com/mateobur/katacoda-scenarios/master/falco/assets/falco_rules.yaml -o falco_rules.yaml
+curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/sysdig-falco/assets/falco.yaml -o falco.yaml
+curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/sysdig-falco/assets/falco_rules.yaml -o falco_rules.yaml
 touch /var/log/falco_events.log
 `{{execute}}
 
