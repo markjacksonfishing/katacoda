@@ -32,7 +32,7 @@ But what if we want to filter out only SQL queries to the `wp_posts` table? We c
 
 `sysdig -s 2048 -c echo_fds "proc.name=mysqld and evt.buffer contains wp_post"`{{execute}}
 
-_Note: -s 2048 incrases the buffer size to capture all the information._
+_Note: -s 2048 increases the buffer size to capture all the information._
 
 ## Analyze MySQL and Apache activity at the lowest level
 
