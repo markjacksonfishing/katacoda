@@ -18,7 +18,7 @@ If we tail the log file with `tail /var/log/falco_events.log`{{execute}} we shou
    17:13:24.357351845: Notice A shell was spawned in a container with an attached terminal (user=root example1 (id=604aa46610dd) shell=bash parent=<NA> cmdline=bash terminal=34816)
    ```
 
-This is the specific */etc/falco_rules.yaml* rule that fired the event:
+This is the specific */etc/falco/falco_rules.yaml* rule that fired the event:
 
    ```
    - rule: Terminal shell in container
