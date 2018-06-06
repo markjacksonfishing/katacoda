@@ -1,8 +1,12 @@
 # File containing Falco rules, loaded at startup.
-rules_file: /etc/falco_rules.yaml
+rules_file: /etc/falco/falco_rules.yaml
 
 # Whether to output events in json or text
 json_output: false
+
+# Whether or not output to any of the output channels below is
+# buffered. Defaults to true
+buffered_outputs: false
 
 # Send information logs to stderr and/or syslog Note these are *not* security
 # notification logs! These are just Falco lifecycle (and possibly error) logs.

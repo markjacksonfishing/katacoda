@@ -14,7 +14,7 @@ Then, we can pull and launch the Sysdig Falco container, mounting the configurat
 
 `
 docker pull sysdig/falco
-docker run -d --name falco --privileged -v /var/run/docker.sock:/host/var/run/docker.sock -v /dev:/host/dev -v /proc:/host/proc:ro -v /boot:/host/boot:ro -v /lib/modules:/host/lib/modules:ro -v /usr:/host/usr:ro -v /etc/falco/falco.yaml:/etc/falco.yaml -v /etc/falco/falco_rules.yaml:/etc/falco_rules.yaml -v /var/log/falco_events.log:/var/log/falco_events.log sysdig/falco
+docker run -d --name falco --privileged -v /var/run/docker.sock:/host/var/run/docker.sock -v /dev:/host/dev -v /proc:/host/proc:ro -v /boot:/host/boot:ro -v /lib/modules:/host/lib/modules:ro -v /usr:/host/usr:ro -v /etc/falco/falco.yaml:/etc/falco/falco.yaml -v /etc/falco/falco_rules.yaml:/etc/falco/falco_rules.yaml -v /var/log/falco_events.log:/var/log/falco_events.log sysdig/falco
 `{{execute}}
 
 __Note: if you accidentally terminate the container or want to reload the configuration files, you can always `docker restart falco`{{execute}} from the host.__
