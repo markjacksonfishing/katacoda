@@ -6,7 +6,7 @@ Let's pull and launch the event generator:
 docker run -d --name falco-event-generator sysdig/falco-event-generator
 `{{execute}}
 
-If we look at the log with `tail /var/log/falco_events.log`{{execute}} you'll see lots of suspicious activity detected, as that container simulates all sorts of typicall container break-in and break-out attempts:
+If we look at the log with `tail -f /var/log/falco_events.log`{{execute}} you'll see lots of suspicious activity detected, as that container simulates all sorts of typicall container break-in and break-out attempts:
 
 ```
 19:00:55.362191761: Error File created below /dev by untrusted program (user=root command=event_generator  file=/dev/created-by-event-generator-sh)
