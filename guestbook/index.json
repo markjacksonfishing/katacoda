@@ -1,0 +1,62 @@
+{
+    "private": true,
+    "title": "Deploy Guestbook example on Kubernetes",
+    "description": "This scenario teaches you how to deploy the Guestbook application using Kubernetes and Docker",
+    "details": {
+        "steps": [
+            {
+                "title": "Step 1 - Start Kubernetes",
+                "code": "set-env.sh",
+                "text": "step1.md"
+            },
+            {
+                "title": "Step 2 - Redis Master Controller",
+                "text": "step2.md"
+            },
+            {
+                "title": "Step 3 - Redis Master Service",
+                "text": "step3.md"
+            },
+            {
+                "title": "Step 4 - Replication Slave Pods",
+                "text": "step4.md"
+            },
+            {
+                "title": "Step 5 - Redis Slave Service",
+                "text": "step5.md"
+            },
+            {
+                "title": "Step 6 - Frontend Replicated Pods",
+                "text": "step6.md"
+            },
+            {
+                "title": "Step 7 - Guestbook Frontend Service",
+                "text": "step7.md"
+            },
+            {
+                "title": "Step 8 - Access Guestbook Frontend",
+                "text": "step8.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+      "showdashboard": true,
+      "dashboard": "Guestbook",
+      "uilayout": "editor-terminal",
+      "uisettings": "yaml",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n",
+      "uieditorpath": "/root/tutorial"
+    },
+    "backend": {
+        "port": 30080,
+        "imageid": "kubernetes-cluster-running"
+    }
+}

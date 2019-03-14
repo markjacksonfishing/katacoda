@@ -1,0 +1,17 @@
+To start we need a running Kubernetes cluster. The details of this are explained in the [Launch Kubernetes cluster](https://www.katacoda.com/courses/kubernetes/launch-cluster) scenario.
+
+#### Task
+
+Start a single-node cluster using the helper script. The helper script will launch the API, Master, a Proxy and DNS discovery. The Web App uses DNS Discovery to find the Redis slave to store data.
+
+`launch.sh`{{execute}}
+
+#### Health Check
+
+Check everything is up using the following health Check:
+`
+kubectl cluster-info
+kubectl get nodes
+`{{execute}}
+
+If the node returns NotReady then it is still waiting. Wait a couple of seconds before retrying.
