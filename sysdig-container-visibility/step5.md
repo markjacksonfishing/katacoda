@@ -1,4 +1,4 @@
-One of the hardest things to do when troubleshooting Linux systems in general and container-based infrastructures in particular, is observing the data that processes and/or containers are exchanging. Not only at the network level but also at the file level. Let's see a few examples:
+One of the hardest things to do when troubleshooting Linux systems in general, and container-based infrastructures in particular, is observing the data that processes and/or containers are exchanging. Not only at the network level, but also at the file level. Let's see a few examples:
 
 ## Watch HTTP requests to each of the containers
 
@@ -10,7 +10,7 @@ When trying to inspect network traffic, we might be used to `tcpdump`, but what 
 
 Sometimes we need to troubleshoot DNS resolution inside containers. Because `/etc/resolv.conf` and `/etc/hosts` are generated at run time, these might change without our control. Let's use Sysdig to find out what Apache reads from the `/etc/hosts` file.
 
-*cecho_fds* is one of the most useful chisels, allows to trace the data sent on the filtered file descriptors, either network or file system activity.
+_echo_fds_ is one of the most useful chisels, as it allows to trace the data sent on the filtered file descriptors, either network or file system activity.
 
 `sysdig -c echo_fds "container.name=wp1 and fd.name=/etc/hosts"`{{execute}}
 

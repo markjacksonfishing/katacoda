@@ -28,7 +28,7 @@ _Note: The -pc flag makes sysdig tell us which container each connection belongs
 
 `sysdig -c topcontainers_file`{{execute}}
 
-## Top IO usage processes running
+## Top I/O usage processes running
 
 `sysdig -pc -c topprocs_file`{{execute}}
 

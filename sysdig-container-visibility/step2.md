@@ -1,4 +1,4 @@
-Sysdig works by capturing system calls being made within the Linux Kernel. This provides Sysdig with unique visibility into how applications are operating even inside containers. Think of wireshark for your entire system, not only network activity, that understands the Docker containers and other orchestration tools that you use.
+Sysdig works by capturing system calls being made within the Linux Kernel. This provides Sysdig with unique visibility into how applications are operating even inside containers. Think of Wireshark not only for network activity, but for your entire system, and able to understand the Docker containers and other orchestration tools that you use.
 
 ![Sysdig architecture](https://github.com/katacoda-scenarios/sysdig-scenarios/raw/master/sysdig-container-visibility/assets/sysdig_diagram.png)
 
@@ -17,10 +17,10 @@ Sysdig can be installed as a package but also deployed as a container onto the D
    --volume=/usr:/host/usr:ro \
    sysdig/sysdig`{{execute}}
 
-Once we run Sysdig, it will capture and display information about all system calls and events on the system. This includes timestamp, CPU where it was executed, process name, thread ID, event type and all the relevant arguments.
+Once we run Sysdig, it will capture and display information about all the system calls and events on the system. This includes process name, thread ID, timestamp, CPU where it was executed, event type and all the relevant arguments.
 
 Run `sysdig -M 3`{{execute}} to see all these events in your Wordpress deployment.
 
 _Note: (-M 3 will finish Sysdig after a 3 seconds capture, otherwise you can finish it with <kbd>CTRL</kbd>+<kbd>C</kbd>)._
 
-All this information can be too much for an individual to process, that's why Sysdig offers filters and aggregation scripts known as chisels.
+All this information can be too much for an individual to process, that's why Sysdig offers filters and aggregation scripts known as _chisels_.
