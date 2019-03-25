@@ -1,29 +1,38 @@
 {
     "private": true,
-    "title": "Forensics example with Falco",
+    "title": "Sysdig Falco: Forensics example",
     "description": "This scenario teaches you how to use Sysdig Falco for container forensics",
     "difficulty": "medium",
     "time" :  "20 minutes",
     "details": {
+        "assets": {
+            "host01": [
+                {
+                    "file": "falco-account.yaml",
+                    "target": "~/"
+                }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": "Based on Sysdig Blog articles: https://sysdig.com/blog/."
+        },
         "steps": [
             {
                 "title": "Step 1 - Install Falco on Kubernetes",
                 "text": "step1.md"
             }
         ],
-        "intro": {
-            "text": "intro.md",
-            "credits": "Based on Sysdig Blog articles: https://sysdig.com/blog/."
-        },
         "finish": {
             "text": "finish.md"
         }
     },
     "environment": {
-      "uilayout": "terminal",
+      "uilayout": "terminal-terminal",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
     },
     "backend": {
-        "imageid": "kubernetes"
+        "imageid": "kubernetes-cluster"
     }
 }
