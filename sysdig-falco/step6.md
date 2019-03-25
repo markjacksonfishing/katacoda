@@ -15,4 +15,3 @@ If we look at the log with `tail -f /var/log/falco_events.log`{{execute}} you'll
 19:00:59.370589147: Error File below known binary directory renamed/removed (user=root command=event_generator  operation=rename file=<NA> res=0 oldpath=/bin/true newpath=/bin/true.event-generator-sh )
 ...
 ```
-
