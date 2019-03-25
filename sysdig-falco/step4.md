@@ -25,7 +25,7 @@ The rule for this step is right below:
   priority: ERROR
 ```
 
-Let's take a look at the _open_write_ macro used above:
+Let's take a look at the *open_write* macro used above:
 
 ```yaml
 - macro: open_write

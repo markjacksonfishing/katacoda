@@ -10,7 +10,7 @@ When trying to inspect network traffic, we might be used to `tcpdump`, but what 
 
 Sometimes we need to troubleshoot DNS resolution inside containers. Because `/etc/resolv.conf` and `/etc/hosts` are generated at run time, these might change without our control. Let's use Sysdig to find out what Apache reads from the `/etc/hosts` file.
 
-_echo_fds_ is one of the most useful chisels, as it allows to trace the data sent on the filtered file descriptors, either network or file system activity.
+*echo_fds* is one of the most useful chisels, as it allows to trace the data sent on the filtered file descriptors, either network or file system activity.
 
 `sysdig -c echo_fds "container.name=wp1 and fd.name=/etc/hosts"`{{execute}}
 
