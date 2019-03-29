@@ -11,7 +11,8 @@ curl -Lo /tmp/helm-linux-amd64.tar.gz https://storage.googleapis.com/kubernetes-
 tar zxf /tmp/helm-linux-amd64.tar.gz -C /tmp/
 chmod a+x /tmp/linux-amd64/helm 
 sudo mv /tmp/linux-amd64/helm /usr/local/bin
-helm init
+kubectl create -f helm-account.yaml
+helm init --service-account tiller
 helm repo update
 `{{execute HOST1}}
 

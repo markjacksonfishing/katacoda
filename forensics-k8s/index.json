@@ -8,7 +8,7 @@
         "assets": {
             "host01": [
                 {
-                    "file": "falco-account.yaml",
+                    "file": "helm-account.yaml",
                     "target": "~/"
                 }
             ]
