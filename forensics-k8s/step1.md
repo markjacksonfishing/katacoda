@@ -2,7 +2,7 @@ We have already set up a Kubernetes cluster just for you, so you just have to ma
 
 Once Kubernetes is ready, we join node01 to the cluster running the script `join.sh`{{execute HOST2}}.
 
-Then we can run `kubectl get nodes`{{execute HOST1}} on the master to see the nodes in the cluster.
+Then we can run `kubectl get nodes`{{execute HOST1}} on the master to see the nodes in the cluster and check they are ready.
 
 We will install Falco using Helm, a package manager for Kubernetes. We can download and install Helm with these commands:
 
@@ -24,3 +24,4 @@ We can now deploy Sysdig Falco in a few seconds, as it only takes a simple comma
 `helm install --name sysdig-falco-1 stable/falco`{{execute HOST1}}
 
 This will result in a Falco Pod being deployed to each node, and thus the ability to monitor any running containers for abnormal behavior.
+`kubectl get pods`{{execute HOST1}}

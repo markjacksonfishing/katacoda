@@ -7,10 +7,12 @@
     "details": {
         "assets": {
             "host01": [
-                {
-                    "file": "helm-account.yaml",
-                    "target": "~/"
-                }
+                {"file": "helm-account.yaml", "target": "~/"},
+                {"file": "client-deployment.yaml", "target": "~/"},
+                {"file": "mysql-deployment.yaml", "target": "~/"},
+                {"file": "mysql-service.yaml", "target": "~/"},
+                {"file": "ping-deployment.yaml", "target": "~/"},
+                {"file": "ping-service.yaml", "target": "~/"}
             ]
         },
         "intro": {
@@ -22,6 +24,14 @@
             {
                 "title": "Step 1 - Install Falco on Kubernetes",
                 "text": "step1.md"
+            },
+            {
+                "title" : "Step 2 - Install and test our application",
+                "text": "step2.md"
+            },
+            {
+                "title" : "Step 3 - Hack the web application",
+                "text": "step3.md"
             }
         ],
         "finish": {
