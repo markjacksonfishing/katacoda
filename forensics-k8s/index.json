@@ -8,6 +8,8 @@
         "assets": {
             "host01": [
                 {"file": "helm-account.yaml", "target": "~/"},
+                {"file": "falco_rules.local.yaml", "target": "~/"},
+                {"file": "custom_rules.yaml", "target": "~/"},
                 {"file": "client-deployment.yaml", "target": "~/"},
                 {"file": "mysql-deployment.yaml", "target": "~/"},
                 {"file": "mysql-service.yaml", "target": "~/"},
@@ -32,6 +34,10 @@
             {
                 "title" : "Step 3 - Hack the web application",
                 "text": "step3.md"
+            },
+            {
+                "title" : "Step 4 - Investigate the incident",
+                "text": "step4.md"
             }
         ],
         "finish": {

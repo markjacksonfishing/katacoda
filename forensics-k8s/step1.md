@@ -9,7 +9,7 @@ We will install Falco using Helm, a package manager for Kubernetes. We can downl
 `
 curl -Lo /tmp/helm-linux-amd64.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz
 tar zxf /tmp/helm-linux-amd64.tar.gz -C /tmp/
-chmod a+x /tmp/linux-amd64/helm 
+chmod a+x /tmp/linux-amd64/helm
 sudo mv /tmp/linux-amd64/helm /usr/local/bin
 kubectl create -f helm-account.yaml
 helm init --service-account tiller
@@ -21,7 +21,7 @@ We have also initialized Helm and installed Tiller (the Helm server side compone
 We can view the current status of our cluster using the command `kubectl get pod -n kube-system`{{execute HOST1}}
 
 We can now deploy Sysdig Falco in a few seconds, as it only takes a simple command:
-`helm install --name sysdig-falco-1 stable/falco`{{execute HOST1}}
+`helm install --name falco --set ebpf.enabled=false -f custom_rules.yaml stable/falco`{{execute HOST1}}
 
 This will result in a Falco Pod being deployed to each node, and thus the ability to monitor any running containers for abnormal behavior.
 `kubectl get pods`{{execute HOST1}}
