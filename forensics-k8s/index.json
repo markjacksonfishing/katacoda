@@ -1,5 +1,4 @@
 {
-    "private": true,
     "title": "Sysdig Falco: Forensics example",
     "description": "This scenario teaches you how to use Sysdig Falco for container forensics",
     "difficulty": "medium",
