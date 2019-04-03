@@ -4,7 +4,18 @@ Fortunately, we took precautions in step 1, when we installed Falco with a few r
 
 `more custom_rules.yaml`{{execute HOST1}}
 
-Notice than among the conditions of our rules we make use of k8s metadata:
+As you know from our [previous scenario](https://katacoda.com/sysdig/scenarios/sysdig-falco), a Falco rule looks like this:
+
+```yaml
+- rule: Unauthorized process
+  desc: There is a running process not described in the base template
+  condition: spawned_process and container and k8s.ns.name=ping and k8s.deployment.name=ping and not proc.name in (apache2, sh, ping)
+  output: Unauthorized process (%proc.cmdline) running in (%container.id)
+  priority: ERROR
+  tags: [process]
+```
+
+Notice how in the rule condition we make use of Kubernetes metadata:
 `k8s.ns.name=ping and k8s.deployment.name=ping`
 
 You can find all the available fields in the [documentation](https://github.com/draios/sysdig/wiki/Sysdig-User-Guide#all-supported-filters).

@@ -4,5 +4,7 @@ This time we just used a simple file output, but you can also [configure a custo
 
 Eager to learn more? These are some recommended further steps:
 
+- [Automate Sysdig Falco Deployment Using Helm Charts](https://sysdig.com/blog/falco-helm-chart/) in our blog
+- [Runtime container security – How to implement open source container security (part 1)](https://sysdig.com/blog/oss-container-security-runtime/)
 - [Sysdig Falco documentation](https://github.com/draios/falco/wiki)
 - [Sysdig slack](https://slack.sysdig.com/), join channel #falco

@@ -1,6 +1,6 @@
 {
     "title": "Sysdig Falco: Forensics example",
-    "description": "This scenario teaches you how to use Sysdig Falco for container forensics",
+    "description": "This scenario teaches you how to use Sysdig Falco for container forensics on a Kubernetes cluster",
     "difficulty": "medium",
     "time" :  "20 minutes",
     "details": {
