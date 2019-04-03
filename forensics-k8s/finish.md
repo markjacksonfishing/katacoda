@@ -2,6 +2,8 @@ In this course you experimented with the basic of Sysdig Falco and its operation
 
 This time we just used a simple file output, but you can also [configure a custom programmatic output](https://github.com/draios/falco/wiki/Falco-Alerts#program-output) to send notifications to event and alerting systems in your organization.
 
+We also set up a response engine, that automatically responds to security threats taking appropriate actions.
+
 Eager to learn more? These are some recommended further steps:
 
 - [Automate Sysdig Falco Deployment Using Helm Charts](https://sysdig.com/blog/falco-helm-chart/) in our blog

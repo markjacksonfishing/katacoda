@@ -37,6 +37,14 @@
             {
                 "title" : "Step 4 - Investigate the incident",
                 "text": "step4.md"
+            },
+            {
+                "title" : "Step 5 - Installing a Response Engine",
+                "text": "step5.md"
+            },
+            {
+                "title" : "Step 6 - Deploying playbooks",
+                "text": "step6.md"
             }
         ],
         "finish": {

@@ -2,7 +2,7 @@ After the attacker abused the usernames/passwords he obtained, we are assigned t
 
 Fortunately, we took precautions in step 1, when we installed Falco with a few relevant rules.
 
-`more custom_rules.yaml`{{execute HOST1}}
+`cat custom_rules.yaml`{{execute HOST1}}
 
 As you know from our [previous scenario](https://katacoda.com/sysdig/scenarios/sysdig-falco), a Falco rule looks like this:
 

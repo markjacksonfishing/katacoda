@@ -10,4 +10,4 @@ This scenario will cover the following security threats:
 - Write to non authorized directory
 - Processes opening unexpected connections to the Internet
 
-You will play both the attacker and defender (sysadmin) roles, verifying that the intrusion attempt has been detected by Sysdig Falco.
+You will play both the attacker and defender (sysadmin) roles, verifying that the intrusion attempt has been detected by Sysdig Falco, and then deploying playbooks that will be automatically run to respond a threat.
