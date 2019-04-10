@@ -1,0 +1,57 @@
+{
+    "private": true,
+    "title": "Sysdig Monitor Lab 01: Application performance analysis",
+    "description": "Monitor the key metrics of a WS application. Identify performance bottlenecks and scale the application.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "helm-account.yaml", "target": "~/" },
+                { "file": "create.sh", "target": "~/" },
+                { "file": "delete.sh", "target": "~/" },
+                { "file": "scale.sh", "target": "~/" },
+                { "file": "stress.sh", "target": "~/" },
+                { "file": "manifests/db.yaml", "target": "~/" },
+                {
+                    "file": "manifests/namespace.yaml",
+                    "target": "~/manifests/"
+                },
+                { "file": "manifests/observer.yaml", "target": "~/manifests/" },
+                { "file": "manifests/redis.yaml", "target": "~/manifests/" },
+                { "file": "manifests/result.yaml", "target": "~/manifests/" },
+                { "file": "manifests/vote.yaml", "target": "~/manifests/" },
+                { "file": "manifests/voter.yaml", "target": "~/manifests/" },
+                { "file": "manifests/worker.yaml", "target": "~/manifests/" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Step 1 - Introducing the environment",
+                "text": "step1.md"
+            },
+            {
+                "title": "Step 2 - Installing the Sysdig agent",
+                "text": "step2.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "showdashboard": true,
+        "dashboard": "Dashboard",
+        "uilayout": "terminal"
+    },
+    "backend": {
+        "port": 8080,
+        "imageid": "kubernetes-cluster-running"
+    }
+}
