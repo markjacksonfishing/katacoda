@@ -9,10 +9,10 @@
         "assets": {
             "host01": [
                 { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "create.sh", "target": "~/" },
-                { "file": "delete.sh", "target": "~/" },
-                { "file": "scale.sh", "target": "~/" },
-                { "file": "stress.sh", "target": "~/" },
+                { "file": "create.sh", "target": "~/", "chmod": "+x" },
+                { "file": "delete.sh", "target": "~/", "chmod": "+x" },
+                { "file": "scale.sh", "target": "~/", "chmod": "+x" },
+                { "file": "stress.sh", "target": "~/", "chmod": "+x" },
                 { "file": "manifests/db.yaml", "target": "~/" },
                 {
                     "file": "manifests/namespace.yaml",
@@ -33,12 +33,16 @@
         },
         "steps": [
             {
-                "title": "Step 1 - Introducing the environment",
+                "title": "Step 1 - Setting up the environment",
                 "text": "step1.md"
             },
             {
                 "title": "Step 2 - Installing the Sysdig agent",
                 "text": "step2.md"
+            },
+            {
+                "title": "Step 3 - Installing the example app",
+                "text": "step3.md"
             }
         ],
         "finish": {
