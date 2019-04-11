@@ -43,6 +43,14 @@
             {
                 "title": "Step 3 - Installing the example app",
                 "text": "step3.md"
+            },
+            {
+                "title": "Step 4 - Monitoring a bottleneck in the app",
+                "text": "step4.md"
+            },
+            {
+                "title": "Step 5 - Scaling the application",
+                "text": "step5.md"
             }
         ],
         "finish": {
