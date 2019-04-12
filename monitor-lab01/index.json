@@ -13,17 +13,7 @@
                 { "file": "delete.sh", "target": "~/", "chmod": "+x" },
                 { "file": "scale.sh", "target": "~/", "chmod": "+x" },
                 { "file": "stress.sh", "target": "~/", "chmod": "+x" },
-                { "file": "manifests/db.yaml", "target": "~/" },
-                {
-                    "file": "manifests/namespace.yaml",
-                    "target": "~/manifests/"
-                },
-                { "file": "manifests/observer.yaml", "target": "~/manifests/" },
-                { "file": "manifests/redis.yaml", "target": "~/manifests/" },
-                { "file": "manifests/result.yaml", "target": "~/manifests/" },
-                { "file": "manifests/vote.yaml", "target": "~/manifests/" },
-                { "file": "manifests/voter.yaml", "target": "~/manifests/" },
-                { "file": "manifests/worker.yaml", "target": "~/manifests/" }
+                { "file": "manifests/*.yaml", "target": "~/manifests/" }
             ]
         },
         "intro": {
@@ -58,12 +48,9 @@
         }
     },
     "environment": {
-        "showdashboard": true,
-        "dashboard": "Dashboard",
         "uilayout": "terminal"
     },
     "backend": {
-        "port": 8080,
         "imageid": "kubernetes-cluster-running"
     }
 }
