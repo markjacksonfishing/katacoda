@@ -1,17 +1,21 @@
-We will install the Sysdig Agent using Helm, a package manager for Kubernetes, which is already installed and initialized.
+This lab uses a tweaked version of the Sysdig agent which supports scraping from Prometheus endpoints that uses authentication with private key and certificate. The work is still not merged intro dev branch but all of us hope that will be merged as soon as possible.
 
-To learn more about Helm, please visit [WordPress in Kubernetes: The Perfect Setup](https://sysdig.com/blog/wordpress-kubernetes-perfect-setup/) on our blog.
+Under the `sysdig-agent` directory you will find the following files:
 
-We can view the current status of our cluster using the command `kubectl get pod -n kube-system`{{execute}}
+- create.sh
+- delete.sh
+- dragent.yaml
+- sysdig-account.yaml
+- sysdig-daemonset-config.yaml
+- sysdig-secret.yaml
 
-Once all the pods are running, we can deploy the Sysdig Agent in a few seconds, as it only takes a simple command:
-`helm install --name sysdig --set sysdig.accessKey=YOUR_OWN_ACCESS_KEY,sysdig.settings.tags="cluster:training" stable/sysdig`{{copy}}
+The `dragent.yaml` file contains the agent configuration. Any customizations that you might need to pass to the Sysdig agent needs to be done here, but in this lab in particular, there is no need to make any changes.
 
-After copying the above command, you can paste it into the terminal using the right button of your mouse.  Remember you have to use **your own access key**.
+To deploy the Sysdig agent you need to execute `create.sh`:
 
-This will result in a Sysdig Agent Pod being deployed to each node, and thus the ability to monitor any running containers.
+`cd sysdig-agent;
+./create.sh $SYSDIG_AGENT_ACCESS_KEY cloud:katacoda,cluster:training sysdig-training`{{execute}}
 
-Creating the containers may take a little time. Check that all the containers are running with
-`kubectl get pods`{{execute}}
+After a few moments, you should see the agent pods (one per each Kubernetes node) in `Running` state inside the `sysdig-agent-kubernetes-internal` namespace:
 
-`helm list`{{execute}} will also show that the sysdig agent has been deployed.
+`kubectl get pods -n sysdig-agent-kubernetes-internal`{{execute}}

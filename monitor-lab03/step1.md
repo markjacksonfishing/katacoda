@@ -15,3 +15,11 @@ This lab requires the following environment variables to be set:
 
 - `SYSDIG_AGENT_ACCESS_KEY`: The agent access token. Needed for deploying the agent.
 - `SYSDIG_API_TOKEN`: The API token for Sysdig Monitor. Needed for creating the dashboards.
+
+You can find your Sysdig Agent Access Key in the Agent Installation tab of the Settings page, and your Sysdig Monitor API Token in the User Profile tab.
+
+`export SYSDIG_AGENT_ACCESS_KEY="your_own_access_key"`{{copy}}
+
+`export SYSDIG_API_TOKEN="your_own_api_token"`{{copy}}
+
+After copying the commands, you can paste them in the interactive terminal using the right buttom of your mouse.  Remember to use **your own keys**.
