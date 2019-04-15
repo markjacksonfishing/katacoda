@@ -1,0 +1,43 @@
+{
+    "private": true,
+    "title": "Sysdig Monitor Lab 03: Kubernetes platform monitoring",
+    "description": "Use a Sysdig agent to scrape Kubernetes metrics from its internal components.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "etcd/*", "target": "~/etcd/" },
+                { "file": "example-java-app/*", "target": "~/example-java-app/" },
+                { "file": "*.sh", "target": "~/", "chmod": "+x" },
+                { "file": "dashboards.json", "target": "~/" },
+                { "file": "helm-account.yaml", "target": "~/" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Step 1 - Setting up the environment",
+                "text": "step1.md"
+            },
+            {
+                "title": "Step 2 - Installing the Sysdig agent",
+                "text": "step2.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "uilayout": "terminal"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}
