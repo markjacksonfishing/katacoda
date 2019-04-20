@@ -28,6 +28,14 @@
             {
                 "title": "Step 2 - Installing the Sysdig agent",
                 "text": "step2.md"
+            },
+            {
+                "title": "Step 3 - Deploying dashboards",
+                "text": "step3.md"
+            },
+            {
+                "title": "Step 4 - Generating load",
+                "text": "step4.md"
             }
         ],
         "finish": {
