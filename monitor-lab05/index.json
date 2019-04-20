@@ -29,6 +29,10 @@
             {
                 "title": "Step 3 - Installing the 'ticket-generator' application",
                 "text": "step3.md"
+            },
+            {
+                "title": "Triggering an error condition to simulate an issue",
+                "text": "step4.md"
             }
         ]
     },
