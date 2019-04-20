@@ -20,16 +20,18 @@ fi
 NAMESPACE="sysdig-agent-kubernetes-internal"
 kubectl create namespace ${NAMESPACE}
 
-ETCD_POD=$(kubectl get pod -n kube-system | grep ^etcd-server-ip | cut -f1 -d ' ')
+#ETCD_POD=$(kubectl get pod -n kube-system | grep ^etcd-server-ip | cut -f1 -d ' ')
 
-kubectl exec -n kube-system ${ETCD_POD} cat /srv/kubernetes/etcd.pem > client-cert
-kubectl exec -n kube-system ${ETCD_POD} cat /srv/kubernetes/etcd-key.pem > client-key
+#kubectl exec -n kube-system ${ETCD_POD} cat /srv/kubernetes/etcd.pem > client-cert
+#kubectl exec -n kube-system ${ETCD_POD} cat /srv/kubernetes/etcd-key.pem > client-key
 
-kubectl -n ${NAMESPACE} create secret generic etcd \
-	--from-file=client-cert  \
-	--from-file=client-key
+#kubectl -n ${NAMESPACE} create secret generic etcd \
+#	--from-file=client-cert  \
+#	--from-file=client-key
 
-rm client-cert client-key
+#rm client-cert client-key
+
+kubectl -n ${NAMESPACE} create secret generic etcd --from-file=../etcd/client-cert --from-file=../etcd/client-key
 
 cp sysdig-secret.yaml sysdig-secret.yaml.dist
 H_AGENTKEY=`echo -n "$AGENTKEY" | base64`
