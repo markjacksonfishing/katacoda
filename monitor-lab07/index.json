@@ -25,6 +25,18 @@
             {
                 "title": "Step 2 - Installing Jenkins",
                 "text": "step2.md"
+            },
+            {
+                "title": "Step 3 - Populating Jenkins Pipelines and Plugins",
+                "text": "step3.md"
+            },
+            {
+                "title": "Step 4 - Configuring Jenkins",
+                "text": "step4.md"
+            },
+            {
+                "title": "Step 5 - Sysdig credentials",
+                "text": "step5.md"
             }
         ]
     },

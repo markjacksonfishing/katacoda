@@ -1,0 +1,49 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: jenkins
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: jenkins
+    role: jenkins
+  name: jenkins
+  namespace: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+      role: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+        role: jenkins
+    spec:
+      containers:
+      - image: sysdiglabs/jenkins:0.2
+        name: jenkins
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: jenkins
+  name: jenkins-service
+  namespace: jenkins
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: jenkins
+

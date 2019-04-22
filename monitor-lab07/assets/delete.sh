@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-kubectl delete ns jenkins
+kubectl delete -f jenkins.yaml
