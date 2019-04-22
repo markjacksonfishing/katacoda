@@ -1,4 +1,4 @@
-FooDuring this lab we have seen how Sysdig Monitor provides deep visibility into your containerized infrastructure and out of the box allows to:
+During this lab we have seen how Sysdig Monitor provides deep visibility into your containerized infrastructure and out of the box allows to:
 
 - Explore the containerized infrastructure and a microservices application.
 - Monitor a web services application using key metrics and monitoring approaches:

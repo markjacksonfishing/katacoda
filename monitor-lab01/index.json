@@ -9,10 +9,7 @@
         "assets": {
             "host01": [
                 { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "create.sh", "target": "~/", "chmod": "+x" },
-                { "file": "delete.sh", "target": "~/", "chmod": "+x" },
-                { "file": "scale.sh", "target": "~/", "chmod": "+x" },
-                { "file": "stress.sh", "target": "~/", "chmod": "+x" },
+                { "file": "*.sh", "target": "~/", "chmod": "+x" },
                 { "file": "manifests/*.yaml", "target": "~/manifests/" }
             ]
         },
@@ -35,12 +32,20 @@
                 "text": "step3.md"
             },
             {
-                "title": "Step 4 - Monitoring a bottleneck in the app",
+                "title": "Step 4 - Learning more about our application",
                 "text": "step4.md"
             },
             {
-                "title": "Step 5 - Scaling the application",
+                "title": "Step 5 - Monitoring the application",
                 "text": "step5.md"
+            },
+            {
+                "title": "Step 6 - Monitoring a bottleneck in the app",
+                "text": "step6.md"
+            },
+            {
+                "title": "Step 7 - Monitoring the application after the changes",
+                "text": "step7.md"
             }
         ],
         "finish": {
