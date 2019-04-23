@@ -1,13 +1,40 @@
-As the cluster operator you get a notification: a service version update is scheduled for today.
+Logging into Sysdig Monitor, you should arrive at the Explore tab which offers an inventory overview where you can group the different resources or entities in your infrastructure using physical attributes like hostname and containers, or logical attributes Kubernetes namespaces, deployments and pods. For each entity we can see some basic metrics in the table like CPU, memory, network or I/O.
 
-Let's simulate that update now, running in your home directory:
+For example, change the grouping view to _Deployments and Pods_
 
-`./update.sh`{{execute}}
+![Grouping](assets/image02.png)
 
-You can check that the old `result` pods were terminated, and new updated pods were created:
+You should be able to see the `lab2-example-voting-app` namespace with all the deployments and pods that make it up:
 
-`kubectl get pods -n lab2-example-voting-app`{{execute}}
+![Deployments](assets/image03.png)
 
-They are in `Running` state, so the pod initialization process seems fine so far.
+Proposed exercises
+------------------
 
-However, in the MySQL/PostgreSQL dashboard there is a significant bump in the number of SQL errors that clearly started when we updated the service pods (**yellow rectangle events**). There is something wrong with this new version!
+Let's try to answer some questions already:
+
+- How many nodes do you have in your cluster?
+- Can you see the Sysdig agent is running on each node?
+- Can you tell how many instances do you run of each microservice in the voting app?
+- Can you tell on which node is currently running each voting app microservice?
+- Which microservice uses more CPU? And I/O?
+- Which node has more memory usage? And disk usage?
+
+Now we have an idea of the components of the app. But how these microservices interact with each other? In order to emit a vote we should probably expect traffic between the voter and the vote service. The result server will then check the database to generate the results.
+
+With Sysdig Monitor you can use _Topology_ maps to visualize how entities interact with each other. When using a physical grouping we can see the different entities talking with each other, but on an orchestration platform is more interesting to understand how services interact. With a service based grouping like Deployments and pods: Namespaces &gt; Deployments &gt; Pods we can select one of the default dashboards: `Topology` → `Network Traffic`. This will show us our entire infrastructure. But if we want to look only into an specific part, we will change from `Entire Infrastructure` into  `lab2-example-voting-app`. We can see this changing the scope.
+
+![Network traffic](assets/image04.png)
+
+As we drill into these entities, we can see how we can even look inside the container, down to the process level. This is a really cool example of the deep visibility that Sysdig provides.
+
+You can monitor several aspects of your application or cluster directly from Explore using the default Dashboards. There are a bunch of them available for Applications, Hosts & Containers, Kubernetes, Network, Services and Topology as we have just seen.
+
+Proposed exercises
+------------------
+
+Using default dashboards, try to find out:
+
+- Which technology is used for each voting app microservice? (identifying each process running inside each container)
+- What are the network connections of the worker deployment?
+- Do we have any container CPU or memory limits on the containers?

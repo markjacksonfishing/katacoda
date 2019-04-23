@@ -34,12 +34,24 @@
                 "text": "step3.md"
             },
             {
-                "title": "Step 4 - Deploying an update and detecting errors",
+                "title": "Step 4 - Exploring the application with Sysdig Monitor",
                 "text": "step4.md"
             },
             {
-                "title": "Step 5 - Using Sysdig for troubleshooting",
+                "title": "Step 5 - Monitoring the application",
                 "text": "step5.md"
+            },
+            {
+                "title": "Step 6 - Monitoring a failed application upgrade",
+                "text": "step6.md"
+            },
+            {
+                "title": "Step 7 - Alerting and recording troubleshooting trace information",
+                "text": "step7.md"
+            },
+            {
+                "title": "Step 8 - Debugging SQL errors using Sysdig captures & Sysdig Inspect",
+                "text": "step8.md"
             }
         ],
         "finish": {
