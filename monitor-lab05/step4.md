@@ -1,11 +1,34 @@
-The ticket token generator example microservices application will normally behave properly in standard conditions, but twice a week (it is programmed to do so) will trigger the 502 HTTP error issue.
+Logging into Sysdig Monitor, you should arrive at the Explore tab by default, the explore tab offers you an inventory overview where you can group the different entities using physical attributes - like host id - or logical attributes like pods, inside deployments, inside Kubernetes namespaces.
 
-For training purposes you can also trigger the error manually any time you want executing the following script within your home directory:
+Once we have selected the desired grouping, you can monitor a single metric or a complete Dashboard.
 
-`./triggererror.sh`{{execute}}
+For example, change the grouping view to _Deployments and Pods_
 
-And if you want the application to return to its normal behavior, you can run:
+![Grouping](assets/image01.png)
 
-`./stoperror.sh`{{execute}}
+You should be able to see the ticket-generator namespace and the 3 deployments and 4 pods that make it up:
 
-For training purposes we have instrumented being able to trigger and stop the 502 HTTP error within an example microservices application, but this was actually a real issue that one of our customers had. The issue was introduced with a new software release and they were able to troubleshoot it using Sysdig.
+![Deployments](assets/image02.png)
+
+The normal traffic flow of the application should be:
+
+`Ticket client` → `Load Balancer service` → `Load Balancer Pod` → `Backend service` → `Backend pods`
+
+You should be able to see exactly this, selecting the ticket-generator namespace and the `Topology` → `Network Traffic` Default dashboard.
+
+![Network traffic](assets/image03.png)
+
+As you can see, is the typical layered application. A 'ticket' client requests a new ticket to the load balancer frontend, and this balancer forwards the requests to the two backend server pods. All these pods communicate using HTTP REST-style requests.
+
+Proposed exercises
+------------------
+
+You can explore several aspects of your application or cluster directly from the explore tab and using default Dashboards, for example, which processes are running in each container:
+
+![Processes](assets/image04.png)
+
+From this interface, try to explore:
+
+- In which physical node is running each pod of our stack.
+- CPU, memory, bandwidth consumption of each pod, a deployment and the namespace.
+- Kube state metrics health.

@@ -7,10 +7,7 @@
     "time": "30 minutes",
     "details": {
         "assets": {
-            "host01": [
-                { "file": "*.sh", "target": "~/", "chmod": "+x" },
-                { "file": "*.yaml", "target": "~/" }
-            ]
+            "host01": [{ "file": "*.sh", "target": "~/", "chmod": "+x" }, { "file": "*.yaml", "target": "~/" }]
         },
         "intro": {
             "text": "intro.md",
@@ -19,20 +16,40 @@
         },
         "steps": [
             {
-                "title": "Step 1 - Setting up the environment",
+                "title": "Setting up the environment",
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - Installing the Sysdig agent",
+                "title": "Installing the Sysdig agent",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Installing the 'ticket-generator' application",
+                "title": "Installing the 'ticket-generator' application",
                 "text": "step3.md"
             },
             {
-                "title": "Triggering an error condition to simulate an issue",
+                "title": "Exploring the application with Sysdig Monitor",
                 "text": "step4.md"
+            },
+            {
+                "title": "Monitoring the application",
+                "text": "step5.md"
+            },
+            {
+                "title": "Alerting to notify on error conditions",
+                "text": "step6.md"
+            },
+            {
+                "title": "Triggering an error condition to simulate an issue",
+                "text": "step7.md"
+            },
+            {
+                "title": "Identifying an issue with alertings and monitoring metrics",
+                "text": "step8.md"
+            },
+            {
+                "title": "Advanced troubleshooting and debugging an issue",
+                "text": "step9.md"
             }
         ]
     },

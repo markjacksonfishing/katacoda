@@ -16,7 +16,12 @@ Goals
   - Where is each container running?
   - How this microservices application works?
   - Which services talk to each other?
-  - What’s running inside each container and microservice?
+  - What's running inside each container and microservice?
 - Monitor a web services application. Key metrics and monitoring approaches: Golden signals, USE resource monitoring and Kubernetes orchestration.
 - Identify failure points and create the alerts to detect any of these error conditions.
 - Use Sysdig captures and Sysdig Inspect to deep dive into the system calls and perform troubleshooting using syscall tracing. In this lab we will be able to follow the HTTP conversation and pinpoint the exact location of the glitch that is causing the 502 HTTP errors.
+
+Competencies required
+---------------------
+
+The student needs to understand the basic concepts of microservices applications, containers and Kubernetes. You will be able to check the status of deployed resources (pods, deployments, services) and nodes.

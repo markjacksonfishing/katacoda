@@ -17,7 +17,7 @@ This will create:
 - A Kubernetes service to communicate with the backend service abstraction
 - A ticket-balancer deployment composed of 1 haproxy pod
 - A Kubernetes service to communicate with the load balancer service abstraction
-- A ticket-client deployment composed of 1 “ticket-consumer” pod
+- A ticket-client deployment composed of 1 "ticket-consumer" pod
 
 Wait until all the pods reach Running state:
 
