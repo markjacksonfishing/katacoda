@@ -2,7 +2,7 @@ There are several metrics and dashboards that we can use to observe whether the 
 
 Everything in this application uses HTTP, so we can use the different metrics and default HTTP(s) dashboards offered out-of-the-box in Sysdig Monitor to diagnose and assess performance.
 
-For example, a good place to start would be the HTTP dashboard (Default Dashboards → Applications → HTTP):
+For example, a good place to start would be the HTTP dashboard (`Default Dashboards` → `Applications` → `HTTP`):
 
 ![HTTP dashboard](assets/image04.png)
 

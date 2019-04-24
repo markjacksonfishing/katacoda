@@ -1,3 +1,6 @@
+Conclusions and takeaways
+-------------------------
+
 During this lab we have seen how Sysdig Monitor provides deep visibility into your containerized infrastructure and out of the box allows to:
 
 - Explore the containerized infrastructure and a microservices application.
