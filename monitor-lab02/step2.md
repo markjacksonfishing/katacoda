@@ -1,7 +1,5 @@
 We will install the Sysdig Agent using Helm, a package manager for Kubernetes, which is already installed and initialized.
 
-To learn more about Helm, please visit [WordPress in Kubernetes: The Perfect Setup](https://sysdig.com/blog/wordpress-kubernetes-perfect-setup/) on our blog.
-
 We can view the current status of our cluster using the command `kubectl get pod -n kube-system`{{execute}}
 
 Once all the pods are running, we can deploy the Sysdig Agent in a few seconds, as it only takes a simple command:

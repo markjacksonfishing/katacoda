@@ -10,13 +10,13 @@ Sysdig Inspect will open and we can see an overview. Each of these tiles aggrega
 
 This is how we are going to be able to navigate through thousands system calls recorded in this capture file, so from a fired alert you can drill down and recreate everything that happened: modified files, network connections and executed commands. Using the sliders we can narrow our search around a specific time frame if we want.
 
-A good candidate to start the debugging is the  “postgresql Bytes” tile (top middle, NETWORK APPS column):
+A good candidate to start the debugging is the "postgresql Bytes" tile (top middle, NETWORK APPS column):
 
 ![Tiles](assets/image16.png)
 
 Let's drill down on that tile (hover over the tile and click on the two downward arrows).
 
-The connection section in the context of “postgres bytes” show us two processes:
+The connection section in the context of "postgres bytes" show us two processes:
 
 ![Postgres Bytes](assets/image17.png)
 
@@ -28,6 +28,6 @@ Let's drill down in any of those process extracting the raw SQL I/O stream (clic
 
 Blue rows mean that we are sending a message (write syscall) while the orange row represent a received message (read syscall).
 
-You will immediately pinpoint the SQL error: our clients are requesting a table “vote” that does not exist, the previous service version was using the “votes” table.
+You will immediately pinpoint the SQL error: our clients are requesting a table "vote" that does not exist, the previous service version was using the "votes" table.
 
 This time is not much more complex than a typo error, but you have been able to detect and troubleshoot a SQL syntax error without actually having to instrument the client nor the SQL server.

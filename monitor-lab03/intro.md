@@ -15,5 +15,5 @@ Goals
   - API Server: The frontend HTTP API. The control plane.
   - Etcd: The persistence backend of all cluster data.
   - Scheduler: How Kubernetes decides which pod execute on each node.
-  - Kubelet: The “node agent” which lives on each node.
+  - Kubelet: The "node agent" which lives on each node.
 - Apply Golden Signals also to Kubernetes internal components.

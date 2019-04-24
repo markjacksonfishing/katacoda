@@ -20,10 +20,11 @@ or there is any situation that someone needs to look at:
 Alerts are configured through a set of parameters:
 
 - A name, a description and a priority.
-- A metric that this alert will monitor. You can also define how the data is aggregated such as avg, max, min or sum. To alert on multiple metrics using boolean logic, you can switch to Advanced Mode.
-- A scope that will define where in the environment this alert will apply. Use advanced operators to include, exclude, or pattern-match groups, tags, and entities.
-You can also create alerts directly from Explore and Dashboards for automatically populating this scope.
-- The trigger conditions will define the threshold and time window for assessing the alert condition. Boolean logic can be used to define the threshold against a value. Multiple functions allow time aggregation such as on average, as a rate, in sum, at least once or for the entire time.
+- A **metric** that this alert will monitor. You can also define how the data is aggregated such as avg, max, min or sum. To alert on multiple metrics using boolean logic, you can switch to _Advanced Mode_.
+- A **scope** that will define where in the environment this alert will apply. Use advanced operators to include, exclude, or pattern-match groups, tags, and entities.
+  
+  You can also create alerts directly from Explore and Dashboards for automatically populating this scope.
+- The **trigger conditions** will define the threshold and time window for assessing the alert condition. Boolean logic can be used to define the threshold against a value. Multiple functions allow time aggregation such as on average, as a rate, in sum, at least once or for the entire time.
   
   Additionally a single alert will fire an alert for your entire scope, while multiple alert will fire if any or every segments breach the threshold at once.
   
@@ -35,7 +36,7 @@ But what makes Sysdig really special is the capability to act every time an aler
 
 Here you will be able to configure where the capture file is stored, the file name prefix the time frame and a capture filter.
 
-Capture files can grow quickly but the size will depend on 3 parameters: how busy is the server, the capture time and filter. Typically on containerized infrastructure things happen quite fast so a small period of time like 15 seconds should be enough to capture enough information. By default the capture filter is empty, so the capture will include information from the entire host and all the running containers. If you have a very busy server you might decide to configure a capture filter here, for example container.name contains nginx, if you want to capture syscalls from your Nginx containers. Please have a look at the [Sysdig open source documentation](https://github.com/draios/sysdig/wiki/sysdig-user-guide) for more information on filters.
+Capture files can grow quickly but the size will depend on 3 parameters: how busy is the server, the capture time and filter. Typically on containerized infrastructure things happen quite fast so a small period of time like 15 seconds should be enough to capture enough information. By default the capture filter is empty, so the capture will include information from the entire host and all the running containers. If you have a very busy server you might decide to configure a capture filter here, for example `container.name contains nginx`, if you want to capture syscalls from your Nginx containers. Please have a look at the [Sysdig open source documentation](https://github.com/draios/sysdig/wiki/sysdig-user-guide) for more information on filters.
 
 For this lab, we will be using an alert: `[APM] SQL error threshold`
 
