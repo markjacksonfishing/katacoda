@@ -19,24 +19,36 @@
         },
         "steps": [
             {
-                "title": "Step 1 - Setting up the environment",
+                "title": "Introduction to the components",
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - Installing Jenkins",
+                "title": "Scenario",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Populating Jenkins Pipelines and Plugins",
+                "title": "Setting up the environment",
                 "text": "step3.md"
             },
             {
-                "title": "Step 4 - Configuring Jenkins",
+                "title": "Installing Jenkins",
                 "text": "step4.md"
             },
             {
-                "title": "Step 5 - Sysdig credentials",
+                "title": "Populating Jenkins Pipelines and Plugins",
                 "text": "step5.md"
+            },
+            {
+                "title": "Configuring Jenkins",
+                "text": "step6.md"
+            },
+            {
+                "title": "Sysdig credentials",
+                "text": "step7.md"
+            },
+            {
+                "title": "Configure Sysdig Secure",
+                "text": "step8.md"
             }
         ]
     },

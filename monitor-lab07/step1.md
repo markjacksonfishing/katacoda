@@ -1,12 +1,28 @@
-We have set up a Kubernetes cluster just for you.
-On the right you can see the terminal of the `master` node, from which you can interact with the cluster using the `kubectl` tool, which is already configured.
+Jenkins
+-------
 
-For instance, you can get the details of the cluster executing `kubectl cluster-info`{{execute}}
+It’s an automation server that provides a solution for building, deploying and automating any project. With it, one can execute, or program periodic executions of Continuous Integration and Continuous Delivery.
 
-You can view the nodes in the cluster with the command `kubectl get nodes`{{execute}}
+Continuous Integration (CI) is a procedure with witch we are building and testing the project as the developers make changes in it. This solves the “integration hell” and helps to avoid one developer's work-in-progress breaking another developer's copy.
 
-You should see 2 nodes: one master and a worker.
+Continuous Delivery (CD) aims at building, testing, and releasing software with greater speed and frequency. Most of the deployments are repetitive, so automating them increases reliability in the deployment process and avoid wasting time.
 
-Check that you are admin: `kubectl auth can-i create node`{{execute}}
+Image Scanning
+--------------
 
-In order to follow this course, you will need a [Sysdig](http://sysdig.com/) Secure account, with Administrator access privileges.
+One of the last steps of the Continuous Integration pipeline involves building the container images that will be pulled and executed in our environment. Therefore, whether you are building Docker images from your own code or but also when using unmodified third party images, it’s important to identify and find any known vulnerabilities that may be present in those images.
+
+Docker images are composed of several immutable layers, basically a diff over the previous one adding files and other changes, and each one associated with a unique hash id.
+
+The container image scanning process typically includes:
+
+- Checking the software packages, binaries, libraries, operating system files, etc. against one or more well known vulnerabilities databases. Some Docker scanning tools have a repository containing the scanning results for common Docker images that can be used as a cache to speed up the process.
+- Analyzing the Dockerfile and image metadata to detect security sensitive configurations like running as privileged (root) user, exposing insecure ports, using based images tagged with “latest” rather than specific versions for full traceability, etc.
+- User defined policies, or any set of requirements that you want to check for every image, like software packages blacklists, base images whitelists, whether a SUID file has been added, etc.
+
+Anchore
+-------
+
+The Anchore Engine allows developers to perform detailed analysis on their container images, run queries, produce reports and define policies that can be used in CI/CD pipelines. Developers can extend the tool to add new plugins that add new queries, new image analysis, and new policies.
+
+![Anchore](assets/image01.png)

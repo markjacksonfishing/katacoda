@@ -13,4 +13,8 @@ Goals
   - Spot operating system vulnerabilities
   - Spot application library vulnerabilities
   - Spot unwanted exposed ports, or packages that should not be installed.
-  
+
+Competencies required
+---------------------
+
+The student needs to understand the basic concepts of Jenkins usage, although this will cover step by step the set up and usage for a simple usage. In production, Jenkins is a bigger application that will need more configuration apart from what’s described in this lab.

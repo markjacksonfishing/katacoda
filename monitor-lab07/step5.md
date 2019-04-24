@@ -1,4 +1,7 @@
-Last thing: give it access to Sysdig Secure.
+With Jenkins unlocked, execute the next script in **other terminal** (the first one will be blocked, it has to redirect the ports to your own machine):
 
-Click on the **Manage Jenkins** button, and then click on Configure System.  
-Add the Engine URL if it's not there already, and the API Token of your account.
+`./populate.sh`{{execute T2}}
+
+This will automatically extract the bundled plugins with the image and create the pipelines we are going to use.
+
+Jenkins will be restarted automatically, and you will need to **log in again** using the credentials shown in the terminal.
