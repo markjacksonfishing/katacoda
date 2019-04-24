@@ -1,13 +1,31 @@
-Set up an alert on the number of restarts of the pods that, when triggered, will produce a Sysdig capture file.
+Sysdig Monitor is tightly integrated with Kubernetes events and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics).
 
-Let's scale the nginx deployment back to 0 pods:
+You can start gathering information about this error directly from the Events tab in the Sysdig Monitor interface:
 
-`kubectl scale deployment nginx -n nginx-flask --replicas=0`{{execute}}
+![Events](assets/image03.png)
 
-We will now use an script included in this folder that will constantly try to spawn the nginx pods several times over 5 minutes:
+We can see there is a crashloop event for the `kubernetes.pod.name='nginx-86595b9b4b-khg8q'` and the exact time for this event.
 
-`./generror.sh`{{execute}}
+We can directly use the button `Create alert from event` at the bottom to generate an alert item every time this event or a similar event is triggered.
 
-Leave the script running, it will finish and stop generating the error condition in a few minutes.
+![New alert](assets/image04.png)
 
-There will be a very sudden increase in pod restart events in the `nginx-flask` namespace. In the Captures tab, you should be able to see the corresponding capture file, that will greatly help us discover the cause of the restarts.
+Most of the fields from this alert will auto-fill based on the actual event that happened in your Kubernetes cluster.
+
+Now that we have configured an alert, we can also correlate these events with the behavior of our systems. Looking at the image below we can quickly see when a specific backoff event occurred and if it caused and change to the performance of the system.
+
+![Kubernetes overview](assets/image05.png)
+
+Proposed exercise: Kube-state-metrics
+-------------------------------------
+
+Sysdig collects the kube-state-metrics out of the box, these metrics will provide full insight regarding the state of your Kubernetes cluster, for example:
+
+- How many instances we are running? How many we want?
+- Are the pods running, available and ready?
+- Which entities compose my namespace? Are they up and running?
+
+Go back to the explore tab, select the `nginx-flask` namespace and iterate over all the `Kubernetes` → `Kubernetes State` dashboards.
+
+- Would you be able to diagnose errors in the deployment looking at this panels?
+- Which are the most relevant for the application we are trying to deploy in this exercise?

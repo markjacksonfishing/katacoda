@@ -20,15 +20,15 @@
         },
         "steps": [
             {
-                "title": "Step 1 - Setting up the environment",
+                "title": "Setting up the environment",
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - Installing the Sysdig agent",
+                "title": "Installing the Sysdig agent",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Installing the 'nginx-crashloop' application",
+                "title": "Installing the 'nginx-crashloop' application",
                 "text": "step3.md"
             },
             {
@@ -36,8 +36,20 @@
                 "text": "step4.md"
             },
             {
-                "title": "Triggering an error condition to simulate an issue",
+                "title": "Exploring Kubernetes events and deployment state with Sysdig Monitor",
                 "text": "step5.md"
+            },
+            {
+                "title": "Alerting to notify on error conditions",
+                "text": "step6.md"
+            },
+            {
+                "title": "Triggering an error condition to simulate an issue",
+                "text": "step7.md"
+            },
+            {
+                "title": "Debugging CrashloopBackoff using Sysdig captures & Sysdig Inspect",
+                "text": "step8.md"
             }
         ]
     },

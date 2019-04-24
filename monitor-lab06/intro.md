@@ -13,12 +13,17 @@ Goals
   - Where is each container running?
   - How this microservices application works?
   - Which services talk to each other?
-  - What’s running inside each container and microservice?
+  - What's running inside each container and microservice?
 - Troubleshoot a deployment problem.
   - Microservices and containers need specific mechanism to troubleshoot this kind of error.
     - Pod dies in a fraction of a second
-    - You don’t have logs
+    - You don't have logs
     - You cannot just SSH and try to restart the process
     - Traditional troubleshooting is not feasible
   - You will learn how to debug and troubleshoot a container-oriented deployment
 - Reason about dependencies, deployment order and how services find each other in Kubernetes
+
+Competencies required
+---------------------
+
+The student needs to understand the basic concepts of microservices applications, containers and Kubernetes. You will be able to check the status of deployed resources (pods, deployments, services) and nodes.

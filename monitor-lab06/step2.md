@@ -11,7 +11,9 @@ After copying the above command, you can paste it into the terminal using the ri
 
 This will result in a Sysdig Agent Pod being deployed to each node, and thus the ability to monitor any running containers.
 
-Creating the containers may take a little time. Check that all the containers are running with
-`kubectl get pods`{{execute}}
+You can see that the sysdig agent has been deployed:
+`helm list`{{execute}}
 
-`helm list`{{execute}} will also show that the sysdig agent has been deployed.
+Creating the containers may take a little time. Check that all the containers are in `Running` state with
+
+`kubectl get pods`{{execute}}
