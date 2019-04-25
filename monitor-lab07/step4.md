@@ -4,7 +4,11 @@ The `create.sh` script will allow you to deploy a Jenkins application with the p
 
 The shell should be blocked right now, **don't close it**, because there is a port forwarded from the Kubernetes cluster to your own system.
 
-You can access the URL displayed in the output, and see the following:
+You can access the Jenkins tab on the right or, alternatively, open this URL in your browser:
+
+<https://[[HOST_SUBDOMAIN]]-31337-[[KATACODA_HOST]].environments.katacoda.com/>
+
+You will see the following:
 
 ![Scenario](assets/image03.png)
 

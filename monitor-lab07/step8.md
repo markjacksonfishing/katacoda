@@ -2,6 +2,25 @@ Sysdig Secure allows you to configure different policies for image scanning, so 
 
 For this Lab, Sysdig Secure must be configured with the following minimum settings:
 
+![Scanning Policies](assets/image15.png)
+
+Gate            | Kind          | Description                                                 | Action
+----------------|---------------|-------------------------------------------------------------|-------
+Dockerfile      | Exposed ports | Ports: 22, Type: blacklist                                  | Stop
+Dockerfile      | Instruction   | HEALTHCHECK not exists                                      | Warn
+Vulnerabilities | Package       | Package type: all; Severity comparison: =; Severity: medium | Warn
+Vulnerabilities | Package       | Package type: all; Severity comparison: >; Severity: medium | Stop
+
+Let's explain this settings:
+
+* You can define the ports exposed from an image and port 22 is a special one which is commonly used for SSH connections. We don’t want SSH connections to our containers, because that can compromise the security of the internal cluster.
+* HEALTHCHECK is a special instruction when a Docker image is built, which tells Docker how to test a container to check that it is still working. This can detect cases such as a web server that is stuck in an infinite loop and unable to handle new connections, even though the server process is still running.
+* Vulnerabilities in the package with a severity comparison equals to medium: when the image is scanned, Anchore measures the severity of the vulnerabilities that detects, if the ones that it finds are equal to “medium”, then we will just report a Warning.
+* When Anchore scans the image and detects vulnerabilities higher than severity medium, we report that we must stop the execution of the pipeline.
+
+Anchore Gates
+-------------
+
 <table>
     <thead>
       <tr>

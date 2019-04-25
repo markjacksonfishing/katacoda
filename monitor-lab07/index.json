@@ -49,11 +49,25 @@
             {
                 "title": "Configure Sysdig Secure",
                 "text": "step8.md"
+            },
+            {
+                "title": "Executing the Pipelines",
+                "text": "step9.md"
+            },
+            {
+                "title": "Pipeline Report in Sysdig Secure",
+                "text": "step10.md"
+            },
+            {
+                "title": "Alerting with Sysdig Secure",
+                "text": "step11.md"
             }
         ]
     },
     "environment": {
-        "uilayout": "terminal"
+        "uilayout": "terminal",
+        "showdashboard": true,
+        "dashboards": [{ "name": "Jenkins", "port": 31337 }]
     },
     "backend": {
         "imageid": "kubernetes-cluster-running"

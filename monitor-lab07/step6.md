@@ -17,3 +17,5 @@ Docker Credentials
 
 In Kind select "Username with password", and insert your data.
 The key part here is that you _must_ write **"docker-repository-credentials"** in the **ID field**.
+
+![Docker Credentials](assets/image11.png)

@@ -25,4 +25,5 @@ Anchore
 
 The Anchore Engine allows developers to perform detailed analysis on their container images, run queries, produce reports and define policies that can be used in CI/CD pipelines. Developers can extend the tool to add new plugins that add new queries, new image analysis, and new policies.
 
-![Anchore](assets/image01.png)
+![Anchore](/sysdig/scenarios/monitor-lab07/assets/image01.png)
+
