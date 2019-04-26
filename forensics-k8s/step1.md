@@ -1,27 +1,24 @@
-We have already set up a Kubernetes cluster just for you, so you just have to make sure it is up and running by executing `launch.sh`{{execute HOST1}}
+We have already set up a Kubernetes cluster just for you.  
+On the right you can see the terminal of the `master` node, from which you can interact with the cluster using the `kubectl` tool, which is already configured.
 
-Once Kubernetes is ready, we join node01 to the cluster running the script `join.sh`{{execute HOST2}}.
+For instance, you can get the details of the cluster executing `kubectl cluster-info`{{execute}}
 
-Then we can run `kubectl get nodes`{{execute HOST1}} on the master to see the nodes in the cluster and check they are ready.
+You can view the nodes in the cluster with the command `kubectl get nodes`{{execute}}
 
-We will install Falco using Helm, a package manager for Kubernetes. We can download and install Helm with these commands:
+You should see 2 nodes: one master and a worker.
 
-`
-curl -Lo /tmp/helm-linux-amd64.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz
-tar zxf /tmp/helm-linux-amd64.tar.gz -C /tmp/
-chmod a+x /tmp/linux-amd64/helm
-sudo mv /tmp/linux-amd64/helm /usr/local/bin
-kubectl create -f helm-account.yaml
-helm init --service-account tiller
-helm repo update
-`{{execute HOST1}}
+Check that you are admin: `kubectl auth can-i create node`{{execute}}
 
-We have also initialized Helm and installed Tiller (the Helm server side component), and made sure our chart database is up-to-date. To learn more about Helm, please visit [WordPress in Kubernetes: The Perfect Setup](https://sysdig.com/blog/wordpress-kubernetes-perfect-setup/) on our blog.
+You can view the current status of our cluster using the command `kubectl get pod -n kube-system`{{execute HOST1}}
 
-We can view the current status of our cluster using the command `kubectl get pod -n kube-system`{{execute HOST1}}
+You will install Falco using Helm, a package manager for Kubernetes that we have already installed in the cluster.  In other environments, you will probably have to install it yourself.
 
-We can now deploy Sysdig Falco in a few seconds, as it only takes a simple command:
+Deploying Sysdig Falco only takes a simple command:
+
 `helm install --name falco -f custom_rules.yaml stable/falco`{{execute HOST1}}
 
 This will result in a Falco Pod being deployed to each node, and thus the ability to monitor any running containers for abnormal behavior.
+
+Check that all the pods are in `Running` state before continuing.
+
 `kubectl get pods`{{execute HOST1}}

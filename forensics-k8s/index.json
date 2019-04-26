@@ -2,19 +2,10 @@
     "title": "Sysdig Falco: Forensics example",
     "description": "This scenario teaches you how to use Sysdig Falco for container forensics on a Kubernetes cluster",
     "difficulty": "medium",
-    "time" :  "20 minutes",
+    "time": "20 minutes",
     "details": {
         "assets": {
-            "host01": [
-                {"file": "helm-account.yaml", "target": "~/"},
-                {"file": "falco_rules.local.yaml", "target": "~/"},
-                {"file": "custom_rules.yaml", "target": "~/"},
-                {"file": "client-deployment.yaml", "target": "~/"},
-                {"file": "mysql-deployment.yaml", "target": "~/"},
-                {"file": "mysql-service.yaml", "target": "~/"},
-                {"file": "ping-deployment.yaml", "target": "~/"},
-                {"file": "ping-service.yaml", "target": "~/"}
-            ]
+            "host01": [{ "file": "*.yaml", "target": "~/" }]
         },
         "intro": {
             "text": "intro.md",
@@ -27,23 +18,23 @@
                 "text": "step1.md"
             },
             {
-                "title" : "Step 2 - Install and test our application",
+                "title": "Step 2 - Install and test our application",
                 "text": "step2.md"
             },
             {
-                "title" : "Step 3 - Hack the web application",
+                "title": "Step 3 - Hack the web application",
                 "text": "step3.md"
             },
             {
-                "title" : "Step 4 - Investigate the incident",
+                "title": "Step 4 - Investigate the incident",
                 "text": "step4.md"
             },
             {
-                "title" : "Step 5 - Installing a Response Engine",
+                "title": "Step 5 - Installing a Response Engine",
                 "text": "step5.md"
             },
             {
-                "title" : "Step 6 - Deploying playbooks",
+                "title": "Step 6 - Deploying playbooks",
                 "text": "step6.md"
             }
         ],
@@ -52,10 +43,10 @@
         }
     },
     "environment": {
-      "uilayout": "terminal-terminal",
-      "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
+        "uilayout": "terminal",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
     },
     "backend": {
-        "imageid": "kubernetes-cluster"
+        "imageid": "kubernetes-cluster-running"
     }
 }
