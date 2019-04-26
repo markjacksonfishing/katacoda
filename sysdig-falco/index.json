@@ -1,5 +1,5 @@
 {
-  "title": "Sysdig Falco: Container security monitoring",
+  "title": "Docker runtime security with Falco",
   "description": "Learn how to use Sysdig Falco to detect anomalous behaviour and create your own container security policy",
   "difficulty": "medium",
   "time": "20 minutes",
