@@ -2,9 +2,7 @@ The `create.sh` script will allow you to deploy a Jenkins application with the p
 
 `./create.sh`{{execute}}
 
-The shell should be blocked right now, **don't close it**, because there is a port forwarded from the Kubernetes cluster to your own system.
-
-You can access the Jenkins tab on the right or, alternatively, open this URL in your browser:
+Use the **Jenkins tab on the right** to access the Jenkins user interface or, alternatively, open this URL in your browser:
 
 <https://[[HOST_SUBDOMAIN]]-31337-[[KATACODA_HOST]].environments.katacoda.com/>
 
@@ -26,5 +24,3 @@ You can ignore the warnings in the next window and click the Start using Jenkins
 You will see the Jenkins front page with a Welcome message.
 
 ![Welcome to Jenkins window](/sysdig/scenarios/monitor-lab07/assets/image06.png)
-
-Next steps are populating the jobs and the plugins, and configuring Jenkins so it can connect with DockerHub and Sysdig Secure.
