@@ -10,21 +10,21 @@ You can access the Jenkins tab on the right or, alternatively, open this URL in 
 
 You will see the following:
 
-![Scenario](assets/image03.png)
+![Scenario](/sysdig/scenarios/monitor-lab07/assets/image03.png)
 
 Use the administrator token displayed in the output of the terminal to unlock Jenkins.
 
 Close the "Customize Jenkins" window by clicking the top right icon.
 You don't need to execute plugin installation in Jenkins, because all the plugins are bundled in the Docker Image, with the correct version and will be installed with the execution of the next script.
 
-![Customize Jenkins window](assets/image04.png)
+![Customize Jenkins window](/sysdig/scenarios/monitor-lab07/assets/image04.png)
 
 You can ignore the warnings in the next window and click the Start using Jenkins button.
 
-![Jenkins is ready window](assets/image05.png)
+![Jenkins is ready window](/sysdig/scenarios/monitor-lab07/assets/image05.png)
 
 You will see the Jenkins front page with a Welcome message.
 
-![Welcome to Jenkins window](assets/image06.png)
+![Welcome to Jenkins window](/sysdig/scenarios/monitor-lab07/assets/image06.png)
 
 Next steps are populating the jobs and the plugins, and configuring Jenkins so it can connect with DockerHub and Sysdig Secure.

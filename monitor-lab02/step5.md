@@ -4,7 +4,7 @@ Everything in this application uses HTTP, so we can use the different metrics an
 
 For example, a good place to start would be the HTTP dashboard (`Default Dashboards` → `Applications` → `HTTP`):
 
-![HTTP dashboard](assets/image05.png)
+![HTTP dashboard](/sysdig/scenarios/monitor-lab02/assets/image05.png)
 
 From this panel, you can quickly check several relevant metrics:
 
@@ -22,7 +22,7 @@ Apart from HTTP, we already know that this application is also using SQL (Postgr
 
 Let's take a look at the `MySQL/PostgreSQL` dashboard:
 
-![MySQL/PostgreSQL dashboard](assets/image06.png)
+![MySQL/PostgreSQL dashboard](/sysdig/scenarios/monitor-lab02/assets/image06.png)
 
 You will quickly identify the service golden metrics again, database-oriented this time.
 

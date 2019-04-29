@@ -34,7 +34,7 @@ Capture files can grow quickly but the size will depend on 3 parameters: how bus
 
 For this lab, we will be using an alert: `[APM] Ticket generator HTTP errors`
 
-![Ticket generator HTTP errors](assets/image09.png)
+![Ticket generator HTTP errors](/sysdig/scenarios/monitor-lab05/assets/image09.png)
 
 As you can see, this alert detects any HTTP errors (`net.http.statusCode` = 5xx or 4xx) in our ticket-generator namespace.
 

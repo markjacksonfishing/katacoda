@@ -4,11 +4,11 @@ Once we have selected the desired grouping, you can monitor a single metric or a
 
 For example, change the grouping view to Deployments and Pods
 
-![Grouping](assets/image01.png)
+![Grouping](/sysdig/scenarios/monitor-lab06/assets/image01.png)
 
 You should be able to see the `nginx-flask` namespace and the 2 deployments and 3 pods that make it up.
 
-![Deployments](assets/image02.png)
+![Deployments](/sysdig/scenarios/monitor-lab06/assets/image02.png)
 
 So far, we have deployed the first layer of our microservices architecture (the backend servers). Now, let's try to deploy the frontend nginx services that will balance the traffic to the backends:
 

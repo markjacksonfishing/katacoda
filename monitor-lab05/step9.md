@@ -4,7 +4,7 @@ Captures can be also downloaded to your device. In this case Sysdig Inspect can 
 
 Let's open the linked capture (`ticket-generator-http-error.scap`) from the captures tab:
 
-![Capture files](assets/image12.png)
+![Capture files](/sysdig/scenarios/monitor-lab05/assets/image12.png)
 
 Sysdig Inspect will open and we can see an overview. Each of these tiles aggregate different activities including file system and network, application protocols traffic, security events, performance indicators and logs.
 
@@ -12,11 +12,11 @@ This is how we are going to be able to navigate through thousands of system call
 
 The fist tile that catches our attention is the "HTTP errors" tile
 
-![Overview](assets/image13.png)
+![Overview](/sysdig/scenarios/monitor-lab05/assets/image13.png)
 
 If we drill down on that tile (the two downward arrows icons) and visualize the data using the "Printable ASCII" mode, we can get more detailed data on the error:
 
-![Tiles](assets/image14.png)
+![Tiles](/sysdig/scenarios/monitor-lab05/assets/image14.png)
 
 The error is a `502 - Bad Gateway The server returned an invalid or incomplete response`.
 
@@ -28,7 +28,7 @@ The sysdig capture process starts asynchronously and there may be already severa
 
 Blue rows mean that we are sending a message (write syscall) while the orange row represents a received message (read syscall).
 
-![Messages](assets/image15.png)
+![Messages](/sysdig/scenarios/monitor-lab05/assets/image15.png)
 
 You should start with a sending message (blue) from the ticket-client container with the request: `GET /getticket`.
 
@@ -42,7 +42,7 @@ From there, you can follow the conversation easily:
 
 Now, the glitch that is causing the HTTP error (see first request):
 
-![Messages](assets/image16.png)
+![Messages](/sysdig/scenarios/monitor-lab05/assets/image16.png)
 
 - The balancer receives the response from the backend container. The body is correct and as expected, we have a new ticket, but the headers have a format which is not valid. The `text/plain: Content-type` header should be instead `Content-type: text/plain`. While this is ignored by some browsers (that's why it worked in the developer's laptop) and some HTTP proxies will be able to tolerate this invalid message, the HAproxy that we are using in this example is not.
 - The HAproxy send the invalid response message to the client: 502 HTTP error: Bad Gateway.

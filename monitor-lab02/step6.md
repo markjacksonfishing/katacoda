@@ -10,11 +10,11 @@ But, how to correlate changes in the deployment definition with a problem in our
 
 You can directly observe the stream of Kubernetes & Docker events from the `Events` left panel tab:
 
-![Events](assets/image07.png)
+![Events](/sysdig/scenarios/monitor-lab02/assets/image07.png)
 
 Or, even more handy to diagnose a problematic upgrade, you can also see these event superimposed over any other Sysdig metric in a panel:
 
-![Superimposed event](assets/image08.png)
+![Superimposed event](/sysdig/scenarios/monitor-lab02/assets/image08.png)
 
 In the picture above you can clearly see the rectangular superimposed event snippets, and how are they clearly related with a brief service interruption `net.http.request.count = 0`. You can gather more event information or jump to the events interface for that specific event using the pop-up box that you can see hovering your mouse over the rectangle.
 
@@ -32,7 +32,7 @@ They are in `Running` state, so the pod initialization process seems fine so far
 
 If you take a look at the last Kubernetes events, you can see how the pods have been killed and replaced:
 
-![Kubernetes events](assets/image09.png)
+![Kubernetes events](/sysdig/scenarios/monitor-lab02/assets/image09.png)
 
 You can gather more information from the kube-state-metrics. Sysdig collects the kube-state-metrics out of the box, these metrics will provide full insight regarding the state of your Kubernetes cluster, for example:
 
@@ -42,19 +42,19 @@ You can gather more information from the kube-state-metrics. Sysdig collects the
 
 Let's take a look at the `Kubernetes Namespace State` default dashboard:
 
-![Kubernetes namespace state](assets/image10.png)
+![Kubernetes namespace state](/sysdig/scenarios/monitor-lab02/assets/image10.png)
 
 There are no restarting, unavailable or paused containers and the total number of pods and deployments is the expected one. From the Kubernetes orchestrator point of view, we don't see any problems arising from the latest service update.
 
 Now, let's take a look at the application layer using the golden service metrics. Our application uses basically two protocols: HTTP and SQL. You can start taking a look at the HTTP default dashboard:
 
-![Kubernetes namespace state](assets/image11.png)
+![Kubernetes namespace state](/sysdig/scenarios/monitor-lab02/assets/image11.png)
 
 Notice the yellow rectangles indicating the Kubernetes event on top of the metrics. The HTTP error count is very low and the other HTTP metrics do not seem to have suffered any significant change related with the update.
 
 Now, let's look at the SQL side of our application:
 
-![SQL dashboard](assets/image12.png)
+![SQL dashboard](/sysdig/scenarios/monitor-lab02/assets/image12.png)
 
 There is a significant bump in the number of SQL errors that clearly started when we updated the service pods (**yellow rectangle events**). There is something wrong with this new version.
 

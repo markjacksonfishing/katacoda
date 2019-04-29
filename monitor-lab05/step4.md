@@ -4,11 +4,11 @@ Once we have selected the desired grouping, you can monitor a single metric or a
 
 For example, change the grouping view to _Deployments and Pods_
 
-![Grouping](assets/image01.png)
+![Grouping](/sysdig/scenarios/monitor-lab05/assets/image01.png)
 
 You should be able to see the ticket-generator namespace and the 3 deployments and 4 pods that make it up:
 
-![Deployments](assets/image02.png)
+![Deployments](/sysdig/scenarios/monitor-lab05/assets/image02.png)
 
 The normal traffic flow of the application should be:
 
@@ -16,7 +16,7 @@ The normal traffic flow of the application should be:
 
 You should be able to see exactly this, selecting the ticket-generator namespace and the `Topology` → `Network Traffic` Default dashboard.
 
-![Network traffic](assets/image03.png)
+![Network traffic](/sysdig/scenarios/monitor-lab05/assets/image03.png)
 
 As you can see, is the typical layered application. A 'ticket' client requests a new ticket to the load balancer frontend, and this balancer forwards the requests to the two backend server pods. All these pods communicate using HTTP REST-style requests.
 
@@ -25,7 +25,7 @@ Proposed exercises
 
 You can explore several aspects of your application or cluster directly from the explore tab and using default Dashboards, for example, which processes are running in each container:
 
-![Processes](assets/image04.png)
+![Processes](/sysdig/scenarios/monitor-lab05/assets/image04.png)
 
 From this interface, try to explore:
 

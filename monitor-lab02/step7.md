@@ -40,7 +40,7 @@ Capture files can grow quickly but the size will depend on 3 parameters: how bus
 
 For this lab, we will be using an alert: `[APM] SQL error threshold`
 
-![SQL error threshold alert](assets/image13.png)
+![SQL error threshold alert](/sysdig/scenarios/monitor-lab02/assets/image13.png)
 
 As you can see, this alert detects any SQL errors (`net.sql.error.count`) in our `lab2-example-voting-app namespace`.
 
@@ -58,7 +58,7 @@ Let's update the application again and wait for the alert & capture to be trigge
 
 If you go now to the `Explore` tab and select the `lab2-example-voting-app` namespace and `net.sql.error.count` metric:
 
-![net.sql.error.count` metric](assets/image14.png)
+![net.sql.error.count` metric](/sysdig/scenarios/monitor-lab02/assets/image14.png)
 
 You can see how the SQL errors quickly pick up and how this is unequivocally related to the Kubernetes deployment event (yellow rectangle).
 

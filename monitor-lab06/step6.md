@@ -34,7 +34,7 @@ Capture files can grow quickly but the size will depend on 3 parameters: how bus
 
 For this lab, we will be using an alert: `[Kubernetes] Pod CrashLoopBackOff`
 
-![Pod CrashLoopBackOff](assets/image06.png)
+![Pod CrashLoopBackOff](/sysdig/scenarios/monitor-lab06/assets/image06.png)
 
 Let's analyze the different components of the alert
 

@@ -6,7 +6,7 @@ Again, in our home directory we have a script to scale this service:
 
 After a few moments, using the `Services` → `Kubernetes Service Golden Signals` dashboard one more time, we can see how our application becomes under control again.
 
-![Golden signals](assets/image09.png)
+![Golden signals](/sysdig/scenarios/monitor-lab01/assets/image09.png)
 
 We can see a couple of interesting points:
 

@@ -4,7 +4,7 @@ Captures can be also downloaded to your device. In this case Sysdig Inspect can 
 
 Let's open the linked capture (`sql-error.scap`) from the captures tab:
 
-![Capture files](assets/image15.png)
+![Capture files](/sysdig/scenarios/monitor-lab02/assets/image15.png)
 
 Sysdig Inspect will open and we can see an overview. Each of these tiles aggregate different activities including file system and network, application protocols traffic, security events, performance indicators and logs.
 
@@ -12,19 +12,19 @@ This is how we are going to be able to navigate through thousands system calls r
 
 A good candidate to start the debugging is the "postgresql Bytes" tile (top middle, NETWORK APPS column):
 
-![Tiles](assets/image16.png)
+![Tiles](/sysdig/scenarios/monitor-lab02/assets/image16.png)
 
 Let's drill down on that tile (hover over the tile and click on the two downward arrows).
 
 The connection section in the context of "postgres bytes" show us two processes:
 
-![Postgres Bytes](assets/image17.png)
+![Postgres Bytes](/sysdig/scenarios/monitor-lab02/assets/image17.png)
 
 We already know that the result pods and the nodejs process in particular were causing the SQL errors.
 
 Let's drill down in any of those process extracting the raw SQL I/O stream (click on a process row and then the I/O Stream button on your bottom left).
 
-![I/O Stream](assets/image18.png)
+![I/O Stream](/sysdig/scenarios/monitor-lab02/assets/image18.png)
 
 Blue rows mean that we are sending a message (write syscall) while the orange row represent a received message (read syscall).
 

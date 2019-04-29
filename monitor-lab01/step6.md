@@ -12,7 +12,7 @@ This will scale up the instances of `voter` service, generating more load on the
 
 After a few moments, you will be able to see a change in the golden signals behavior, for example in the `Services` → `Kubernetes Service Golden Signals` dashboard.
 
-![Kubernetes Service Golden Signals dashboard](assets/image06.png)
+![Kubernetes Service Golden Signals dashboard](/sysdig/scenarios/monitor-lab01/assets/image06.png)
 
 Proposed exercises
 ------------------
@@ -37,10 +37,10 @@ Proposed exercises
 
 Looking at the `Services` → `Kubernetes Service Golden Signals` dashboard, we can see an increase of CPU usage on the voter service:
 
-![Kubernetes Service Golden Signals dashboard](assets/image07.png)
+![Kubernetes Service Golden Signals dashboard](/sysdig/scenarios/monitor-lab01/assets/image07.png)
 
 And if we dig a little deeper using the `Hosts & Containers` → `Container Limits` dashboard, we can see that the CPU of the `voter` service is hitting its limit:
 
-![Container limits](assets/image08.png)
+![Container limits](/sysdig/scenarios/monitor-lab01/assets/image08.png)
 
 The `cpu.quota.used.percent` is a metric which indicates percentage of CPU quota a container actually used over a defined period of time. This is a hard limit for the amount of CPU the container can use, and for this reason, the CPU quota should not exceed 100%. From our dashboard we can see that the `vote` service is hitting its 100% limit so that this indicates that the `vote` service is the bottleneck.

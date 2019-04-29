@@ -4,7 +4,7 @@ Everything in this application uses HTTP, so we can use the different metrics an
 
 For example, a good place to start would be the HTTP Dashboard (`Default Dashboards` → `Applications` → `HTTP`):
 
-![HTTP](assets/image05.png)
+![HTTP](/sysdig/scenarios/monitor-lab05/assets/image05.png)
 
 From this panel, you can quickly check several relevant metrics:
 
@@ -27,11 +27,11 @@ Another methodology, more oriented towards resource usage and capacity limits is
 
 The `Overview by container` will offer you an USE-style overview of your namespace:
 
-![Overview by container](assets/image06.png)
+![Overview by container](/sysdig/scenarios/monitor-lab05/assets/image06.png)
 
 If you are interested in one step in particular of the data flow, you can also look at the connections table
 
-![Connections table](assets/image07.png)
+![Connections table](/sysdig/scenarios/monitor-lab05/assets/image07.png)
 
 From here you can see the different processes inside the pods:
 
@@ -51,6 +51,6 @@ Sysdig collects the kube-state-metrics out of the box, these metrics will provid
 
 For example using the `Kubernetes State Overview` Dashboard:
 
-![Kubernetes State Overview](assets/image08.png)
+![Kubernetes State Overview](/sysdig/scenarios/monitor-lab05/assets/image08.png)
 
 Here, you can see the number of containers, pods, deployments, services, etc. Also if any of your pods is restarting frequently or currently unavailable.

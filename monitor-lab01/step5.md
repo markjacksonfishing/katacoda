@@ -4,7 +4,7 @@ Everything in this application uses HTTP, so we can use the different metrics an
 
 For example, a good place to start would be the HTTP dashboard (`Default Dashboards` → `Applications` → `HTTP`):
 
-![HTTP dashboard](assets/image04.png)
+![HTTP dashboard](/sysdig/scenarios/monitor-lab01/assets/image04.png)
 
 From this panel, you can quickly check several relevant metrics:
 
@@ -20,7 +20,7 @@ Other monitoring methodologies look at the resource consumption instead. For exa
 
 The dashboard `Kubernetes` → `Resource Usage` → `Kubernetes Deployment Health` will offer you an USE-style overview that aggregates metrics by Kubernetes metadata:
 
-![Deployment health dashboard](assets/image05.png)
+![Deployment health dashboard](/sysdig/scenarios/monitor-lab01/assets/image05.png)
 
 Sysdig can also monitor the orchestration state. This is important to help you know whether Kubernetes is deploying and orchestrating things as we expect. These metrics are also known as kube-state-metrics. The dashboard `Kubernetes` → `Kubernetes State` → `Kubernetes Deployment State` will give you some insights. Different dashboards that report on different resources will need to be used depending on the scope we are looking at. For a cluster scope we can look at namespaces; inside a namespace we can look at deployments, inside a deployment we can look at pods.
 

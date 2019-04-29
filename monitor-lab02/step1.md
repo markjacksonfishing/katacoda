@@ -13,4 +13,4 @@ In order to follow this course, you will need a [Sysdig](http://sysdig.com/) Mon
 
 Log in the Sysdig Monitor web UI, go to your profile Settings, and in the `Agent Installation` tab you will find your Access Key (something like `5ca1ab1e-d3ad-beef-dea1-deba7ab1ed0c`).  Keep it handy, as you will need it to authorize the agent against the backend.
 
-![Agent key](assets/image01.png)
+![Agent key](/sysdig/scenarios/monitor-lab02/assets/image01.png)

@@ -2,7 +2,7 @@ Sysdig Secure allows you to configure different policies for image scanning, so 
 
 For this Lab, Sysdig Secure must be configured with the following minimum settings:
 
-![Scanning Policies](assets/image15.png)
+![Scanning Policies](/sysdig/scenarios/monitor-lab07/assets/image15.png)
 
 Gate            | Kind          | Description                                                 | Action
 ----------------|---------------|-------------------------------------------------------------|-------

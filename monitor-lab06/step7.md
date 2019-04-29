@@ -10,18 +10,18 @@ Leave the script running, it will finish and stop generating the error condition
 
 Wait a couple of minutes and then go back to the Explore tab, select the `nginx-flask` namespace and the metric `kubernetes.pod.restart.count`
 
-![kubernetes.pod.restart.count](assets/image07.png)
+![kubernetes.pod.restart.count](/sysdig/scenarios/monitor-lab06/assets/image07.png)
 
 There is a very sudden increase in pod restart events in this namespace.
 
 If you go to the Events tab:
 
-![Events](assets/image08.png)
+![Events](/sysdig/scenarios/monitor-lab06/assets/image08.png)
 
 You will be able to see the different Back-off events coming from Kubernetes, and finally our own alert that has been triggered.
 
 We configured this alert to automatically generate a Sysdig capture when fired, if we go now to the Captures tab, you should be able to see the corresponding capture file:
 
-![Capture files](assets/image09.png)
+![Capture files](/sysdig/scenarios/monitor-lab06/assets/image09.png)
 
 We have been able to pinpoint exactly **what** happened and the Kubernetes entities and events involved. Now, the Sysdig capture file will greatly help us discovering **why** it happened.

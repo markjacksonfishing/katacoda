@@ -2,11 +2,11 @@ Logging into Sysdig Monitor, you should arrive at the Explore tab which offers a
 
 For example, change the grouping view to _Deployments and Pods_
 
-![Changing the grouping view](assets/image01.png)
+![Changing the grouping view](/sysdig/scenarios/monitor-lab01/assets/image01.png)
 
 You should be able to see the `example-voting-app` namespace with all the deployments and pods that make it up:
 
-![List of deployments and pods](assets/image02.png)
+![List of deployments and pods](/sysdig/scenarios/monitor-lab01/assets/image02.png)
 
 Proposed exercises
 ------------------
@@ -24,7 +24,7 @@ Now we have an idea of the components of the app. But how do these microservices
 
 With Sysdig Monitor you can use _Topology maps_ to visualize how entities interact with each other. When using a physical grouping we can see the different entities talking with each other, but with orchestration grouping we get a better understanding of how the Kubernetes-orchestrated services interact. With a service based grouping like Deployments and pods: Namespaces &gt; Deployments &gt; Pods we can select one of the default dashboards: `Topology` → `Network Traffic`. This will show us our entire infrastructure. But if we want to look only into a specific part, we will change from `Entire Infrastructure` into `example-voting-app` namespace. We call this changing the scope.
 
-![Network traffic diagram](assets/image03.png)
+![Network traffic diagram](/sysdig/scenarios/monitor-lab01/assets/image03.png)
 
 As we drill into these entities, we can see how we can even look inside the container, down to the process level. This is a really cool example of the deep visibility that Sysdig provides.
 
