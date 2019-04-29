@@ -13,24 +13,21 @@ A _playbook_ is the piece code executed when an alert is received to respond to 
 - stop the pod killing the container
 - taint the specific node where the pod is running
 
-## Installing the prerequisites
+Installing the prerequisites
+----------------------------
 
 Let's install `pip`, and then use it to install `pipenv`:
 
-`
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 export PATH=$PATH:~/.local/bin
-pip install --user pipenv
-`{{execute HOST1}}
+pip install --user pipenv`{{execute HOST1}}
 
 Next let's create a `kubeless` namespace and deploy kubeless.
 
-`
-export RELEASE=$(curl -s https://api.github.com/repos/kubeless/kubeless/releases/latest | grep tag_name | cut -d '"' -f 4)
+`export RELEASE=$(curl -s https://api.github.com/repos/kubeless/kubeless/releases/latest | grep tag_name | cut -d '"' -f 4)
 kubectl create ns kubeless
-kubectl create -f https://github.com/kubeless/kubeless/releases/download/$RELEASE/kubeless-$RELEASE.yaml
-`{{execute HOST1}}
+kubectl create -f https://github.com/kubeless/kubeless/releases/download/$RELEASE/kubeless-$RELEASE.yaml`{{execute HOST1}}
 
 We can see the pods created:
 `kubectl get pods -n kubeless`{{execute HOST1}}
@@ -46,29 +43,26 @@ We will also need the `zip` utility:
 
 Finally, we install the Kubeless CLI:
 
-`
-export OS=$(uname -s| tr '[:upper:]' '[:lower:]')
+`export OS=$(uname -s| tr '[:upper:]' '[:lower:]')
 curl -OL https://github.com/kubeless/kubeless/releases/download/$RELEASE/kubeless_$OS-amd64.zip
 unzip kubeless_$OS-amd64.zip
-sudo mv bundles/kubeless_$OS-amd64/kubeless /usr/local/bin/
-`{{execute HOST1}}
+sudo mv bundles/kubeless_$OS-amd64/kubeless /usr/local/bin/`{{execute HOST1}}
 
-## Installing the Kubernetes Response Engine for Sysdig Falco
+Installing the Kubernetes Response Engine for Sysdig Falco
+----------------------------------------------------------
 
 Once we have all of the above, we can deploy NATS using a Kubernetes Operator and the Kubeless framework that makes use of Kubernetes Custom Resource.
 
-`
-git clone https://github.com/falcosecurity/kubernetes-response-engine.git
+`git clone https://github.com/falcosecurity/kubernetes-response-engine.git
 cd kubernetes-response-engine/deployment/cncf
-make
-`{{execute HOST1}}
+make`{{execute HOST1}}
 
 In case `make` fails, just run `make`{{execute HOST1}} again.
 
 We also have to remove the current falco installation, and install a new one with the output to the NATS server enabled:
-`
+
+`cd
 helm del --purge falco
-helm install --name falco --set integrations.natsOutput.enabled=true -f custom_rules.yaml stable/falco
-`{{execute HOST1}}
+helm install --name falco --set integrations.natsOutput.enabled=true -f custom_rules.yaml stable/falco`{{execute HOST1}}
 
 Executing `kubectl get pods`{{execute HOST1}} we will notice that each falco pod has now two containers: `falco` and `falco-nats`.
