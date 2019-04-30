@@ -1,0 +1,21 @@
+{
+    "title": "Sysdig Falco",
+    "description": "Learn the basics of Sysdig Falco",
+    "courses": [
+        {
+            "course_id": "sysdig-falco",
+            "title": "Docker runtime security with Falco",
+            "description": "Learn how to use Sysdig Falco to detect anomalous behaviour and create your own container security policy"
+        },
+        {
+            "course_id": "forensics-k8s",
+            "title": "Practical example of Kubernetes runtime security with Falco",
+            "description": "This scenario teaches you how to use Sysdig Falco for container forensics on a Kubernetes cluster"
+        },
+        {
+            "course_id": "falco-response-engine",
+            "title": "Practical example of Kubernetes runtime security with Falco",
+            "description": "This scenario teaches you how to use Sysdig Falco Response Engine on a Kubernetes cluster"
+        }
+    ]
+}

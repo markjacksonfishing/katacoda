@@ -1,5 +1,6 @@
 {
-    "title": "Sysdig Falco: Forensics example",
+    "pathwayTitle": "Sysdig Falco",
+    "title": "Practical example of Kubernetes runtime security with Falco",
     "description": "This scenario teaches you how to use Sysdig Falco for container forensics on a Kubernetes cluster",
     "difficulty": "medium",
     "time": "20 minutes",
@@ -14,27 +15,27 @@
         },
         "steps": [
             {
-                "title": "Step 1 - Install Falco on Kubernetes",
+                "title": "Setting up the environment",
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - Install and test our application",
+                "title": "Deploying Falco",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Hack the web application",
+                "title": "Falco default configuration",
                 "text": "step3.md"
             },
             {
-                "title": "Step 4 - Investigate the incident",
+                "title": "Install and test our application",
                 "text": "step4.md"
             },
             {
-                "title": "Step 5 - Installing a Response Engine",
+                "title": "Hack the web application",
                 "text": "step5.md"
             },
             {
-                "title": "Step 6 - Deploying playbooks",
+                "title": "Investigate the incident",
                 "text": "step6.md"
             }
         ],
