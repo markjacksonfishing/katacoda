@@ -3,6 +3,7 @@
     "title": "Practical example of Kubernetes runtime security with Falco",
     "description": "This scenario teaches you how to use Sysdig Falco for container forensics on a Kubernetes cluster",
     "difficulty": "medium",
+    "icon": "fa-kubernetes",
     "time": "20 minutes",
     "details": {
         "assets": {
@@ -45,7 +46,15 @@
     },
     "environment": {
         "uilayout": "terminal",
-        "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n",
+        "showdashboard": true,
+        "dashboards": [
+            {
+                "name": "Ping web",
+                "port": 31337,
+                "href": "https://[[HOST_SUBDOMAIN]]-31337-[[KATACODA_HOST]].environments.katacoda.com/ping.php"
+            }
+        ]
     },
     "backend": {
         "imageid": "kubernetes-cluster-running"
