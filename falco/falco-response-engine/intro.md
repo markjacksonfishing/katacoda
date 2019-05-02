@@ -16,3 +16,5 @@ A _playbook_ is the piece code executed when an alert is received to respond to 
 - sending an alert to Slack
 - stop the pod killing the container
 - taint the specific node where the pod is running
+
+![Diagram](/sysdig/courses/falco/falco-response-engine/assets/01_diagram.png)
