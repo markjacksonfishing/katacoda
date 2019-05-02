@@ -11,7 +11,8 @@ kubectl create -f ping-deployment.yaml --namespace=ping
 kubectl create -f ping-service.yaml --namespace=ping
 kubectl create -f client-deployment.yaml --namespace=ping`{{execute}}
 
-As usual, make sure the pods are ready:
+As usual, make sure the pods are ready (it may take one or two minutes):
+
 `kubectl get pods -n ping`{{execute}}
 
 You can access the Ping web application pressing the **Ping web** tab on the right.
