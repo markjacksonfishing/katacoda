@@ -7,10 +7,7 @@
     "time": "30 minutes",
     "details": {
         "assets": {
-            "host01": [
-                { "file": "*.sh", "target": "~/", "chmod": "+x" },
-                { "file": "*.yaml", "target": "~/" }
-            ]
+            "host01": [{ "file": "*.sh", "target": "~/", "chmod": "+x" }, { "file": "*.yaml", "target": "~/" }]
         },
         "intro": {
             "text": "intro.md",
@@ -33,10 +30,6 @@
             {
                 "title": "Installing Jenkins",
                 "text": "step4.md"
-            },
-            {
-                "title": "Populating Jenkins Pipelines and Plugins",
-                "text": "step5.md"
             },
             {
                 "title": "Configuring Jenkins",
