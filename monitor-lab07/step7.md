@@ -4,7 +4,7 @@ Click on the **Manage Jenkins** button:
 
 ![Manage Jenkins button](/sysdig/scenarios/monitor-lab07/assets/image12.png)
 
-Then click on Configure System:
+Then click on **Configure System**:
 
 ![Configure System button](/sysdig/scenarios/monitor-lab07/assets/image13.png)
 
