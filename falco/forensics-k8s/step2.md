@@ -2,7 +2,7 @@ You will install Falco using _Helm_, a package manager for Kubernetes that we ha
 
 Deploying Sysdig Falco only takes a simple command:
 
-`helm install --name falco -f custom_rules.yaml stable/falco`{{execute}}
+`helm install --name falco stable/falco`{{execute}}
 
 This will result in a Falco Pod being deployed to each node, and thus the ability to monitor any running containers for abnormal behavior.
 
