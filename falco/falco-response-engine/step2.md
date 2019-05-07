@@ -1,10 +1,13 @@
 
-Let's install `pip`, and then use it to install `pipenv`:
+Let's install `pip`:
 
-`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
-export PATH=$PATH:~/.local/bin
-pip install --user pipenv`{{execute}}
+`sudo apt update
+sudo apt install -y python3-pip`{{execute}}
+
+And now use it to install `pipenv`:
+
+`pip3 install --user pipenv
+export PATH=$PATH:~/.local/bin`{{execute}}
 
 You will also need the `zip` utility:
 
