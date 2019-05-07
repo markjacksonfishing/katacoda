@@ -14,7 +14,7 @@
         },
         {
             "course_id": "falco-response-engine",
-            "title": "Practical example of Kubernetes runtime security with Falco",
+            "title": "Blocking security threats with Falco Response Engine",
             "description": "This scenario teaches you how to use Sysdig Falco Response Engine on a Kubernetes cluster"
         }
     ]
