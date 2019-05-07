@@ -24,7 +24,7 @@ spec:
         role: jenkins
     spec:
       containers:
-        - image: sysdiglabs/jenkins:0.3
+        - image: sysdiglabs/jenkins:0.4
           name: jenkins
           ports:
             - containerPort: 8080
