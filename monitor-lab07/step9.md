@@ -1,4 +1,4 @@
-You can execute the pipeline clicking the button Build with parameters.
+You can execute the pipeline going to **Sysdig CICD cronagent** → **Build with parameters**.
 
 ![Build with Parameters](/sysdig/scenarios/monitor-lab07/assets/image16.png)
 
