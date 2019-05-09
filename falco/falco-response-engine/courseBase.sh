@@ -10,3 +10,4 @@ sudo mv /tmp/linux-amd64/helm /usr/local/bin
 kubectl create -f helm-account.yaml
 helm init --service-account tiller
 helm repo update
+
