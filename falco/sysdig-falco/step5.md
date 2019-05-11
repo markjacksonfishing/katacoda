@@ -2,15 +2,13 @@ Containers usually have a well defined set of mountpoints that rarely changes. I
 
 Let's download a new version of the configuration file for this example:
 
-`
-sudo -s
+`sudo -s
 cd /etc/falco
-curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/sysdig-falco/assets/falco_rules_step5.yaml -o falco_rules.yaml
-`{{execute}}
+curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/falco/sysdig-falco/assets/falco_rules_step5.yaml -o falco_rules.yaml`{{execute}}
 
 This is the rule that watches for sensitive mounts inside containers:
 
-```
+```yaml
 - rule: Launch Sensitive Mount Container
   desc: >
     Detect the initial process started by a container that has a mount from a sensitive host directory

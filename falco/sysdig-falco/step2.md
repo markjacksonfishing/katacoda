@@ -14,11 +14,11 @@ You can play around a little if you want, then execute `exit`{{execute}} to leav
 
 If we tail the log file with `tail /var/log/falco_events.log`{{execute}} we should be able to read:
 
-```
+```log
 17:13:24.357351845: Notice A shell was spawned in a container with an attached terminal (user=root example1 (id=604aa46610dd) shell=bash parent=<NA> cmdline=bash terminal=34816)
 ```
 
-This is the specific _/etc/falco/falco_rules.yaml_ rule that fired the event:
+This is the specific `/etc/falco/falco_rules.yaml` rule that fired the event:
 
 ```yaml
 - rule: Terminal shell in container

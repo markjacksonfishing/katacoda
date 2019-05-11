@@ -2,11 +2,9 @@ Container immutability means that running containers are exactly the same, they 
 
 Let's download a new version of the configuration file for this example:
 
-`
-sudo -s
+`sudo -s
 cd /etc/falco
-curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/sysdig-falco/assets/falco_rules_step4.yaml -o falco_rules.yaml
-`{{execute}}
+curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/falco/sysdig-falco/assets/falco_rules_step4.yaml -o falco_rules.yaml`{{execute}}
 
 Pay attention to the macro that defines the write-allowed directories that we customized for _Nginx_:
 
@@ -38,17 +36,15 @@ To apply the new configuration file we will restart the Sysdig Falco container: 
 
 Now, you can spawn a new container and try this rule:
 
-`
-docker run -d -P --name example3 nginx
+`docker run -d -P --name example3 nginx
 docker exec -it example3 bash
 mkdir /userdata
 touch /userdata/foo # Shouldn't trigger this rule
-touch /usr/foo # But this will do
-`{{execute}}
+touch /usr/foo # But this will do`{{execute}}
 
 `exit`{{execute}} the container and look at the log file `tail /var/log/falco_events.log`{{execute}}. You will find these two events:
 
-```
+```log
 21:15:01.998703651: Error Writing to non user_data dir (user=root command=bash  file=/dev/tty)
 21:15:58.476945006: Error Writing to non user_data dir (user=root command=touch /usr/foo file=/usr/foo)
 ```

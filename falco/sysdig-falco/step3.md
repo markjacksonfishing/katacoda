@@ -4,11 +4,9 @@ You know that your _Nginx_ containers should only be executing the _nginx_ proce
 
 Let's download a new version of the configuration file for this example:
 
-`
-sudo -s
+`sudo -s
 cd /etc/falco
-curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/sysdig-falco/assets/falco_rules_step3.yaml -o falco_rules.yaml
-`{{execute}}
+curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/falco/sysdig-falco/assets/falco_rules_step3.yaml -o falco_rules.yaml`{{execute}}
 
 Now, pay attention to the following rule in the file:
 
@@ -40,7 +38,7 @@ And run anything in the _example2_ container, _ls_ for example:
 
 If we look at the log with `tail /var/log/falco_events.log`{{execute}} you will be able to read:
 
-```
+```log
 18:38:43.364877988: Warning Unauthorized process (ls ) running in (604aa46610dd)
 ```
 
