@@ -21,4 +21,4 @@ A Rule is a node in the YAML file containing at least the following keys:
 - **output**: it specifies the message that should be output if a matching event occurs, and follows the Sysdig output format syntax.
 - **priority**: a case-insensitive representation of severity and should be one of "emergency", "alert", "critical", "error", "warning", "notice", "informational", or "debug".
 
-Additional optional keys are: enabled, tags, warn\_evttypes and skip-if-unknown-filter.
+Additional optional keys are: `enabled`, `tags`, `warn_evttypes` and `skip-if-unknown-filter`.
