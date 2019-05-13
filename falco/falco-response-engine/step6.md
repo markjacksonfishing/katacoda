@@ -1,3 +1,5 @@
+You can subscribe a Kubeless function (_playbook_) to a NATS queue, so the function will be invoked for every message in the queue.
+
 Delete Offending Pod
 --------------------
 

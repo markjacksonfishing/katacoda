@@ -6,4 +6,5 @@ helm install --name falco --set integrations.natsOutput.enabled=true -f custom_r
 
 Notice that each falco pod has two containers, `falco` and `falco-nats`:
 
-`kubectl get pods`{{execute}}
+`kubectl get pods
+kubectl get po -o jsonpath="{.items[*].spec.containers[*].name" | tr -s '[[:space:]]' '\n' | sort | uniq`{{execute}}

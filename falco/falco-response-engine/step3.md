@@ -1,7 +1,9 @@
+_[Kubeless](https://kubeless.io/)_ is a Kubernetes-native Serverless Framework. You can use Kubeless to deploy your functions without worrying about the underlying infrastructure, and trigger them in response to events.
+
 Deploy Kubeless in Kubernetes
 -----------------------------
 
-Next let's create a `kubeless` namespace and deploy kubeless.
+Next let's create a `kubeless` namespace and deploy the latest release of kubeless.
 
 `kubectl create ns kubeless
 export RELEASE=$(curl -s https://api.github.com/repos/kubeless/kubeless/releases/latest | grep tag_name | cut -d '"' -f 4)
@@ -13,7 +15,7 @@ You can see:
   `kubectl get pods -n kubeless`{{execute}}
 - the deployment:  
   `kubectl get deployment -n kubeless`{{execute}}
-- and the _functions_ Custom Resource Definition:  
+- and the `functions` [Custom Resource Definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/):  
   `kubectl get customresourcedefinition`{{execute}}
 
 Local kubeless command line
