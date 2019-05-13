@@ -1,10 +1,8 @@
 Containers usually have a well defined set of mountpoints that rarely changes. If a container tries to mount a different host directory, or read/write a file outside of the allowed directory set, that means that either someone is trying to breakout the container, or a team member has been given excessive visibility to the container.
 
-Let's download a new version of the configuration file for this example:
+Let's install a new version of the configuration file for this example:
 
-`sudo -s
-cd /etc/falco
-curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/falco/sysdig-falco/assets/falco_rules_step5.yaml -o falco_rules.yaml`{{execute}}
+`sudo cp falco_rules_5.yaml /etc/falco/falco_rules.yaml`{{execute}}
 
 This is the rule that watches for sensitive mounts inside containers:
 
@@ -28,7 +26,7 @@ The macro `sensitive_mount` includes the _forbidden_ directories. By default it 
 
 To apply the new configuration file we will restart the Sysdig Falco container: `docker restart falco`{{execute}}.
 
-Now, you can spawn a new container and try to mount _/mnt_:
+Now, you can spawn a new container and try to mount `/mnt`:
 
 `docker run -d -P --name example4 -v /mnt:/tmp/mnt alpine`{{execute}}
 

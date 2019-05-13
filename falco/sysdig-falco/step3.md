@@ -1,12 +1,10 @@
 Docker best practices recommend running just one process per container. This has a significant security impact because you know exactly which processes you expect to see running.
 
-You know that your _Nginx_ containers should only be executing the _nginx_ process. Anything else is an indicator of an anomaly.
+You know that your _Nginx_ containers should only be executing the `nginx` process. Anything else is an indicator of an anomaly.
 
-Let's download a new version of the configuration file for this example:
+Let's install a new version of the configuration file for this example:
 
-`sudo -s
-cd /etc/falco
-curl https://raw.githubusercontent.com/katacoda-scenarios/sysdig-scenarios/master/falco/sysdig-falco/assets/falco_rules_step3.yaml -o falco_rules.yaml`{{execute}}
+`sudo cp falco_rules_3.yaml /etc/falco/falco_rules.yaml`{{execute}}
 
 Now, pay attention to the following rule in the file:
 
@@ -32,7 +30,7 @@ Now we need to run a new _Nginx_ container:
 
 `docker run -d -P --name example2 nginx`{{execute}}
 
-And run anything in the _example2_ container, _ls_ for example:
+And run anything in the `example2` container, `ls` for example:
 
 `docker exec -it example2 ls`{{execute}}
 

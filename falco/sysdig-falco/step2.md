@@ -31,4 +31,4 @@ This is the specific `/etc/falco/falco_rules.yaml` rule that fired the event:
   tags: [container, shell]
 ```
 
-This is a rather complex rule, don't worry if you don't fully understand every section at this moment. We can identify a rule name, description, some trigger conditions, event output with some context-aware variables provided by Falco like _%proc.name_ or _%container.info_, the priority and some tags.
+This is a rather complex rule, don't worry if you don't fully understand every section at this moment. We can identify a rule name, description, some trigger conditions, event output with some context-aware variables provided by Falco like `%proc.name` or `%container.info`, the priority and some tags.

@@ -5,37 +5,44 @@
     "difficulty": "medium",
     "time": "20 minutes",
     "details": {
-        "steps": [
-            {
-                "title": "Step 1 - Sysdig Falco installation",
-                "text": "step1.md"
-            },
-            {
-                "title": "Step 2 - Container running interactive shell",
-                "text": "step2.md"
-            },
-            {
-                "title": "Step 3 - Unauthorized process",
-                "text": "step3.md"
-            },
-            {
-                "title": "Step 4 - Write to non user-data directory",
-                "text": "step4.md"
-            },
-            {
-                "title": "Step 5 - Sensitive mount by container",
-                "text": "step5.md"
-            },
-            {
-                "title": "Step 6 - Falco event generator",
-                "text": "step6.md"
-            }
-        ],
+        "assets": {
+            "host01": [
+                { "file": "falco.yaml", "target": "/root" },
+                { "file": "falco_rules.yaml", "target": "/root" },
+                { "file": "falco_rules_3.yaml", "target": "/root" }
+            ]
+        },
         "intro": {
             "text": "intro.md",
             "courseData": "background.sh",
             "credits": "Based on Sysdig Blog articles: https://sysdig.com/blog/."
         },
+        "steps": [
+            {
+                "title": "Sysdig Falco installation",
+                "text": "step1.md"
+            },
+            {
+                "title": "Container running interactive shell",
+                "text": "step2.md"
+            },
+            {
+                "title": "Unauthorized process",
+                "text": "step3.md"
+            },
+            {
+                "title": "Write to non user-data directory",
+                "text": "step4.md"
+            },
+            {
+                "title": "Sensitive mount by container",
+                "text": "step5.md"
+            },
+            {
+                "title": "Falco event generator",
+                "text": "step6.md"
+            }
+        ],
         "finish": {
             "text": "finish.md"
         }
