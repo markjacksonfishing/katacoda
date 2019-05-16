@@ -1,17 +1,23 @@
 Installing Helm
 ---------------
 
-We will install the Sysdig Agent using Helm, a package manager for Kubernetes. We can download and install Helm with these commands:
+We will install the Sysdig Agent using **Helm**, a package manager for Kubernetes.
+
+Let's download and uncompress Helm:
 
 `curl -Lo /tmp/helm-linux-amd64.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-linux-amd64.tar.gz
-tar zxf /tmp/helm-linux-amd64.tar.gz -C /tmp/
-chmod a+x /tmp/linux-amd64/helm
-sudo mv /tmp/linux-amd64/helm /usr/local/bin
-kubectl create -f helm-account.yaml
+tar zxf /tmp/helm-linux-amd64.tar.gz -C /tmp/`{{execute}}
+
+We make the binary executable, and place it in the path:
+
+`chmod a+x /tmp/linux-amd64/helm
+sudo mv /tmp/linux-amd64/helm /usr/local/bin`{{execute}}
+
+Finally, we also initialize Helm, install Tiller (the Helm server side component), and make sure our chart database is up-to-date:
+
+`kubectl create -f helm-account.yaml
 helm init --service-account tiller
 helm repo update`{{execute}}
-
-We have also initialized Helm and installed Tiller (the Helm server side component), and made sure our chart database is up-to-date.
 
 We can view the current status of our cluster using the command `kubectl get pod -n kube-system`{{execute}}
 

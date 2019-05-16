@@ -12,13 +12,18 @@ From this panel, you can quickly check several relevant metrics:
 - HTTP error count (per second): looks at the [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) to detect any error condition. Remember that 4XX response codes are client errors and 5XX are server errors.
 - Average request time (in milliseconds): measures the latency of your service. This can give you an idea of the perceived quality of service from the client point of view.
 
-These metrics are what is called golden signals in the [Google SRE Book](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/). Using these we can monitor any application from a user's perspective, and should be the first metrics to look at to determine the health and performance of any application. This is specifically relevant on microservices applications where the different components communicate with each other using some kind of requests (HTTP, gRPC, etc).
+These metrics (i.e. latency, traffic, errors, and saturation) are what is called **golden signals** in the [Google SRE Book](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/). Using these we can monitor any application from a user's perspective, and should be the first metrics to look at to determine the health and performance of any application. This is specifically relevant on microservices applications where the different components communicate with each other using some kind of API request (HTTP, gRPC, etc).
 
 Here we can also see how Sysdig is able to identify and decode certains application protocols (HTTP in this case) and give you APM-like metrics like, which are the top requested URLs or endpoints, which are the  slowest, and HTTP response codes or request types (GET, POST, etc).
 
-Other monitoring methodologies look at the resource consumption instead. For example USE monitoring tries to abstract service capacity on resource utilization, saturation and errors. Utilization metrics could be CPU % usage, memory usage, etc, saturation metrics could be memory pages faults or disk IO wait, and errors could be failed attempts to open files, to mention one example.
+Other monitoring methodologies look at the resource consumption instead.
+For example USE monitoring tries to abstract the service capacity of resources based on three metrics - utilization, saturation, and errors, where
 
-The dashboard `Kubernetes` → `Resource Usage` → `Kubernetes Deployment Health` will offer you an USE-style overview that aggregates metrics by Kubernetes metadata:
+- _utilization_ metrics could be CPU % usage, memory usage, etc,
+- _saturation_ metrics could be memory pages faults or disk IO wait, and
+- _errors_ could be failed attempts to open files.
+
+The dashboard `Default Dashboards` → `Kubernetes` → `Resource Usage` → `Kubernetes Deployment Health` will offer you an USE-style overview that aggregates metrics by Kubernetes metadata:
 
 ![Deployment health dashboard](/sysdig/scenarios/monitor-lab01/assets/image05.png)
 

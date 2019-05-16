@@ -5,7 +5,7 @@ Suddenly there is more people voting using our application and the app becomes s
 Competencies required
 ---------------------
 
-The student needs to understand the basic concepts of microservices applications, containers and Kubernetes. He will be able to check the status of deployed Kubernetes resources (pods, deployments, services) and nodes.
+The student needs to understand the basic concepts of microservices applications, containers and Kubernetes, and be able to check the status of deployed Kubernetes resources (pods, deployments, services) and nodes.
 
 Goals
 -----

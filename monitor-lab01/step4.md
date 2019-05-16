@@ -1,4 +1,4 @@
-Logging into Sysdig Monitor, you should arrive at the Explore tab which offers an inventory overview where you can group the different resources or entities in your infrastructure using physical attributes like hostname and containers, or logical attributes Kubernetes namespaces, deployments and pods. For each entity we can see some basic metrics in the table like CPU, memory, network or I/O.
+Logging into Sysdig Monitor, you should arrive at the Explore tab.  This view offers an inventory overview where you can group the different resources or entities in your infrastructure.  You can view the data using physical attributes like hostname and containers, or logical attributes like Kubernetes namespaces, deployments and pods. For each entity we can see some basic metrics in the table like CPU, memory, network or I/O.
 
 For example, change the grouping view to _Deployments and Pods_
 
@@ -11,7 +11,7 @@ You should be able to see the `example-voting-app` namespace with all the deploy
 Proposed exercises
 ------------------
 
-Let's try to answer some questions already:
+Let's try to answer some questions before we go any further:
 
 - How many nodes do you have in your cluster?
 - Can you see the Sysdig agent running on each node?
