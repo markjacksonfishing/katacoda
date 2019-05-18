@@ -34,6 +34,6 @@ Proposed exercises
 
 Using kube-state dashboards, try to find out:
 
-- Is any Kubernetes pod restarting?
+- Are any Kubernetes pod restarting?
 - How many instances (pods) do we have for each service? And how many do we expect?
 - Pods desired (defined) are equal to pod available?

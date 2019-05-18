@@ -18,14 +18,14 @@ This fits perfectly well with the four golden signals methodology for monitoring
 - Traffic as rate of requests per second
 - Errors, and their frequency
 
-The golden signals is a fitting methodology for this example because it's designed around requests and microservices. As opposed to other methods that focus more strongly on the health signals coming from hardware and software components, golden signals focus on perceived service quality.
+The golden signals methodology is fitting for this example because it's designed around requests and microservices. As opposed to other methods that focus more strongly on the health signals coming from hardware and software components, golden signals focus on perceived service quality.
 
-Another methodology, more oriented towards resource usage and capacity limits is the USE (Utilization, Saturations and Errors)
+Another methodology, more oriented towards resource usage and capacity limits is USE (Utilization, Saturations and Errors)
 
 - CPU, memory, disk I/O, network
 - Against host or container limits
 
-The `Overview by container` will offer you an USE-style overview of your namespace:
+The `Overview by container` dashboard will offer you an USE-style overview of your namespace:
 
 ![Overview by container](/sysdig/scenarios/monitor-lab05/assets/image06.png)
 

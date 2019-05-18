@@ -10,7 +10,7 @@ Goals
   - Does each deployment have sufficient resources?
   - How many CPU cores and how much memory has been requested by the containers in a Pod?
   - Is Kubernetes Master node having performance problems?
-  - How much time is spending the Scheduler to schedule a Pod?
+  - How much time is the Scheduler spending to schedule a Pod?
 - Identify and understand how the different Kubernetes internal components fits in the puzzle:
   - API Server: The frontend HTTP API. The control plane.
   - Etcd: The persistence backend of all cluster data.

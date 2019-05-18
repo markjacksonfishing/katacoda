@@ -15,7 +15,7 @@ You can create the credentials using the **Add Credentials** button.
 Docker Credentials
 ------------------
 
-In Kind select "Username with password", and insert your data.
+In the `Kind` field select "Username with password", and insert credentials for [Docker Hub](http://hub.docker.com).
 The key part here is that you _must_ write **"docker-repository-credentials"** in the **ID field**.
 
 ![Docker Credentials](/sysdig/scenarios/monitor-lab07/assets/image11.png)

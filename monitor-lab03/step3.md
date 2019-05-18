@@ -7,9 +7,7 @@ In order to import the dashboards:
 `cd;
 ./create-dashboards.sh $SYSDIG_API_TOKEN`{{execute}}
 
-The script will create a Kubernetes Job which installs those dashboards, so that there is no need for running Docker in you workstation.
-
-Be careful because the script doesn't check for duplicated dashboards, and you may end with the dashboards repeated.
+The script will create a Kubernetes Job which installs those dashboards.  Be careful because the script doesn't check for duplicated dashboards, and you may end with the dashboards repeated.
 
 You can check the progress with the following query to Kubernetes. Wait until `SUCCESSFUL` has a `1` value.
 

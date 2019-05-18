@@ -17,4 +17,4 @@ The voting app is now ready: the `lab2-voting-app` namespace contains the differ
 - The `worker` synchronizes data between two databases. One stores data in memory and the other offers disk persistence.
 - The `result` is an HTTP server that reports on the results.
 - The `observer` is an HTTP client that retrieves the results.
-- The `db`  is a database that persists the votes collected by `vote`.
+- The `db` is a database that persists the votes collected by `vote`.

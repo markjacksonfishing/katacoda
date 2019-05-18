@@ -1,4 +1,4 @@
-This lab uses a tweaked version of the Sysdig agent which supports scraping from Prometheus endpoints that uses authentication with private key and certificate. The work is still not merged intro dev branch but all of us hope that will be merged as soon as possible.
+This lab uses a tweaked version of the Sysdig agent which supports scraping from Prometheus endpoints that uses authentication with private key and certificate. At the time of writing, the work is not merged in the dev branch yet.
 
 Under the `sysdig-agent` directory you will find the following files:
 

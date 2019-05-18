@@ -1,4 +1,4 @@
-The ticket token generator example microservices application will normally behave properly in standard conditions, but twice a week (it is programmed to do so) will trigger the 502 HTTP error issue.
+The ticket token generator example microservices application will behave normally in standard conditions, however it is programmed to trigger the 502 HTTP error issue twice a week.
 
 For training purposes you can also trigger the error manually any time you want executing the following script within your home directory:
 

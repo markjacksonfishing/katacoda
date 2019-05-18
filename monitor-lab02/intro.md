@@ -18,4 +18,6 @@ Goals
 Competencies required
 ---------------------
 
-The student needs to understand the basic concepts of microservices applications, containers and Kubernetes. He will be able to check the status of deployed Kubernetes resources (pods, deployments, services) and nodes.
+The student needs to understand the basic concepts of microservices applications, containers and Kubernetes, and be able to check the status of deployed Kubernetes resources (pods, deployments, services) and nodes.
+
+If you have not done it yet, it's a good idea to complete the previous scenario, [Application performance analysis](https://www.katacoda.com/sysdig/scenarios/monitor-lab01), before this one.
