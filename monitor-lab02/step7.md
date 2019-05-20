@@ -38,7 +38,8 @@ Here you will be able to configure where the capture file is stored, the file na
 
 Capture files can grow quickly but the size will depend on 3 parameters: how busy is the server, the capture time and filter. Typically on containerized infrastructure things happen quite fast so a small period of time like 15 seconds should be enough to capture enough information. By default the capture filter is empty, so the capture will include information from the entire host and all the running containers. If you have a very busy server you might decide to configure a capture filter here, for example `container.name contains nginx`, if you want to capture syscalls from your Nginx containers. Please have a look at the [Sysdig open source documentation](https://github.com/draios/sysdig/wiki/sysdig-user-guide) for more information on filters.
 
-For this lab, we will be using an alert: `[APM] SQL error threshold`
+For this lab, we will add a new alert.  Go to the `Alerts` pane and click the `Add Alert` button.
+You may name the alert `[APM] SQL error threshold`, and configure it as the following screenshot (click on the image to enlarge it).
 
 ![SQL error threshold alert](/sysdig/scenarios/monitor-lab02/assets/image13.png)
 
@@ -56,7 +57,7 @@ Let's update the application again and wait for the alert & capture to be trigge
 
 `./update.sh`{{execute}}
 
-If you go now to the `Explore` tab and select the `lab2-example-voting-app` namespace and `net.sql.error.count` metric:
+If you go now to the `Explore` tab and select the `lab2-example-voting-app` namespace and the `Metrics` → `Network` → `net.sql.error.count` dashboard:
 
 ![net.sql.error.count` metric](/sysdig/scenarios/monitor-lab02/assets/image14.png)
 

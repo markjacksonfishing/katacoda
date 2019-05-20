@@ -1,4 +1,10 @@
-Logging into Sysdig Monitor, you should arrive at the Explore tab.  This view offers an inventory overview where you can group the different resources or entities in your infrastructure.  You can view the data using physical attributes like hostname and containers, or logical attributes like Kubernetes namespaces, deployments and pods. For each entity we can see some basic metrics in the table like CPU, memory, network or I/O.
+Logging into Sysdig Monitor, you should arrive at the Explore tab.  This view offers an inventory overview where you can group the different resources or entities in your infrastructure.
+
+By default, Sysdig Monitor will show you live data with a one hour time window.  For this workshop it is recommended to use the time window navigation bar (in the bottom of the screen) to select a shorter time window, such as 10 seconds.
+
+_Groupings_ are hierarchical organizations of labels, allowing users to organize their infrastructure views on the Explore tab in a logical hierarchy. This results in a tree view, with rows for each infrastructure object applicable to each level.  For each entity we can see some basic metrics in the table like CPU, memory, network or I/O.
+
+You can view the data using physical attributes like hostname and containers, or logical attributes like Kubernetes namespaces, deployments and pods.
 
 For example, change the grouping view to _Deployments and Pods_
 
@@ -20,9 +26,13 @@ Let's try to answer some questions before we go any further:
 - Which microservice uses more CPU? And I/O?
 - Which node has more memory usage? And disk usage?
 
-Now we have an idea of the components of the app. But how do these microservices interact with each other? When votes are generated, we  expect traffic between the voter and the vote service. The result server will then check the database to generate the results.
+Now we have an idea of the components of the app. But how do these microservices interact with each other? When votes are generated, we expect traffic between the voter and the vote service. The result server will then check the database to generate the results.
 
-With Sysdig Monitor you can use _Topology maps_ to visualize how entities interact with each other. When using a physical grouping we can see the different entities talking with each other, but with orchestration grouping we get a better understanding of how the Kubernetes-orchestrated services interact. With a service based grouping like Deployments and pods: Namespaces &gt; Deployments &gt; Pods we can select one of the default dashboards: `Topology` → `Network Traffic`. This will show us our entire infrastructure. But if we want to look only into a specific part, we will change from `Entire Infrastructure` into `example-voting-app` namespace. We call this changing the scope.
+With Sysdig Monitor you can use _Topology maps_ to visualize how entities interact with each other. When using a physical grouping we can see the different entities talking with each other, but with a logical grouping we get a better understanding of how the Kubernetes-orchestrated services interact.
+
+Select a grouping like `Deployments and pods`: Namespaces &gt; Deployments &gt; Pods &gt; Containers. After selecting `Entire Infraestructure` in the tree, you will be able to choose one of the default dashboards: `Topology` → `Network Traffic`.
+
+If instead of our entire infrastructure we want to look only into a specific part, we will change from `Entire Infrastructure` into, for instance, `example-voting-app` namespace. We call this _changing the scope_.
 
 ![Network traffic diagram](/sysdig/scenarios/monitor-lab01/assets/image03.png)
 
