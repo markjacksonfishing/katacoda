@@ -1,4 +1,5 @@
-Logging into Sysdig Monitor, you should arrive at the Explore tab by default, the explore tab offers you an inventory overview where you can group the different entities using physical attributes - like host id - or logical attributes like pods, inside deployments, inside Kubernetes namespaces.
+Logging into Sysdig Monitor, you should arrive at the Explore tab by default.
+The explore tab offers you an inventory overview where you can group the different entities using physical attributes - like host id - or logical attributes like pods, inside deployments, inside Kubernetes namespaces.
 
 Once we have selected the desired grouping, you can monitor a single metric or a complete Dashboard.
 
@@ -23,11 +24,11 @@ As you can see, is the typical layered application. A 'ticket' client requests a
 Proposed exercises
 ------------------
 
-You can explore several aspects of your application or cluster directly from the explore tab and using default Dashboards, for example, which processes are running in each container:
+You can explore several aspects of your application or cluster directly from the Explore tab, using default Dashboards. For example, which processes are running in each container:
 
 ![Processes](/sysdig/scenarios/monitor-lab05/assets/image04.png)
 
-From this interface, try to explore:
+Within the Explore tab, try to explore:
 
 - In which physical node is running each pod of our stack.
 - CPU, memory, bandwidth consumption of each pod, a deployment and the namespace.

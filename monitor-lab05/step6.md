@@ -20,7 +20,7 @@ Alerts are configured through a set of parameters:
   You can also create alerts directly from Explore and Dashboards for automatically populating this scope.
 - The **trigger conditions** will define the threshold and time window for assessing the alert condition. Boolean logic can be used to define the threshold against a value. Multiple functions allow time aggregation such as on average, as a rate, in sum, at least once or for the entire time.
   
-  Additionally a single alert will fire an alert for your entire scope, while multiple alert will fire if any or every segments breach the threshold at once.
+  Additionally a single alert will fire for your entire scope, while multiple alert will fire if any or every segments breach the threshold at once.
   
   On the right hand side, a preview of the previous metric values compared with the configured threshold will help to configure reasonable values and avoid noisy alerts.
 
@@ -32,7 +32,8 @@ Here you will be able to configure where the capture file is stored, the file na
 
 Capture files can grow quickly but the size will depend on 3 parameters: how busy is the server, the capture time and filter. Typically on containerized infrastructure things happen quite fast so a small period of time like 15 seconds should be enough to capture enough information. By default the capture filter is empty, so the capture will include information from the entire host and all the running containers. If you have a very busy server you might decide to configure a capture filter here, for example `container.name contains nginx`, if you want to capture syscalls from your Nginx containers. Please have a look at the [Sysdig open source documentation](https://github.com/draios/sysdig/wiki/sysdig-user-guide) for more information on filters.
 
-For this lab, we will be using an alert: `[APM] Ticket generator HTTP errors`
+For this lab, we will add a new alert.  Go to the `Alerts` pane and click the `Add Alert` button.
+You may name the alert `[APM] Ticket generator HTTP errors`, and configure it as the following screenshot (click on the image to enlarge it).
 
 ![Ticket generator HTTP errors](/sysdig/scenarios/monitor-lab05/assets/image09.png)
 

@@ -2,6 +2,8 @@ When a capture is opened in Sysdig Monitor a browser window will pop up with Sys
 
 ![Sysdig Inspect](/sysdig/scenarios/monitor-lab06/assets/image10.png)
 
+Remember that you can enlarge the screenshots by clicking on them.
+
 To troubleshoot this event we'll want to look at everything that is occurring the infrastructure column of Sysdig Inspect. Selecting the Docker Events tiles will bring those events into the timeline at the bottom.
 
 Let's try to troubleshoot what's going on here. A good first step is to drill down into `Container Died Events`.

@@ -7,3 +7,5 @@ In order to shake the Kubernetes internals just execute:
 `./loadgen.sh`{{execute}}
 
 You will see a loop of applications starts and deletions.
+
+You will be able to stop the loop pressing Ctrl+C.

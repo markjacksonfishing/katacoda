@@ -29,7 +29,7 @@ The `Overview by container` dashboard will offer you an USE-style overview of yo
 
 ![Overview by container](/sysdig/scenarios/monitor-lab05/assets/image06.png)
 
-If you are interested in one step in particular of the data flow, you can also look at the connections table
+If you are interested in one step in particular of the data flow, you can also look at the connections table (Default Dashboards → Network → Connections Table)
 
 ![Connections table](/sysdig/scenarios/monitor-lab05/assets/image07.png)
 
@@ -38,8 +38,7 @@ From here you can see the different processes inside the pods:
 - The curl process that accesses the load balancer service IP, port 80.
 - The haproxy process that access the backend service IP, port 8080
 - The python backend service that listens in the 8080 port.
-
-And the number of connections, ingress and egress bandwidth of all these communication channels.
+- And the number of connections, ingress and egress bandwidth of all these communication channels.
 
 In addition to monitoring the application from the HTTP and connectivity perspective, you can also monitor the resources in this namespace as Kubernetes entities.
 

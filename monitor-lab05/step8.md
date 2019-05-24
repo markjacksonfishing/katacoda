@@ -2,7 +2,7 @@ You will be able to see the event in the event stream:
 
 ![Events](/sysdig/scenarios/monitor-lab05/assets/image10.png)
 
-If we go back to the Explore tab and explore the `net.http.error.count` metric segmented by `kubernetes.pod.name`:
+If we go back to the Explore tab and explore the `net.http.error.count` metric segmented by `kubernetes.namespace.name`:
 
 ![net.http.error.count](/sysdig/scenarios/monitor-lab05/assets/image11.png)
 
