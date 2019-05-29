@@ -1,0 +1,63 @@
+{
+    "pathwayTitle": "Sysdig Monitor",
+    "title": "Sysdig Monitor Lab 05: Troubleshooting a containerized app with captures",
+    "description": "A dockerized app works well on the developer's laptop, but triggers errors when deployed on Kubernetes",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [{ "file": "*.sh", "target": "~/", "chmod": "+x" }, { "file": "*.yaml", "target": "~/" }]
+        },
+        "intro": {
+            "text": "intro.md",
+            "code": "foreground.sh",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Setting up the environment",
+                "text": "step1.md"
+            },
+            {
+                "title": "Installing the Sysdig agent",
+                "text": "step2.md"
+            },
+            {
+                "title": "Installing the 'ticket-generator' application",
+                "text": "step3.md"
+            },
+            {
+                "title": "Exploring the application with Sysdig Monitor",
+                "text": "step4.md"
+            },
+            {
+                "title": "Monitoring the application",
+                "text": "step5.md"
+            },
+            {
+                "title": "Alerting to notify on error conditions",
+                "text": "step6.md"
+            },
+            {
+                "title": "Triggering an error condition to simulate an issue",
+                "text": "step7.md"
+            },
+            {
+                "title": "Identifying an issue with alertings and monitoring metrics",
+                "text": "step8.md"
+            },
+            {
+                "title": "Advanced troubleshooting and debugging an issue",
+                "text": "step9.md"
+            }
+        ]
+    },
+    "environment": {
+        "uilayout": "terminal"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}

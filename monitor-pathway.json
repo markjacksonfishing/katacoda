@@ -1,0 +1,26 @@
+{
+    "title": "Sysdig Monitor",
+    "description": "Learn the basics of Sysdig Monitor",
+    "courses": [
+        {
+            "course_id": "monitor-lab01",
+            "title": "Application performance analysis",
+            "description": "Monitor the key metrics of a WS application. Identify performance bottlenecks and scale the application."
+        },
+        {
+            "course_id": "monitor-lab02",
+            "title": "Monitoring an application deployment",
+            "description": "Use Sysdig to explore and troubleshoot the errors produced after deploying an update to an application."
+        },
+        {
+            "course_id": "monitor-lab05",
+            "title": "Troubleshooting a containerized app with captures",
+            "description": "A dockerized app works well on the developer's laptop, but triggers errors when deployed on Kubernetes"
+        },
+        {
+            "course_id": "monitor-lab06",
+            "title": "Advanced Kubernetes troubleshooting",
+            "description": "We deploy a multi-layered service, but the frontend pods die, becoming marked as CrashLoopBackOff"
+        }
+    ]
+}
