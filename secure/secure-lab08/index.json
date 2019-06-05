@@ -1,0 +1,36 @@
+{
+    "private": true,
+    "pathwayTitle": "Sysdig Secure",
+    "title": "Sysdig Secure Lab 08: Runtime security",
+    "description": "We will use Sysdig Secure to detect abnormal behaviour in our containers.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [{ "file": "*.sh", "target": "~/", "chmod": "+x" }, { "file": "*.yaml", "target": "~/" }]
+        },
+        "intro": {
+            "text": "intro.md",
+            "code": "foreground.sh",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Setting up the environment",
+                "text": "step1.md"
+            },
+            {
+                "title": "Scenario",
+                "text": "step2.md"
+            }
+        ]
+    },
+    "environment": {
+        "uilayout": "terminal"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}
