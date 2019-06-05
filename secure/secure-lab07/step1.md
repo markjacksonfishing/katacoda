@@ -25,4 +25,4 @@ Anchore
 
 [Anchore Engine](https://anchore.com/) is a third party product that allows developers to perform detailed analysis on their container images, run queries, produce reports and define policies that can be used in CI/CD pipelines. Developers can extend the tool to add new plugins that add new queries, new image analysis, and new policies.
 
-![Anchore](/sysdig/scenarios/secure-lab07/assets/image01.png)
+![Anchore](/sysdig/courses/secure/secure-lab07/assets/image01.png)

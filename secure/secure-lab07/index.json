@@ -1,5 +1,5 @@
 {
-    "title": "Sysdig Secure Lab 07: Image Scanning and CI/CD Pipeline",
+    "title": "Image Scanning and CI/CD Pipeline",
     "description": "We will deploy Jenkins, set up the Sysdig Secure plugin integration, and execute some image build and scan in a pipeline.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",

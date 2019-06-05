@@ -7,4 +7,4 @@ The pipelines will be executed in the following order:
 5. Under the hood, Sysdig executes Anchore using Sysdig image profiles.
 6. Anchore executes the scan and generates a report.
 
-![Scenario](/sysdig/scenarios/secure-lab07/assets/image02.png)
+![Scenario](/sysdig/courses/secure/secure-lab07/assets/image02.png)

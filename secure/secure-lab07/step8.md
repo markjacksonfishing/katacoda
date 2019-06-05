@@ -3,7 +3,7 @@ Sysdig Secure allows you to configure different policies for image scanning, so 
 In Sysdig Secure, go to **Image Scanning** → **Scanning Policies** → **Default Policy**.
 For this Lab, Sysdig Secure must be configured with the following minimum settings:
 
-![Scanning Policies](/sysdig/scenarios/secure-lab07/assets/image15.png)
+![Scanning Policies](/sysdig/courses/secure/secure-lab07/assets/image15.png)
 
 Gate            | Kind          | Description                                                 | Action
 ----------------|---------------|-------------------------------------------------------------|-------
