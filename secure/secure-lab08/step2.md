@@ -5,7 +5,7 @@ We can view the current status of our cluster using the command
 
 Once all the pods are running, we can deploy the Sysdig Agent in a few seconds, as it only takes a simple command:
 
-`helm install --name sysdig --set sysdig.accessKey=YOUR_OWN_ACCESS_KEY,sysdig.settings.tags="cluster:training,location:europe" stable/sysdig`
+`helm install --name sysdig --set sysdig.accessKey=YOUR_OWN_ACCESS_KEY,sysdig.settings.tags="cluster:training\,location:europe" stable/sysdig`
 
 After copying the above command, you can paste it into the terminal using the right button of your mouse.  Remember you have to use **your own access key**.
 

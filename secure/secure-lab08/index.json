@@ -22,8 +22,20 @@
                 "text": "step1.md"
             },
             {
-                "title": "Scenario",
+                "title": "Installing the Sysdig agent",
                 "text": "step2.md"
+            },
+            {
+                "title": "Policies",
+                "text": "step3.md"
+            },
+            {
+                "title": "Container running interactive shell",
+                "text": "step4.md"
+            },
+            {
+                "title": "Investigate the incident",
+                "text": "step5.md"
             }
         ]
     },
