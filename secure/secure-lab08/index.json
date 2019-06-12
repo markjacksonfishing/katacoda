@@ -1,5 +1,4 @@
 {
-    "private": true,
     "pathwayTitle": "Sysdig Secure",
     "title": "Runtime security",
     "description": "We will use Sysdig Secure to detect abnormal behaviour in our containers.",
