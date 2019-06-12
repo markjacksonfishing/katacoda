@@ -1,7 +1,7 @@
 {
     "private": true,
     "pathwayTitle": "Sysdig Secure",
-    "title": "Sysdig Secure Lab 08: Runtime security",
+    "title": "Runtime security",
     "description": "We will use Sysdig Secure to detect abnormal behaviour in our containers.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",

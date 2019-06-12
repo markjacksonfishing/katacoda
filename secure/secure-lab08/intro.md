@@ -1,4 +1,4 @@
-Sysdig secure is a unified data platform that provides vulnerability management, compliance, runtime security
+Sysdig Secure is a unified data platform that provides vulnerability management, compliance, runtime security
 and forensics for enterprise cloud native environments at scale.
 
 It is designed to provide container run-time security and forensics for enterprises with distributed, dynamic services.
@@ -17,7 +17,7 @@ Goals
 
 - Explore the default policies
 - Customize a policy to do a capture of all syscalls happening around a security event
-- Use Sysdig Secure to detect an interactive shell is a container
+- Use Sysdig Secure to detect an interactive shell in a container
 - Investigate the incident, and find out exactly what happened.
 
 Competencies required

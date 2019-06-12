@@ -14,5 +14,6 @@ This will result in a Sysdig Agent Pod being deployed to each node, and thus the
 You can see that the sysdig agent has been deployed:  
 `helm list`
 
-Creating the containers may take a little time. Check that all the containers are in `Running` state with  
-`kubectl get pods`
+Creating the containers may take a little time.  Run the command below, which waits for all pods to be ready.  
+`watch kubectl get pods`  
+When the pods show status `Running`, hit <kbd>Ctrl</kbd>-<kbd>C</kbd> and clear the screen.

