@@ -23,7 +23,7 @@ Once you have decided what you want to detect, Sysdig can also give you the abil
 For example when an certain event occurs, a container could be stopped or paused.
 
 Using the search box, look for the `Terminal shell in container` policy.
-One of the posible actions it to start a Sysdig capture, which would dump all the activity before, during, and after any event.
+One of the possible actions is to start a Sysdig capture, which would dump all the activity before, during, and after any event.
 Customize the policy and specify to collect 30 seconds before the event until 20 seconds after it -
 this will give you full visibility into everything that occurred within that window.
 Remember to click `Apply changes`.
