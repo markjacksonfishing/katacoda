@@ -39,7 +39,10 @@
         ]
     },
     "environment": {
-        "uilayout": "terminal"
+        "showdashboard": true,
+        "dashboards": [{ "name": "Sysdig Secure", "href": "https://secure.sysdig.com" }],
+        "uilayout": "terminal-iframe",
+        "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
     },
     "backend": {
         "imageid": "kubernetes-cluster-running"
