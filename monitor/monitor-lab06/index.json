@@ -55,7 +55,10 @@
         ]
     },
     "environment": {
-        "uilayout": "terminal"
+        "showdashboard": true,
+        "dashboards": [{ "name": "Sysdig Monitor", "href": "https://app.sysdigcloud.com" }],
+        "uilayout": "terminal-iframe",
+        "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
     },
     "backend": {
         "imageid": "kubernetes-cluster-running"
