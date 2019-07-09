@@ -1,16 +1,21 @@
 Sysdig Secure allows you to configure different policies for image scanning, so you can create custom behavior with different rules.
 
-In Sysdig Secure, go to **Image Scanning** → **Scanning Policies** → **Default Policy**.
-For this Lab, Sysdig Secure must be configured with the following minimum settings:
+In Sysdig Secure, go to **Image Scanning** → **Scanning Policies** →  **Policies** → **Default Policy**.
 
-![Scanning Policies](/sysdig/courses/secure/secure-lab07/assets/image15.png)
+![Scanning Policies](/sysdig/courses/secure/secure-lab07/assets/image15a.png)
+
+![Policies](/sysdig/courses/secure/secure-lab07/assets/image15b.png)
+
+For this Lab, Sysdig Secure must be configured with the following minimum settings:
 
 Gate            | Kind          | Description                                                 | Action
 ----------------|---------------|-------------------------------------------------------------|-------
 Dockerfile      | Exposed ports | Ports: 22, Type: blacklist                                  | Stop
 Dockerfile      | Instruction   | HEALTHCHECK not exists                                      | Warn
 Vulnerabilities | Package       | Package type: all; Severity comparison: =; Severity: medium | Warn
-Vulnerabilities | Package       | Package type: all; Severity comparison: >; Severity: medium | Stop
+Vulnerabilities | Package       | Package type: all; Severity comparison: >=; Severity: high  | Stop
+
+![Default Policy](/sysdig/courses/secure/secure-lab07/assets/image15c.png)
 
 Let's explain this settings:
 
