@@ -1,7 +1,7 @@
 {
     "pathwayTitle": "Sysdig Falco",
     "title": "Practical example of Kubernetes runtime security with Falco",
-    "description": "This scenario teaches you how to use Sysdig Falco for container forensics on a Kubernetes cluster",
+    "description": "This scenario teaches you how to use Sysdig Falco for container forensics on a Kubernetes cluster.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
     "time": "20 minutes",
