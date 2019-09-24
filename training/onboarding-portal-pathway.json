@@ -1,0 +1,13 @@
+{
+  "title": "Onboarding",
+  "description": "Sysdig Onboarding Workshop",
+  "courses": [
+    {
+      "pathway_id": "sysdig",
+      "id": "monitor/monitor-lab02",
+      "course_id": "monitor-lab02",
+      "title": "Sysdig Monitor Lab 02: Monitoring an application deployment",
+      "description": "Use Sysdig to explore and troubleshoot the errors produced after deploying an update to an application"
+    }
+  ]
+}
