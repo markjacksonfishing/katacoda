@@ -1,6 +1,6 @@
 {
     "pathwayTitle": "Sysdig Secure",
-    "title": "Sysdig Secure: Policy Editor and Library",
+    "title": "Sysdig Secure Policy Editor and Library",
     "description": "Create custom policies and rules for your specific environment.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
@@ -27,23 +27,23 @@
                 "text": "step2.md"
             },
             {
-                "title": "Installing the example app",
+                "title": "Enable default policies",
                 "text": "step3.md"
             },
             {
-                "title": "Learning more about our application",
+                "title": "Policy Rules Library",
                 "text": "step4.md"
             },
             {
-                "title": "Monitoring the application",
+                "title": "Problem Scenario",
                 "text": "step5.md"
             },
             {
-                "title": "Monitoring a bottleneck in the app",
+                "title": "Create a Rule and a Policy",
                 "text": "step6.md"
             },
             {
-                "title": "Monitoring the application after the changes",
+                "title": "Test our Policy",
                 "text": "step7.md"
             }
         ],

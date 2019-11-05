@@ -1,14 +1,23 @@
-In order to handle the increased load we decide to scale up the `vote` service.
+# Create a Policy
 
-Again, in our home directory we have a script to scale this service:
+Rules are the building blocks for policies, so we need to create a new policy and add our rule to it.  In a real situation a policy may be made up up of many rules, but for our example we will just add the one.
 
-`./scale.sh`{{execute}}
+Now navigate to Policies > Runtime Policies, then click 'Add Policy'. Complete the form filling in the following information
 
-After a few moments, using the `Services` → `Kubernetes Service Golden Signals` dashboard one more time, we can see how our application becomes under control again.
+ - Name: `Directory Created on container`
+ - Description: `A directory has been created in a container`
+ - Enabled: Yes
+ - Severity: high
+ - Scope: `Containers Only`
 
-![Golden signals](/sysdig/courses/secure/secure-policy-editor/assets/image09.png)
+![Create Policy](/sysdig/courses/secure/secure-policy-editor/assets/image07.png)
 
-We can see a couple of interesting points:
+ For Rules, click `Import from Library`, then find and select the rule `Directory Created` that you created earlier.  Click 'Mark for import', then 'Import Rules'.
 
-- The response time per service is performing like before the stress peak. The application is responding flawlessly.
-- The request rate per service has increased. We receive more requests, and we can fulfill its requirements when the vote service is scaled up.
+![Import Rules](/sysdig/courses/secure/secure-policy-editor/assets/image08.png)
+
+Finaly, once the rules have been add, define the actions that should occur once this policy is raised.
+
+![Define Actions](/sysdig/courses/secure/secure-policy-editor/assets/image09.png)
+
+For our example choose to 'Pause' the container and send an email notification.  Optionally you may create a capture, although captures are out of scope of this particular lesson.

@@ -1,5 +1,3 @@
-Installing Helm
----------------
 
 We will install the Sysdig Agent using **Helm**, a package manager for Kubernetes.
 

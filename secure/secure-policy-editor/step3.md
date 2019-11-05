@@ -1,4 +1,3 @@
-# Enable default policies
 
 Click on ‘Policies’ on the left menu of Sysdig Secure, then ‘Runtime Policies’. For a new account, you should be shown ‘You have not configured any policies’, so click ‘Use Sysdig Default Policies’.
 
