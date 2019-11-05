@@ -50,13 +50,21 @@ root@node01:/#
 Create a directory in the container
 
 ```
-mkdir test
+mkdir policy-test
+root@node01:/# command terminated with exit code 137
+master $
 ```
 
-You will notice immediately that the container becomes paused (as expected from our rule actions)
+You will notice immediately that the container becomes paused (as expected from our Policy actions)
 
 Go back to Sysdig Secure UI and click on Policy Event
 
 ![View Policy Events](/sysdig/courses/secure/secure-policy-editor/assets/image10.png)
 
-You'll notice that our activity has raised a few Policy Events, one of which is the policy we created earlier.
+You'll notice that our activity has raised a few Policy Events, one of which is the 'Directory created on container' policy we created earlier.
+
+Highlight this policy and you will see more context, like the node name, container na,e, scope, actions, and a summary. Note that the summary conforms to the 'output' defined in our Falco code.
+
+If you chose to create captures when the policy was invoked, then you would see them here. In any case you cam click 'VIEW COMMANDS' to verify the command you executed on the container.
+
+![View Commands](/sysdig/courses/secure/secure-policy-editor/assets/image10.png)
