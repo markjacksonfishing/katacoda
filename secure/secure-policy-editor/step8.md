@@ -24,8 +24,39 @@ spec:
   hostNetwork: true
   dnsPolicy: Default
   ```
+
 This file contains the configuration for our Pod.  Run the following command to create the Pod.
 
 ```
 kubectl apply -f policy-rule-test.yaml
+pod/policy-rule-test created
 ```
+
+Verify the Pod is Running
+
+```
+kubectl get pod policy-rule-test
+NAME               READY   STATUS    RESTARTS   AGE
+policy-rule-test   1/1     Running   0          19s
+```
+
+Now create a shell into the running Container
+
+```
+kubectl exec -it policy-rule-test -- /bin/bash
+root@node01:/#
+```
+
+Create a directory in the container
+
+```
+mkdir test
+```
+
+You will notice immediately that the container becomes paused (as expected from our rule actions)
+
+Go back to Sysdig Secure UI and click on Policy Event
+
+![View Policy Events](/sysdig/courses/secure/secure-policy-editor/assets/image10.png)
+
+You'll notice that our activity has raised a few Policy Events, one of which is the policy we created earlier.

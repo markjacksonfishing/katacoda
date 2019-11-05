@@ -1,7 +1,11 @@
 
+Now click on the 'Sysdig Secure' tab on the right pane to access the Secure UI.
+
 Click on ‘Policies’ on the left menu of Sysdig Secure, then ‘Runtime Policies’. For a new account, you should be shown ‘You have not configured any policies’, so click ‘Use Sysdig Default Policies’.
 
 ![Auto-generate suggested Sysdig default policies](/sysdig/courses/secure/secure-policy-editor/assets/image01.png)
+
+Note: You will see this blank screen for new accounts only.
 
 This will deploy the default policy set, which is a generic set designed to cover 95% of common detection scenarios. The policies are enabled by default, but no notification or preventative actions are configured, so only events within the Sysdig Platform will be created.
 

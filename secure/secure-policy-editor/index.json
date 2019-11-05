@@ -39,12 +39,16 @@
                 "text": "step5.md"
             },
             {
-                "title": "Create a Rule and a Policy",
+                "title": "Create a Rule",
                 "text": "step6.md"
             },
             {
-                "title": "Test our Policy",
+                "title": "Create a Policy",
                 "text": "step7.md"
+            },
+            {
+                "title": "Test our Policy",
+                "text": "step8.md"
             }
         ],
         "finish": {
