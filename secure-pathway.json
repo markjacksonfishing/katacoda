@@ -11,6 +11,11 @@
             "course_id": "secure-lab08",
             "title": "Runtime security",
             "description": "Use Sysdig Secure to detect suspicious behaviour in containers"
+        },
+        {
+            "course_id": "secure-policy-editor",
+            "title": "Sysdig Secure Policy Editor and Library",
+            "description": "Create custom policies and rules"
         }
     ]
 }

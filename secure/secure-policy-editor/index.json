@@ -1,0 +1,63 @@
+{
+    "pathwayTitle": "Sysdig Secure",
+    "title": "Sysdig Secure: Policy Editor and Library",
+    "description": "Create custom policies and rules for your specific environment.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "helm-account.yaml", "target": "~/" },
+                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Enable default policies",
+                "text": "step1.md"
+            },
+            {
+                "title": "Installing Helm and the Sysdig agent",
+                "text": "step2.md"
+            },
+            {
+                "title": "Installing the example app",
+                "text": "step3.md"
+            },
+            {
+                "title": "Learning more about our application",
+                "text": "step4.md"
+            },
+            {
+                "title": "Monitoring the application",
+                "text": "step5.md"
+            },
+            {
+                "title": "Monitoring a bottleneck in the app",
+                "text": "step6.md"
+            },
+            {
+                "title": "Monitoring the application after the changes",
+                "text": "step7.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "showdashboard": true,
+        "dashboards": [{ "name": "Sysdig Secure", "href": "https://secure.sysdig.com" }],
+        "uilayout": "terminal-iframe",
+        "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}
