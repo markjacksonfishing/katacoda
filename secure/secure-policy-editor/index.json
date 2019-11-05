@@ -49,6 +49,10 @@
             {
                 "title": "Test our Policy",
                 "text": "step8.md"
+            },
+            {
+                "title": "Conclusion",
+                "text": "step9.md"
             }
         ],
         "finish": {

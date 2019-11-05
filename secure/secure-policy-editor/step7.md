@@ -1,4 +1,3 @@
-# Create a Policy
 
 Rules are the building blocks for policies, so we need to create a new policy and add our rule to it.  In a real situation a policy may be made up up of many rules, but for our example we will just add the one.
 
@@ -20,4 +19,6 @@ Finaly, once the rules have been add, define the actions that should occur once 
 
 ![Define Actions](/sysdig/courses/secure/secure-policy-editor/assets/image09.png)
 
-For our example choose to 'Pause' the container and send an email notification.  Optionally you may create a capture, although captures are out of scope of this particular lesson.
+For our example choose to 'Stop' the container and send an email notification.  Optionally you may create a capture, although captures are out of scope of this particular lesson.
+
+Please note that in order to receive email notifications, you must enable the email notification channel in your Sysdig Secure account. See Setting > Notifications.
