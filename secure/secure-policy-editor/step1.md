@@ -28,3 +28,5 @@ Click 'Next' and select the  ‘Kubernetes | GKE | OpenShift’ method button.
 If you have an existing account, then log in to the web UI, go to your profile Settings, and in the `Agent Installation` tab you will find your Access Key (something like `5ca1ab1e-d3ad-beef-dea1-deba7ab1ed0c`).  Keep it handy, as you will need it to authorize the agent against the backend.
 
 ![Agent key](/sysdig/courses/secure/secure-policy-editor/assets/image00.png)
+
+*Note:* There is a similar formatted token called 'Sysdig Secure API Token' on the 'User Profile' page which may cause confusion. Be sure to use the correct token in the 'Agent Installation' tab.  
