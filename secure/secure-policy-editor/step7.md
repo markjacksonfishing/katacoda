@@ -21,6 +21,6 @@ Finally, once the rules have been added, define the actions that should occur on
 
 For our example choose to 'Stop' the container and send an email notification.  Optionally you may create a capture, although captures are out of scope of this particular lesson.
 
-> ![Tip](/sysdig/courses/secure/secure-policy-editor/assets/feature_ligtbulb_50x50.png) Please note that in order to receive email notifications, you must enable the email notification channel in your Sysdig Secure account. See Setting > Notifications.
+> Please note that in order to receive email notifications, you must enable the email notification channel in your Sysdig Secure account. See Settings > Notifications.
 
-Click 'Save'.
+Remember to click 'Save' once you are finished.
