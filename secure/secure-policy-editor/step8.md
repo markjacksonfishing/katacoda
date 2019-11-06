@@ -30,6 +30,8 @@ This file contains the configuration for our Pod.  Run the following command to 
 kubectl apply -f policy-rule-test.yaml
 ```
 
+You should see output similar to the following
+
 ```
 pod/policy-rule-test created
 ```
@@ -38,6 +40,11 @@ Verify the Pod is Running
 
 ```
 kubectl get pod policy-rule-test
+```
+
+You should see one pod running.
+
+```
 NAME               READY   STATUS    RESTARTS   AGE
 policy-rule-test   1/1     Running   0          19s
 ```
@@ -45,14 +52,14 @@ policy-rule-test   1/1     Running   0          19s
 Now create a shell into the running Container
 
 ```
-kubectl exec -it policy-rule-test -- /bin/bash
+$ kubectl exec -it policy-rule-test -- /bin/bash
 root@node01:/#
 ```
 
 Create a directory in the container
 
 ```
-mkdir policy-test
+$ mkdir policy-test
 root@node01:/# command terminated with exit code 137
 master $
 ```
