@@ -47,7 +47,7 @@ $ kubectl create deployment nginx --image=nginx
 deployment.apps/nginx created
 ```
 
-Verify the Pod is Running
+Verify the Pod is Running and get the Pod name
 
 ```
 $ kubectl get pods
