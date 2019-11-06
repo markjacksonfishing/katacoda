@@ -27,24 +27,14 @@ spec:
 This file contains the configuration for our Pod.  Run the following command to create the Pod.
 
 ```
-kubectl apply -f policy-rule-test.yaml
-```
-
-You should see output similar to the following
-
-```
+$ kubectl apply -f policy-rule-test.yaml
 pod/policy-rule-test created
 ```
 
 Verify the Pod is Running
 
 ```
-kubectl get pod policy-rule-test
-```
-
-You should see one pod running.
-
-```
+$ kubectl get pod policy-rule-test
 NAME               READY   STATUS    RESTARTS   AGE
 policy-rule-test   1/1     Running   0          19s
 ```
