@@ -3,7 +3,7 @@ To test our new Policy and the rule, we will create a pod with a single `nginx` 
 
 <!--https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/ -->
 
-Open the terminal tab on the right pane, then create a file called `policy-rule-test.yaml` with the following contents
+<!-- Open the terminal tab on the right pane, then create a file called `policy-rule-test.yaml` with the following contents
 
 ```YAML
 apiVersion: v1
@@ -37,24 +37,40 @@ Verify the Pod is Running
 $ kubectl get pod policy-rule-test
 NAME               READY   STATUS    RESTARTS   AGE
 policy-rule-test   1/1     Running   0          19s
+``` -->
+
+
+Run the following command to instantiate a single Pod running an `nginx` container
+
+```
+$ kubectl create deployment nginx --image=nginx
+deployment.apps/nginx created
+```
+
+Verify the Pod is Running
+
+```
+$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-65f88748fd-mbhcc   1/1     Running   0          5m54s
 ```
 
 Now create a shell into the running Container
 
 ```
-$ kubectl exec -it policy-rule-test -- /bin/bash
-root@node01:/#
+$ kubectl exec -it nginx-65f88748fd-mbhcc -- /bin/bash
+root@nginx-65f88748fd-mbhcc:/#
 ```
 
 Create a directory in the container
 
 ```
 $ mkdir policy-test
-root@node01:/# command terminated with exit code 137
-master $
+root@nginx-65f88748fd-mbhcc:/# command terminated with exit code 137
+$
 ```
 
-You will notice immediately that the container stops (as expected from our Policy actions).  You may also receive an email (if configured)
+You will notice immediately that the container stops, as expected from our Policy actions.  You may also receive an email (if configured)
 
 ![Event Notification Email](/sysdig/courses/secure/secure-policy-editor/assets/image13.png)
 
