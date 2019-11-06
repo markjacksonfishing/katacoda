@@ -11,7 +11,7 @@ This will deploy the default policy set, which is a generic set designed to cove
 
 If you highlight a Runtime Policy you'll see details on a panel on the right. For example, click on 'Suspicious Container Activity' to see what rules make up this policy.
 
-![View Policy Events](/sysdig/courses/secure/secure-policy-editor/assets/image10.png)
+![View Policy Events](/sysdig/courses/secure/secure-policy-editor/assets/image02.png)
 
 You can also expand each Falco rule and edit them inline, for example to add further items to a list or edit conditions.
 

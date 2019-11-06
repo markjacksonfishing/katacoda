@@ -58,7 +58,7 @@ You will notice immediately that the container stops (as expected from our Polic
 
 ![Event Notification Email](/sysdig/courses/secure/secure-policy-editor/assets/image13.png)
 
-Go back to Sysdig Secure UI and click on Policy Event
+Go back to Sysdig Secure UI and click on Policy Events
 
 ![View Policy Events](/sysdig/courses/secure/secure-policy-editor/assets/image10.png)
 
