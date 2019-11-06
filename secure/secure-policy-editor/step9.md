@@ -9,7 +9,7 @@ Click on the three dots on the right and select 'Delete Policy'
 
 ![Delete Policy](/sysdig/courses/secure/secure-policy-editor/assets/image16.png)
 
-Click 'Yes' to confirm. once deleted you can now remove the custom policy rule you created. To delete the Policy Rule, navigate to 'Policies > Rules Library', then search for and highlight the rule you added, 'Directory Created'.
+Click 'Yes' to confirm. Once deleted you can now remove the custom policy rule you created. To delete the Policy Rule, navigate to 'Policies > Rules Library', then search for and highlight the rule you added, 'Directory Created'.
 
 Again, click on the three dots on the right and select 'Delete Rule'
 

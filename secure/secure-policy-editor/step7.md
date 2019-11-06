@@ -11,14 +11,16 @@ Now navigate to Policies > Runtime Policies, then click 'Add Policy'. Complete t
 
 ![Create Policy](/sysdig/courses/secure/secure-policy-editor/assets/image07.png)
 
- For Rules, click `Import from Library`, then find and select the rule `Directory Created` that you created earlier.  Click 'Mark for import', then 'Import Rules'.
+For Rules, click `Import from Library`, then find and select the rule `Directory Created` that you created earlier.  Click 'Mark for import', then 'Import Rules'.
 
 ![Import Rules](/sysdig/courses/secure/secure-policy-editor/assets/image08.png)
 
-Finaly, once the rules have been add, define the actions that should occur once this policy is raised.
+Finally, once the rules have been added, define the actions that should occur once this policy is raised.
 
 ![Define Actions](/sysdig/courses/secure/secure-policy-editor/assets/image09.png)
 
 For our example choose to 'Stop' the container and send an email notification.  Optionally you may create a capture, although captures are out of scope of this particular lesson.
 
-Please note that in order to receive email notifications, you must enable the email notification channel in your Sysdig Secure account. See Setting > Notifications.
+![Tip](/sysdig/courses/secure/secure-policy-editor/assets/feature_ligtbulb.png) Please note that in order to receive email notifications, you must enable the email notification channel in your Sysdig Secure account. See Setting > Notifications.
+
+Click 'Save'.
