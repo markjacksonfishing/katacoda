@@ -28,6 +28,9 @@ This file contains the configuration for our Pod.  Run the following command to 
 
 ```
 kubectl apply -f policy-rule-test.yaml
+```
+
+```
 pod/policy-rule-test created
 ```
 
