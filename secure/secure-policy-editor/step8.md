@@ -47,7 +47,7 @@ $ kubectl create deployment nginx --image=nginx
 deployment.apps/nginx created
 ```
 
-Verify the Pod is Running and note the Pod name
+Verify the Pod has STATUS 'Running' and READY '1/1'
 
 ```
 $ kubectl get pods
@@ -55,7 +55,7 @@ NAME                     READY   STATUS    RESTARTS   AGE
 nginx-65f88748fd-mbhcc   1/1     Running   0          5m54s
 ```
 
-Now create a shell into the running Container
+Make a note the Pod name. Now create a shell into the running Container
 
 ```
 $ kubectl exec -it nginx-65f88748fd-mbhcc -- /bin/bash
@@ -84,6 +84,6 @@ Highlight this policy and you will see more context, like the node name, contain
 
 ![View Policy Event Details](/sysdig/courses/secure/secure-policy-editor/assets/image11.png)
 
-If you chose to create captures when the policy was invoked, then you would see them here. In any case you cam click 'VIEW COMMANDS' to verify the command you executed on the container.
+If you chose to create captures when the policy was invoked, then you would see them here. In any case you can click 'VIEW COMMANDS' to verify the command you executed on the container.
 
 ![View Commands](/sysdig/courses/secure/secure-policy-editor/assets/image12.png)

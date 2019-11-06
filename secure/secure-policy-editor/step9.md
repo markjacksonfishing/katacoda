@@ -1,5 +1,5 @@
 
-You may wish to remove this test policy and policy rule you just created, so it has no affect on your system.
+You may wish to remove this test policy and policy rule you just created, so it has no effect on your system.
 
 Because the rule is used within a policy, you have to delete the policy before you delete the policy rule used within it.
 
