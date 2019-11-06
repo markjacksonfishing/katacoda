@@ -9,7 +9,7 @@ Rules are written in Falco. Falco is a YAML based open source security rules eng
 
 Click `Add Rule` link in the top left. You'll notice these options are tailored for specific rule conditions, such as network (inbound/outbound connections), File System (read/write operations etc), etc.  These are referred to as 'fast rules' and are essentially white list and black lists.
 
-For our scenario select Falco (/sysdig/courses/secure/secure-policy-editor/assets/image05.png) which is a much richer langue for defining rules.
+For our scenario select 'Falco' which is a much richer langue for defining rules.
 
 Complete the form filling in the following information
 
