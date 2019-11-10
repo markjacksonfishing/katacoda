@@ -1,4 +1,4 @@
-The pipelines will be executed in the following order:
+The pipelines will be executed in the following order: 
 
 1. Jenkins will download the source code of the project.
 2. Using the source code, builds the Docker image.
