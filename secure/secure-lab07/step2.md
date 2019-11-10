@@ -1,4 +1,4 @@
-The pipelines will be executed in the following order: 
+The pipelines will be executed in the following order:
 
 1. Jenkins will download the source code of the project.
 2. Using the source code, builds the Docker image.
@@ -6,4 +6,4 @@ The pipelines will be executed in the following order:
 4. Triggers the execution of the Sysdig Plugin.
 5. Sysdig executes the scan and generates a report.
 
-![Scenario](/sysdig/courses/secure/secure-lab07/assets/image02.png)
+![Scenario](/sysdig/courses/secure/secure-lab07/assets/image02a.png)
