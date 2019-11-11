@@ -38,6 +38,7 @@ spec:
     - --tls-cert-file=/etc/kubernetes/pki/apiserver.crt
     - --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     - --audit-policy-file=/audit/audit-policy.yaml
+    - --audit-webhook-config-file=/audit/audit-webhook.yaml
     - --audit-log-path=/audit/log
     - --audit-dynamic-configuration=true
     - --runtime-config=auditregistration.k8s.io/v1alpha1
