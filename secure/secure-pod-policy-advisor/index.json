@@ -1,10 +1,10 @@
 {
     "pathwayTitle": "Sysdig Secure",
+    "private": true,
     "title": "Sysdig Secure Pod Policy Advisor",
     "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
-    "private": true,
     "time": "30 minutes",
     "details": {
         "assets": {
