@@ -1,0 +1,63 @@
+{
+    "pathwayTitle": "Sysdig Secure",
+    "title": "Sysdig Secure Pod Policy Advisor",
+    "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "helm-account.yaml", "target": "~/" },
+                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Make sure your Kubernetes cluster supports PSP",
+                "text": "step1.md"
+            },
+            {
+                "title": "Create default restrictive PSP for default service account",
+                "text": "step2.md"
+            },
+            {
+                "title": "Enable permissive PSP and assign it to kube-system and sysdig-agent",
+                "text": "step3.md"
+            },
+            {
+                "title": "Create a temporary permissive PSP for the new app namespace service account",
+                "text": "step4.md"
+            },
+            {
+                "title": "Upload deployment and generate new PSP, customize it and start simulation",
+                "text": "step5.md"
+            },
+            {
+                "title": "Deploy the application and validate the policy",
+                "text": "step6.md"
+            },
+            {
+                "title": "Replace the permissive PSP by the validated one (and optionally redeploy)",
+                "text": "step7.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "showdashboard": true,
+        "dashboards": [{ "name": "Sysdig Secure", "href": "https://secure.sysdig.com" }],
+        "uilayout": "terminal-iframe",
+        "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}
