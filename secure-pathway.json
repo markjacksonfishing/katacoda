@@ -20,7 +20,8 @@
         {
             "course_id": "secure-pod-policy-advisor",
             "title": "Sysdig Secure Pod Policy Advisor",
-            "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying"
+            "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying",
+            "private": true
         }
     ]
 }
