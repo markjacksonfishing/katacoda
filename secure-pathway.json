@@ -18,6 +18,12 @@
             "description": "Create custom policies and rules"
         },
         {
+            "course_id": "secure-psp-introduction",
+            "title": "Introduction to PSPs",
+            "description": "Introduction to Pod Security Policies (PSPs)",
+            "private": true
+        },
+        {
             "course_id": "secure-pod-policy-advisor",
             "title": "Sysdig Secure Pod Policy Advisor",
             "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying",
