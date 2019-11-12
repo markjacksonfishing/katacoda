@@ -1,20 +1,13 @@
 
-Kubernetes auditing provides a security-relevant chronological set of records documenting the sequence of activities that have affected system by individual users, administrators or other components of the system. These Kubernetes audit log events are formatted using JSON.
+Sysdig's Kubernetes Activity Auditing provides a chronological sequence of user and/or system activity on the Kubernetes cluster. This information can be used to investigate the actions taken (either by a Kubernetes user or by the system) around a specific point in time, perhaps of any security policy event.  For example, it could be used to trace a `kubectl exec` user interaction and list all the command and network activity that happened inside the pod.
+
+This features allows Sysdig Secure to correlate the interactive requests from a Kubernetes user with the commands and network connections performed inside the container, allowing the operator to trace this activity back to a user identity.
 
 It allows cluster administrator to answer the following questions:
 
  - What happened? (i.e. resource was created, listed, modified, deleted)
  - When did it happen?
- - Who (Kubernetes user or software service account) initiated it?
+ - Who initiated it (Kubernetes user or software service account)?
  - On what Kubernetes resource did it happen?
 
-For Example
- - Kube-user ‘john-doe’ deleted the ‘redis-config’ Kubernetes ConfigMap, in the ‘redis’ namespace at 10amPST
- - “sysdig-agent” service account in the “sysdig-agent” namespace listed the cluster namespaces at 10amPST
-
-```
-Capture system activity and make it searchable and indexable against Kubectl activity
-Easily filter through any useror service interaction across the K8s stack
-Comply with SOC2, PCI, ISO, HIPAA, etc. audit
-
-```
+This feature is critical, not only for traceability and compliance reasons, but also to aid fast incidence response.  
