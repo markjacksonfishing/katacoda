@@ -47,7 +47,8 @@
     },
     "environment": {
         "showdashboard": true,
-        "uilayout": "terminal",
+        "uilayout": "editor-terminal",
+        "uisettings": "yaml",
         "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
     },
     "backend": {
