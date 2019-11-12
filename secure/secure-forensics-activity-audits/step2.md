@@ -34,25 +34,7 @@ If you have an existing account, then log in to the web UI, go to your profile S
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--
 # The Issue
 An inattentive Kubernetes users has leaked credentials as part of a Kubernetes ConfigMap, leaving them vulnerable to eavesdropping by other users or software entities.
 
@@ -70,4 +52,4 @@ Rule output will tell you exactly who, when and what was created:
 K8s configmap with private credential (user=system:serviceaccount:kube-audit-configmap-trigger:kube-audit-configmap-trigger-kubectl-trigger verb=create configmap=aws-creds config={"aws-creds":"aws_access_key_id = \"foo\"\naws_s3_access_key_id = \"bar\"\n"})
 ```
 
-<<Add screenshots to give context>>
+<<Add screenshots to give context>> -->
