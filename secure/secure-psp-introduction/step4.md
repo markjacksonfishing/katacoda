@@ -1,6 +1,6 @@
 Prior to PSP definition, we need to enable it. To do so, edit the file `kube-apiserver.yaml` with:
 
-`vi /etc/kubernetes/manifests/kube-apiserver.yaml`{{execute}}
+`/etc/kubernetes/manifests/kube-apiserver.yaml`{{open}}
 
 and set this line
 
