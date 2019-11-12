@@ -49,6 +49,7 @@
         "showdashboard": true,
         "uilayout": "editor-terminal",
         "uisettings": "yaml",
+        "uieditorpath": "/etc/kubernetes/manifests/kube-apiserver.yaml",
         "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
     },
     "backend": {
