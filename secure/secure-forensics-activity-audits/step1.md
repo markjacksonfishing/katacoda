@@ -1,5 +1,5 @@
 
-Sysdig Secure parses the live stream of Kubernetes audit information and applies runtime security rules to its events.
+Sysdig Secure Activity Audit parses the live stream of Kubernetes audit information and applies runtime security rules to its events.
 
 All activity is mapped against specific Kubernetes metadata, such as namespace, deployment and pod. This, along with timestamped records of activity within individual pods, allows teams to quickly troubleshoot exactly what happened, where it happened and who or what instigated it. Essentially it helps join the dots between who ran `kubectl exec` and what exactly happened within the container.
 
