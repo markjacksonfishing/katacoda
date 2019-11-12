@@ -4,17 +4,17 @@ Prior to PSP definition, we need to enable it. To do so, edit the file `kube-api
 
 and set this line
 
-`
+```
 - --enable-admission-plugins=NodeRestriction
-`
+```
 
 to this
 
-`
+```
 - --enable-admission-plugins=NodeRestriction,PodSecurityPolicy
-`
+```
 
-Now PSP is enabled, but there are no policies to ckeck it against. If we execute:
+Now PSP is enabled, but there are no policies to check it against. If we execute:
 
 `
 kubectl -n psp-example --as=system:serviceaccount:psp-example:fake-user create -f- <<EOF
@@ -39,7 +39,7 @@ For this example, we are defining a PSP explicity blocking privileged containers
 
 Create a file `example-psp.yaml` with this content:
 
-`
+```
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
@@ -56,12 +56,12 @@ spec:
     rule: RunAsAny
   volumes:
   - '*'
-`{{copy}}
+```{{copy}}
 
 And let's apply it with:
 
-`
+```
 kubectl -n psp-example create -f example-psp.yaml
-`{{execute}}
+```{{execute}}
 
 Now we have enabled PSP on our cluster and also have a PSP defined. We'll test it in the next step.

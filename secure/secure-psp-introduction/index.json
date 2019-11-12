@@ -21,28 +21,24 @@
         },
         "steps": [
             {
-                "title": "Step1-Title",
+                "title": "Getting started on PSPs",
                 "text": "step1.md"
             },
             {
-                "title": "Step2-Title",
+                "title": "Setting up the environment",
                 "text": "step2.md"
             },
             {
-                "title": "Step3-Title",
+                "title": "Testing the new environment",
                 "text": "step3.md"
             },
             {
-                "title": "Step4-Title",
+                "title": "Creating your first PSP",
                 "text": "step4.md"
             },
             {
-                "title": "Step5-Title",
+                "title": "Checking and updating the PSP",
                 "text": "step5.md"
-            },
-            {
-                "title": "Step6-Title",
-                "text": "step6.md"
             }
         ],
         "finish": {
@@ -51,8 +47,7 @@
     },
     "environment": {
         "showdashboard": true,
-        "dashboards": [{ "name": "Sysdig Secure", "href": "https://secure.sysdig.com" }],
-        "uilayout": "terminal-iframe",
+        "uilayout": "terminal",
         "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
     },
     "backend": {

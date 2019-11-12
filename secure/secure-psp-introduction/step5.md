@@ -1,6 +1,6 @@
 Let's try again to create the same privileged container as we did on step two. We'll name it  __privileged02__
 
-`
+```
 kubectl -n psp-example --as=system:serviceaccount:psp-example:fake-user create -f- <<EOF
 apiVersion: v1
 kind: Pod
@@ -13,7 +13,7 @@ spec:
       securityContext:
         privileged: true
 EOF
-`{{execute}}
+```{{execute}}
 
 This time the error indicate that the creation of privileged containers is explicitly forbidden.
 
@@ -36,7 +36,7 @@ We need to re-apply the policy with:
 
 If we try again to create a privileged container with the next order:
 
-`
+```
 kubectl -n psp-example --as=system:serviceaccount:psp-example:fake-user create -f- <<EOF
 apiVersion: v1
 kind: Pod
@@ -49,6 +49,6 @@ spec:
       securityContext:
         privileged: true
 EOF
-`{{execute}}
+```{{execute}}
 
 We'll see that it succeded: `pod/privileged03 created`
