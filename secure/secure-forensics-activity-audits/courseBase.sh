@@ -1,3 +1,4 @@
+mkdir -p manifests
 mkdir -p /audit
 mv audit-policy.yaml /audit
 mv audit-webhook.yaml /audit

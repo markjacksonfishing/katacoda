@@ -33,7 +33,6 @@ If you have an existing account, then log in to the web UI, go to your profile S
 
 
 
-
 <!--
 # The Issue
 An inattentive Kubernetes users has leaked credentials as part of a Kubernetes ConfigMap, leaving them vulnerable to eavesdropping by other users or software entities.
