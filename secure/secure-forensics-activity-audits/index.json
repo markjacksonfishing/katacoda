@@ -1,7 +1,7 @@
 {
     "pathwayTitle": "Sysdig Secure",
     "title": "Activity Audit Forensics",
-    "description": "Track and monitor systema nd user level activity in your Kubernetes environment.",
+    "description": "Track and monitor systema and user level activity in your Kubernetes environment.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
     "time": "30 minutes",
@@ -9,7 +9,8 @@
         "assets": {
             "host01": [
                 { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+                { "file": "manifests/", "target": "~/" },
+                { "file": "*.sh", "target": "~/" }
             ]
         },
         "intro": {
@@ -23,7 +24,7 @@
                 "text": "step1.md"
             },
             {
-                "title": "The Issue",
+                "title": "Get Started",
                 "text": "step2.md"
             },
             {
@@ -31,12 +32,12 @@
                 "text": "step3.md"
             },
             {
-                "title": "Enable default policies",
-                "text": "step3.md"
+                "title": "Deploy Pods and Simulate an Attack",
+                "text": "step4.md"
             },
             {
-                "title": "Enable default policies",
-                "text": "step3.md"
+                "title": "Investigate Attack with Sysdig Activity Audit Forensics",
+                "text": "step5.md"
             }
         ],
         "finish": {
