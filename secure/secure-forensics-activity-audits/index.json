@@ -9,7 +9,7 @@
         "assets": {
             "master": [
                 { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "manifests/", "target": "~/" },
+                { "file": "manifests/*", "target": "~/" },
                 { "file": "*.sh", "target": "~/" }
             ]
         },
