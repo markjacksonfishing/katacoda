@@ -7,7 +7,7 @@
     "time": "30 minutes",
     "details": {
         "assets": {
-            "host01": [
+            "master": [
                 { "file": "helm-account.yaml", "target": "~/" },
                 { "file": "manifests/", "target": "~/" },
                 { "file": "*.sh", "target": "~/" }
