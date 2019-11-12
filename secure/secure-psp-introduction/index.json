@@ -1,15 +1,17 @@
 {
     "pathwayTitle": "Sysdig Secure",
-    "title": "Kubernetes Audit Log",
-    "description": "Create custom policies and rules for your specific environment.",
+    "private": true,
+    "title": "Pod Security Policies (PSPs)",
+    "description": "A brief introduction to PSPs.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
     "time": "30 minutes",
     "details": {
         "assets": {
-            "host01": [
+            "master": [
                 { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+                { "file": "*.sh", "target": "~/", "chmod": "+x" },
+                { "file": "assets/manifests/*", "target": "~/" }
             ]
         },
         "intro": {
@@ -19,16 +21,32 @@
         },
         "steps": [
             {
-                "title": "What is Kubernetes Audit Log",
+                "title": "Step1-Title",
                 "text": "step1.md"
             },
             {
-                "title": "The Issue",
+                "title": "Step2-Title",
                 "text": "step2.md"
             },
             {
-                "title": "Enable default policies",
+                "title": "Step3-Title",
                 "text": "step3.md"
+            },
+            {
+                "title": "Step4-Title",
+                "text": "step4.md"
+            },
+            {
+                "title": "Step5-Title",
+                "text": "step5.md"
+            },
+            {
+                "title": "Step6-Title",
+                "text": "step6.md"
+            },
+            {
+                "title": "Step7-Title",
+                "text": "step7.md"
             }
         ],
         "finish": {

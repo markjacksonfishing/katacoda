@@ -1,0 +1,47 @@
+{
+    "pathwayTitle": "Sysdig Secure",
+    "title": "Secure Forensics Activity Audits",
+    "description": "Create custom policies and rules for your specific environment.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "helm-account.yaml", "target": "~/" },
+                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "What is Kubernetes Audit Log",
+                "text": "step1.md"
+            },
+            {
+                "title": "The Issue",
+                "text": "step2.md"
+            },
+            {
+                "title": "Enable default policies",
+                "text": "step3.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "showdashboard": true,
+        "dashboards": [{ "name": "Sysdig Secure", "href": "https://secure.sysdig.com" }],
+        "uilayout": "terminal-iframe",
+        "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}
