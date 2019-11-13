@@ -1,5 +1,5 @@
+git clone https://github.com/johnfitzpatrick/psp-demo.git
 mkdir -p manifests
-mkdir -p manifests2
 mkdir -p /audit
 mv manifests/audit-policy.yaml /audit
 mv manifests/audit-webhook.yaml /audit

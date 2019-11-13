@@ -10,7 +10,6 @@
             "master": [
                 { "file": "helm-account.yaml", "target": "~/" },
                 { "file": "manifests/*", "target": "~/manifests" },
-                { "file": "manifests2/*", "target": "~/manifests2" },
                 { "file": "*.sh", "target": "~/" }
             ]
         },
@@ -29,7 +28,7 @@
                 "text": "step2.md"
             },
             {
-                "title": "Installing Helm and the Sysdig agent",
+                "title": "Installing the Sysdig agent",
                 "text": "step3.md"
             },
             {
