@@ -43,6 +43,6 @@ You can see that the sysdig agent has been deployed:
 
 Creating the containers may take a little time. Check that all the containers are in `Running` state with
 
-`kubectl get pods`{{execute}}
+`kubectl get pods -w`{{execute}}
 
-Creating the containers may take a little time. Check that all pods have STATUS 'Running' and READY '1/1' before continuing.
+Creating the containers may take a little time. Check that all pods have STATUS 'Running' and READY '1/1' before continuing. Once on desided state, press Ctrl+C to stop the watch.
