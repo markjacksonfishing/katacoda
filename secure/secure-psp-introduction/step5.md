@@ -19,7 +19,7 @@ This time the error indicate that the creation of privileged containers is expli
 
 `Error from server (Forbidden): error when creating "STDIN": pods "privileged02" is forbidden: unable to validate against any pod security policy: [spec.containers[0].securityContext.privileged: Invalid value: true: Privileged containers are not allowed]`
 
-Our policy is working as we expected.
+Our policy is working as we expected. See the final notice on the error: `Privileged containers are not allowed`.
 
 Modifiying an existing PSP and reapplying it
 --------------------------------------------

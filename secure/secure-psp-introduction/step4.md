@@ -1,13 +1,13 @@
 Prior to PSP definition, we need to enable it. To do so, edit the file `kube-apiserver.yaml`{{open}} .
 
 
-Change the following line
+Change line 18...
 
 ```
 - --enable-admission-plugins=NodeRestriction
 ```
 
-into this
+into this:
 
 ```
 - --enable-admission-plugins=NodeRestriction,PodSecurityPolicy
@@ -32,7 +32,7 @@ EOF
 
 It will fail and will inform us about no PSP definition found.
 
-At this point we need to define a PSP. Be aware that there's no generic policy that can be applied to every cluster, each pod/application has unique needs. So, if we define them by hand or we use the same policy for all our applications, our policy could be either too restricted or too loose.
+At this point we need to define a PSP. Be aware that there's no generic policy that can be applied to every cluster, each pod/application has unique needs. So, if we define them by hand or we use the same policy for all our applications, our policy could be either too restrictive or too loose.
 
 For this example, we are defining a PSP explicity blocking privileged containers.
 
