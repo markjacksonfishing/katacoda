@@ -4,7 +4,7 @@ Suppose that your team generated the same PSP definition we automatically genera
 
 This is the new deployment.yaml:
 
-`
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,7 +29,7 @@ spec:
         - containerPort: 80
         securityContext:
           privileged: true
-`{{copy}}
+```{{copy}}
 
 We are going to apply this deployment into production with:
 
