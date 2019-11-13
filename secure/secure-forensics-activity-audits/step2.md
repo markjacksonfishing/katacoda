@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Before we start we need a system to work on linked to your Sysdig account. We have set up a Kubernetes cluster just for you.
 
 On the right you can see the terminal of the `master` node, from which you can interact with the cluster using the `kubectl` tool, which is already configured.
@@ -31,6 +30,25 @@ If you have an existing account, then log in to the web UI, go to your profile S
 ![Agent key](/sysdig/courses/secure/secure-policy-editor/assets/image00.png)
 
 *Note:* There is a similar formatted token called 'Sysdig Secure API Token' on the 'User Profile' page which may cause confusion. Be sure to use the correct token in the 'Agent Installation' tab.  
-=======
 
->>>>>>> 9342cf48b538ff5276e250ce20d62c770c710884
+
+
+<!--
+# The Issue
+An inattentive Kubernetes users has leaked credentials as part of a Kubernetes ConfigMap, leaving them vulnerable to eavesdropping by other users or software entities.
+
+## The Fix
+Sysdig Secure can detect this event parsing the JSON events and looking for sensitive keywords (password, pass, AWS, token, etc)
+
+The rule contains several macros:
+ - Kubernetes resource is a "ConfigMap"
+ - The action was to "modify", including "creating"
+- the macro "contains_private_credentials" that parses the JSON object to find certain strings
+
+Rule output will tell you exactly who, when and what was created:
+
+```
+K8s configmap with private credential (user=system:serviceaccount:kube-audit-configmap-trigger:kube-audit-configmap-trigger-kubectl-trigger verb=create configmap=aws-creds config={"aws-creds":"aws_access_key_id = \"foo\"\naws_s3_access_key_id = \"bar\"\n"})
+```
+
+<<Add screenshots to give context>> -->

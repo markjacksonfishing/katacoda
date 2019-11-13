@@ -1,15 +1,16 @@
 {
     "pathwayTitle": "Sysdig Secure",
-    "title": "Kubernetes Audit Log",
-    "description": "Create custom policies and rules for your specific environment.",
+    "title": "Activity Audit Forensics",
+    "description": "Track and monitor systema and user level activity in your Kubernetes environment.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
     "time": "30 minutes",
     "details": {
         "assets": {
-            "host01": [
+            "master": [
                 { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+                { "file": "manifests/*", "target": "~/manifests" },
+                { "file": "*.sh", "target": "~/" }
             ]
         },
         "intro": {
@@ -19,16 +20,24 @@
         },
         "steps": [
             {
-                "title": "What is Kubernetes Audit Log",
+                "title": "What is Kubernetes Activity Audit",
                 "text": "step1.md"
             },
             {
-                "title": "The Issue",
+                "title": "Get Started",
                 "text": "step2.md"
             },
             {
-                "title": "Enable default policies",
+                "title": "Installing Helm and the Sysdig agent",
                 "text": "step3.md"
+            },
+            {
+                "title": "Deploy Pods and Simulate an Attack",
+                "text": "step4.md"
+            },
+            {
+                "title": "Investigate Attack with Sysdig Activity Audit Forensics",
+                "text": "step5.md"
             }
         ],
         "finish": {
