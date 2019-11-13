@@ -1,6 +1,6 @@
 This is the `deployment.yaml` we'll be using for this scenario.
 
-`
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,7 +23,7 @@ spec:
         image: nginx:1.7.9
         ports:
         - containerPort: 80
-`{{copy}}
+```{{copy}}
 
 Copy its content and use it to create a new `deployment.yaml` file at your local machine.
 
@@ -46,6 +46,3 @@ Now, go back to the terminal tab and:
 As we generated the least privileged PSP, it won't output any error. This PSP definition file is optimal and ready to be applied right into production!
 
 *NOTE: PSPs also protect us from our dev team. Imagine that you have into production an app with a defined set of permissions. At any point in the future your dev team change its image requirements, having them higher permissions requeriments. As it won't meet the police, PSP Advisor will alert you about the problem and its solution.*
-
-
-
