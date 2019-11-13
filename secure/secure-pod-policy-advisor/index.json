@@ -21,7 +21,7 @@
         },
         "steps": [
             {
-                "title": "Enable default policies",
+                "title": "Sysdig-agent",
                 "text": "step1.md"
             },
             {
