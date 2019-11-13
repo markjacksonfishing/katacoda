@@ -1,11 +1,11 @@
 {
     "pathwayTitle": "Sysdig Secure",
     "private": true,
-    "title": "Sysdig Secure Pod Policy Advisor",
-    "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying.",
-    "difficulty": "medium",
+    "title": "Sysdig Pod Security Policy Advisor",
+    "description": "The easy way to generate and simulate PSPs for your deployments.",
+    "difficulty": "easy",
     "icon": "fa-kubernetes",
-    "time": "30 minutes",
+    "time": "15 minutes",
     "details": {
         "assets": {
             "master": [
@@ -21,32 +21,24 @@
         },
         "steps": [
             {
-                "title": "Make sure your Kubernetes cluster supports PSP",
+                "title": "Sysdig-agent",
                 "text": "step1.md"
             },
             {
-                "title": "Create default restrictive PSP for default service account",
+                "title": "Installing the sysdig-agent with the help of Helm",
                 "text": "step2.md"
             },
             {
-                "title": "Enable permissive PSP and assign it to kube-system and sysdig-agent",
+                "title": "Getting started",
                 "text": "step3.md"
             },
             {
-                "title": "Create a temporary permissive PSP for the new app namespace service account",
+                "title": "Generate your PSP.yaml. Automatically! ",
                 "text": "step4.md"
             },
             {
-                "title": "Upload deployment and generate new PSP, customize it and start simulation",
+                "title": "Simulate your PSP.yaml without bad consequences!",
                 "text": "step5.md"
-            },
-            {
-                "title": "Deploy the application and validate the policy",
-                "text": "step6.md"
-            },
-            {
-                "title": "Replace the permissive PSP by the validated one (and optionally redeploy)",
-                "text": "step7.md"
             }
         ],
         "finish": {
