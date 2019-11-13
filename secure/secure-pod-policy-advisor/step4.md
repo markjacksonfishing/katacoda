@@ -1,7 +1,28 @@
 This is the `deployment.yaml` we'll be using for this scenario.
 
 `
-asdfasdfsadfsadfasdfsadf
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
 `{{copy}}
 
 Copy its content and use it to create a new `deployment.yaml` file at your local machine.
