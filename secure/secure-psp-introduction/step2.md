@@ -17,4 +17,4 @@ Breafly, RBAC is a way of defining the __actions__ that can be performed over a 
 kubectl create rolebinding -n psp-example fake-editor --clusterrole=edit --serviceaccount=psp-example:fake-user
 `{{execute}}
 
-This command creates a rolebinding named _fake-editor_ between the user (service account) named _fake-user_ and a role that binds the action _edit_ with the resource ¿?¿?¿?.
+This command creates a rolebinding named _fake-editor_ between the user (service account) named _fake-user_ and sets the role of editor for this user with _edit_.
