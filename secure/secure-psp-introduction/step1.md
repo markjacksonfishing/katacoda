@@ -1,5 +1,10 @@
 What are Pod Security Policies?
 -------------------------------
+<jf>
+This section looks like it has two headings. 'Getting started on PSPs' comes from `index.json` line24 and 'What are Pod Security Policies?' is defined here.
+
+Maybe put 'What are Pod Security Policies?' in `index.json` and remove heading on this page.
+</jf>
 
 The PodSecurityPolicy objects define a set of security constraints that a pod must meet in order to be accepted into the system. Pod Security Policies are one classification of Kubernetes Admission Controller.
 

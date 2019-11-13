@@ -29,3 +29,5 @@ privileged01   1/1     Running   0          1m16s
 ```
 
 An unlimited access to resource creation may be the source of privilege scallation or other threads to our cluster. Enabling PSPs can help us preventing this.
+
+<jf>What is 'scallation'</jf>

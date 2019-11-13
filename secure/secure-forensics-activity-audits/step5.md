@@ -1,4 +1,3 @@
-# The Forensics
 
 Let's now play the sysadmin role, and investigate the incident.  Open the Sysdig Secure window on the right pane, and click on *Activity Audit* on the left menu.
 
