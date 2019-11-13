@@ -21,7 +21,7 @@ voting-65f88748fd-mbhcc   1/1     Running   0          5m54s
 Make a note the Pod name.
 
 
-Now that the deployment is running, let's simulate the attack.  Run the following command to create a shell into the running Container
+Now that the deployment is running, let's simulate the attack.  Run the following command to create a shell into the running Container, substituting the pod name as appropriate
 
 ```
 $ kubectl exec -it nginx-65f88748fd-mbhcc -- /bin/bash
