@@ -7,14 +7,16 @@ PSPs provide a framework to ensure that Pods run only with the appropriate privi
 
 Although you can perfectly take this course with the information included in it, we recommend you to take before our Kubernetes PSP classroom. It explain in a broad way what are Kubernetes PSPs and how to make them work into your cluster.
 
-Least privilege concept. 
-------------------------
+Least privilege concept
+-----------------------
 
 [Least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is the concept and practice of restricting access rights for users, accounts, and computing processes to only those resources absolutely required to perform routine, legitimate activities. In a K8s PSPs context, it means that the optimal PSPs definition will be that giving our pods just the required permissions. No less and no more! 
 
 
 What is Sysdig PSP Advisor?
 ---------------------------
+
+![General view](/sysdig/courses/secure/secure-pod-policy-advisor/assets/image6.png)
 
 Sysdig Secure Kubernetes Policy Advisor assists users in both creating and validating Pod Security Policies before they apply them.
 
