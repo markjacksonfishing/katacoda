@@ -1,4 +1,3 @@
-git clone https://github.com/johnfitzpatrick/psp-demo.git
 mkdir -p manifests
 mkdir -p /audit
 mv manifests/audit-policy.yaml /audit
