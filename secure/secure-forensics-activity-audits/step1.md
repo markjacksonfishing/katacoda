@@ -14,9 +14,9 @@ This allows SOC teams to spot an abnormal kubectl exec into a pod in Kubernetes,
 SOC teams can search and filter this data for alert triage -- to determine the cause of the anomaly -- and for incident response.
 
 For Example
- - Kube-user ‘john-doe’ deleted the ‘redis-config’ Kubernetes ConfigMap, in the ‘redis’ namespace at 10amPST
- - “sysdig-agent” service account in the “sysdig-agent” namespace listed the cluster namespaces at 10amPST
+ - Kube-user 'john-doe' deleted the 'redis-config' Kubernetes ConfigMap, in the 'redis' namespace at 10amPST
+ - 'sysdig-agent' service account in the 'sysdig-agent' namespace listed the cluster namespaces at 10amPST
 
 Activity Logging also provides an audit logging process, a common requirement for SOC2, PCI, ISO, and HIPAA compliance, and allows you to trace and investigate Kube user activity even if the container no longer exists.
 
-Lets explore the Kubernetes Audit Log feature by way of a hands on example
+Lets explore the Kubernetes Audit Log feature by way of a hands on example.
