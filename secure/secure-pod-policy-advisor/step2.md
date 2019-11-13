@@ -30,8 +30,8 @@ helm install --name sysdig-agent-katacoda \
     --set sysdig.settings.collector_port=6443 \
     --set sysdig.settings.ssl_verify_certificate=false \
     --set sysdig.settings.ssl=true \
-    stable/sysdig
     --set sysdig.settings.tags="cluster:training,location:universe"
+    stable/sysdig
 `{{execute}}
 
 After copying the command, you can paste it into the terminal using the right button of your mouse.  Remember you have to use **your own access key**.
