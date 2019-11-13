@@ -31,15 +31,11 @@ spec:
           privileged: true
 ```{{copy}}
 
-We are going to apply this deployment into production with:
+We are going to take the same steps to apply this new deployment into production with:
 
-1. create the deployment.yaml tab:
+1. `vi deploymentV2.yaml`{{execute}}
 
-`vi deploymentV2.yaml`{{execute}}
-
-2. and apply it to your deployment with: 
-
-`kubectl apply -f deploymentV2.yaml`{{execute}}
+2. and `kubectl apply -f deploymentV2.yaml`{{execute}}
 
 As PSP is not activated yet at our cluster, our deployment will be created smoothly and without complaints (remember that we are still simulating PSP effects on our cluster!). But, here comes the key, the simulation at Sysdig will output an event letting us now that this deployment is conflicting with our defined PSP. 
 

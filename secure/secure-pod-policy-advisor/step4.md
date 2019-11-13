@@ -33,15 +33,15 @@ Click on `Deployment YAML` and upload your *Deployment.yaml* you've just created
 
 Once it has been uploaded, click on `Generate PSP` and you'll have the file prepared.
 
-But wait. You don't have to apply it yet. With PSP Advisor you can just simulate it to check everything will behave as expected when applying the PSP. In other words, this function allows you to evaluate which output/errors your cluster will return to you if you would ever applied this PSP to your cluster.
+But wait. You don't have to apply it yet. With PSP Advisor you can just simulate it to check everything will behave as expected when applying the PSP. In other words, this function allows you to evaluate which output/errors your cluster will return to you if you would have ever applied this PSP to your cluster.
 
 Click on `start simulation` at the top right corner.
 
 Now, go back to the terminal tab and:
 
-1. create the deployment.yaml tab: `vi deploymentV1.yaml`{{execute}}
+1. create the deployment.yaml file with the contents at the top of this step: `vi deploymentV1.yaml`{{execute}}
 
-2. and apply it to your deployment with: `kubectl apply -f deploymentV1.yaml`{{execute}}
+2. save it and apply it to your deployment with: `kubectl apply -f deploymentV1.yaml`{{execute}}
 
 As we generated the least privileged PSP, it won't output any error. This PSP definition file is optimal and ready to be applied right into production!
 
