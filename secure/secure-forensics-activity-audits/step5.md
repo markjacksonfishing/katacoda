@@ -13,9 +13,9 @@ The second area to note is the time graph of activity.  This gives you a visual 
  - `kube exec` - View commands executed against the Kubernetes API
 
 
-Below the graph you see the actual commands that were initiated, categorized as `cmd`, `net` or `kube exec` as outlined above.  You will see here that someone spawned a **<<terminal shell in a container.>>**  
+Below the graph you see the actual commands that were initiated, categorized as `cmd`, `net` or `kube exec` as outlined above.  You will see here that someone spawned a **terminal shell in a container.**  
 
-Clicking on a specific command we can see more details on the command itself.  Click on **<<WHICH ONE>>**
+Clicking on a specific command we can see more details on the command itself.  Click on **WHICH ONE**
 
 time
 full command line
