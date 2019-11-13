@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Before we start we need a system to work on linked to your Sysdig account. We have set up a Kubernetes cluster just for you.
 
 On the right you can see the terminal of the `master` node, from which you can interact with the cluster using the `kubectl` tool, which is already configured.
@@ -30,7 +29,4 @@ If you have an existing account, then log in to the web UI, go to your profile S
 
 ![Agent key](/sysdig/courses/secure/secure-policy-editor/assets/image00.png)
 
-*Note:* There is a similar formatted token called 'Sysdig Secure API Token' on the 'User Profile' page which may cause confusion. Be sure to use the correct token in the 'Agent Installation' tab.  
-=======
-
->>>>>>> 9342cf48b538ff5276e250ce20d62c770c710884
+*Note:* There is a similar formatted token called 'Sysdig Secure API Token' on the 'User Profile' page which may cause confusion. Be sure to use the correct token in the 'Agent Installation' tab.

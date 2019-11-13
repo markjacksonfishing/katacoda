@@ -23,7 +23,15 @@ Installing Sysdig Agent
 -----------------------
 
 Once the tiller pod is running, we can deploy the Sysdig Agent in a few seconds, as it only takes a simple command:
-`helm install --name sysdig --set sysdig.accessKey=YOUR_OWN_ACCESS_KEY,sysdig.settings.tags="cluster:training" stable/sysdig`{{copy}}
+`
+helm install --name pablo-psp3 \
+    --set sysdig.accessKey=f9de92a3-1ad2-4a47-8689-e5bb6c1a2ba7 \
+    --set sysdig.settings.collector=ec2-54-85-248-70.compute-1.amazonaws.com \
+    --set sysdig.settings.collector_port=6443 \
+    --set sysdig.settings.ssl_verify_certificate=false \
+    --set sysdig.settings.ssl=true \
+    stable/sysdig
+`{{execute}}
 
 After copying the command, you can paste it into the terminal using the right button of your mouse.  Remember you have to use **your own access key**.
 
