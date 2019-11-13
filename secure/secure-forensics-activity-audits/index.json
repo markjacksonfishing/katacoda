@@ -10,7 +10,7 @@
             "master": [
                 { "file": "helm-account.yaml", "target": "~/" },
                 { "file": "manifests/*", "target": "~/manifests" },
-                { "file": "*.sh", "target": "~/" }
+                { "file": "*.sh", "target": "~/", "chmod": "+x" }
             ]
         },
         "intro": {
