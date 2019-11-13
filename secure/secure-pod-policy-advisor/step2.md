@@ -30,7 +30,7 @@ helm install --name sysdig-agent-katacoda \
     --set sysdig.settings.collector_port=6443 \
     --set sysdig.settings.ssl_verify_certificate=false \
     --set sysdig.settings.ssl=true \
-    --set sysdig.settings.tags="cluster:training,location:universe" \
+    --set sysdig.settings.tags="cluster:training\,location:universe" \
     stable/sysdig
 `{{execute}}
 
@@ -46,4 +46,4 @@ Creating the containers may take a little time. Check that all the containers ar
 
 `kubectl get pods -w`{{execute}}
 
-Creating the containers may take a little time. Check that all pods have STATUS 'Running' and READY '1/1' before continuing. Once on desided state, press Ctrl+C to stop the watch.
+Creating the containers may take a little time. Check that all pods have STATUS 'Running' and READY '1/1' before continuing. Once on desired state, press <kbd>Ctrl</kbd>+<kbd>C</kbd> to stop the watch.
