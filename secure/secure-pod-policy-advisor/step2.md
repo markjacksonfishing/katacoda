@@ -30,7 +30,7 @@ helm install --name sysdig-agent-katacoda \
     --set sysdig.settings.collector_port=6443 \
     --set sysdig.settings.ssl_verify_certificate=false \
     --set sysdig.settings.ssl=true \
-    --set sysdig.settings.tags="cluster:training,location:universe"
+    --set sysdig.settings.tags="cluster:training,location:universe" \
     stable/sysdig
 `{{execute}}
 
