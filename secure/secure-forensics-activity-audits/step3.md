@@ -13,7 +13,7 @@ NWNhMWFiMWUtZDNhZC1iZWVmLWRlYTEtZGViYTdhYjFlZDBj
 `cd` into the `manifests` directory
 
 ```
-cd manifests
+$ cd manifests
 ```
 
 Now edit the file `sysdig-secret.yaml` and replace the existing key with your base64 encoded key
