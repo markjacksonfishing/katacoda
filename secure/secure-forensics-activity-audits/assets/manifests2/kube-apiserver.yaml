@@ -15,7 +15,7 @@ spec:
     - --allow-privileged=true
     - --authorization-mode=Node,RBAC
     - --client-ca-file=/etc/kubernetes/pki/ca.crt
-    - --enable-admission-plugins=NodeRestriction
+    - --enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,ResourceQuota,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,PodSecurityPolicy
     - --enable-bootstrap-token-auth=true
     - --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
     - --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt
@@ -38,9 +38,10 @@ spec:
     - --tls-cert-file=/etc/kubernetes/pki/apiserver.crt
     - --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     - --audit-policy-file=/audit/audit-policy.yaml
+    - --audit-webhook-config-file=/audit/audit-webhook.yaml
     - --audit-log-path=/audit/log
-    - --audit-dynamic-configuration
-    - --runtime-config=auditregistration.k8s.io/v1alpha1=true
+    - --audit-dynamic-configuration=true
+    - --runtime-config=auditregistration.k8s.io/v1alpha1
     - --feature-gates=DynamicAuditing=true
     image: k8s.gcr.io/kube-apiserver:v1.14.0
     imagePullPolicy: IfNotPresent
