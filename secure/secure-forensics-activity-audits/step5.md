@@ -1,8 +1,3 @@
-<jf>
-## To Do
-Cover common execs by user (e.g. find how many times `curl` has been executed on a container or across all deployments). Play with filters e.g. users, click an item on right pane and see how it appears in the search field, etc,
-
-</jf>
 
 Let's now play the sysadmin role, and investigate the incident.  Open the Sysdig Secure window on the right pane, and click on *Activity Audit* on the left menu.
 
@@ -16,7 +11,7 @@ The second area to note is the time graph of activity.  This gives you a visual 
 
 Below the graph you see the actual commands that were initiated, categorized as `cmd`, `net` or `kube exec` as outlined above.  You will see here that someone spawned a **terminal shell in a container.**  
 
-*!!NEED TO FINALISE THESE STEPS & GRAB SCREENSHOTS ONCE IN PRODUCTION!!*
+*!!NEED TO FINALSE THESE STEPS ONCE IN PRODUCTION!!*
 
 Clicking on a specific command we can see more details on the command itself.  Click on !!TBS - a 'cmd' entry.  On the right pane you will now see more information on the executed command, namely
 
