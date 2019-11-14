@@ -3,4 +3,15 @@ Considering the container density and turnover rate for any non-trivial deployme
 
 Sysdig kernel-level instrumentation generates runtime profiles that are much more detailed and accurate than the average manual rule. This translates into more strict runtime controls, where everything that is not explicitly allowed will be flagged.
 
-Generated profiles are divided into different runtime sections (network, filesystem, etc). Sysdig allows the user to cherry-pick the sections of the profile that look more relevant and automatically generate a runtime policy that imports them.
+!!Screenshot!!
+
+Sysdig uses its syscall-level understanding to gain deep insights into container runtime behavior such as:
+
+ - Spawned process – which process and binaries are running?
+ - Network traffic – what TCP/UDP ports does this application communicate on?
+ - File system activity – what files are being read? And written?
+ - System calls – what system calls are executed?
+
+Sysdig allows the user to cherry-pick the sections of the profile that look more relevant and automatically generate a runtime policy that imports them.
+
+Lets see this feature in action.
