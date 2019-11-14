@@ -2,9 +2,9 @@
     "pathwayTitle": "Sysdig Secure",
     "title": "Activity Audit Forensics",
     "description": "Track and monitor systema and user level activity in your Kubernetes environment.",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "icon": "fa-kubernetes",
-    "time": "30 minutes",
+    "time": "15 minutes",
     "details": {
         "assets": {
             "master": [
