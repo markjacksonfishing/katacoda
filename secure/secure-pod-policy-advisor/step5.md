@@ -2,13 +2,13 @@ Now, let's test an scenario in which we can appreciate the power of the simulati
 
 Suppose that your team generated the same PSP definition we automatically generated in last step. But, your deployment now needs higher permissions (for example, running as privileged).
 
-This is the new deployment.yaml:
+This is the new deploymentV2.yaml:
 
 ```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deploymentV2
   namespace: default
   labels:
     app: nginx

@@ -22,15 +22,23 @@ We can view the current status of our cluster using the command `kubectl get pod
 Installing Sysdig Agent
 -----------------------
 
+Let's store our key with:
+`
+MY_KEY=<insert_your_ACCESS_KEY_here>
+`{{copy}}
+
+and execute it with your *access key*.
+
 Once the tiller pod is running, we can deploy the Sysdig Agent in a few seconds, as it only takes a simple command:
 `
 helm install --name sysdig-agent-katacoda \
-    --set sysdig.accessKey=f9de92a3-1ad2-4a47-8689-e5bb6c1a2ba7 \
-    --set sysdig.settings.collector=ec2-54-85-248-70.compute-1.amazonaws.com \
+    --set sysdig.accessKey=$MY_KEY \
     --set sysdig.settings.collector_port=6443 \
-    --set sysdig.settings.ssl_verify_certificate=false \
+    --set sysdig.settings.ssl_verify_certificate=true \
     --set sysdig.settings.ssl=true \
-    --set sysdig.settings.tags="cluster:training\,location:universe" \
+    --set sysdig.settings.tags="cluster:trainingKatacoda\,location:universe" \
+    --set sysdig.settings.secure.enabled="true" \
+    --set image.tag=0.93.0 \
     stable/sysdig
 `{{execute}}
 
