@@ -1,19 +1,15 @@
 
-Let's simulate an attack on our cluster by logging into it and running some nefarious commands.  In this example we will use `kubectl exec` to install some system updates, install a package, then download a `tar` file, explode it. This routine may be typical of a malware or user instigated attack.
+Let's simulate an attack on our cluster by logging into it and running some nefarious commands.  In this example we will use `kubectl exec` to get a shell into the container, and from there we will install some system updates, install a package, then download a `tar` file, explode it. This routine may be typical of a malware or user instigated attack.
 
-First let's create a deployment.
+First let's create a deployment.  To do so we can simply run the script `create.sh`
 
 ```
-$ kubectl create ns nginx
+master $ ./create.sh
 namespace/nginx created
-
-$ kubectl apply -f nginx-deployment-foo.yaml -n nginx
 deployment.apps/nginx-deployment created
-
-$ kubectl get pods -n nginx
-NAME                               READY   STATUS              RESTARTS   AGE
-nginx-deployment-5d57c58f5-4zdj4   0/1     ContainerCreating   0          13s
 ```
+
+If you wish you can `cat create.sh` to see exactly what the script does, but it simply instantiates  YAML file for an `nginx` deployment, creates the deployment and then removes the YAML file.
 
 Verify the Pod has STATUS 'Running' and READY '1/1' before continuing.
 

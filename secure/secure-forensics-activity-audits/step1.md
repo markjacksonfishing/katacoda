@@ -11,6 +11,8 @@ This allows SOC teams to spot an abnormal kubectl exec into a pod in Kubernetes,
  - network activity (src, dst, sport, dport, no payload)
  - `kubectl exec` requests to the Kubernetes API
 
+ ![Activity Audits UI](/sysdig/courses/secure/secure-policy-editor/assets/image01.png)
+
 SOC teams can search and filter this data for alert triage -- to determine the cause of the anomaly -- and for incident response.
 
 For Example
