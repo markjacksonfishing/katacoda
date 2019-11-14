@@ -34,16 +34,10 @@ The text in blue on this screen indicate these lines may be included in a filter
 
 ![Add to filter](/sysdig/courses/secure/secure-forensics-activity-audits/assets/image05.png)
 
-**Note** Clicking on the '-' adds  `comm!="curl"` added to the Filters box. That is to say, it does not remove `curl` from the filters, but the search is for entries that specifically *excludes* `curl`.
+**Note** Clicking on the '-' adds  `comm!="curl"` to the Filters box. That is to say, it does not remove `curl` from the filters, but the search is for entries that specifically *excludes* `curl`.
 
-<<New Screenshot
 ![Shell event](/sysdig/courses/secure/secure-lab08/assets/shell_event.png)
 
 Similarily, if you select `kube exec` from the 'Datasource' search box, we can see details of a command executed against the Kubernetes cluster (as opposed within an actual container)
 
-
 To look at what commands were executed, click on the `View commands` button.
-
-
-<<New Screenshot
-![Commands Audit](/sysdig/courses/secure/secure-lab08/assets/commands_audit.png)
