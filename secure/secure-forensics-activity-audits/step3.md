@@ -9,20 +9,6 @@ Before you install the Sysdig Agent you will need to get your Access Key from th
 $ cd manifests
 ```
 
-Now edit the file `sysdig-secret.yaml` and replace the existing key with your base64 encoded key
-
-```
-apiVersion: v1
-kind: Secret
-metadata:
-  name: sysdig-agent
-  labels:
-    app: sysdig-agent
-type: Opaque
-data:
-  access-key: NWNhMWFiMWUtZDNhZC1iZWVmLWRlYTEtZGViYTdhYjFlZDBj
-```
-
 Now run the script `sysdig-agent.sh`, and enter your Access Key when prompted
 
 ```
