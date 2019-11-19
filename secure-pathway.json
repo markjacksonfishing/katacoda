@@ -3,7 +3,7 @@
     "description": "Learn the basics of Sysdig Secure",
     "courses": [
         {
-            "course_id": "secure-lab08",
+            "course_id": "secure-runtime-security",
             "title": "Runtime security",
             "description": "Use Sysdig Secure to detect suspicious behaviour in containers"
         },
@@ -31,7 +31,7 @@
             "private": true
         },
         {
-            "course_id": "secure-lab07",
+            "course_id": "secure-image-scanning-and-ci-cd",
             "title": "Image Scanning and CI/CD Pipeline",
             "description": "We will deploy Jenkins, set up the Sysdig Secure plugin integration, and execute some image build and scan in a pipeline."
         }
