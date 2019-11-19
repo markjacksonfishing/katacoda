@@ -15,11 +15,13 @@ In this screen you can switch on/off any of the define policies, search among al
 Before we continue, it is important to make explicit the distinction between Policies and Rules within Sysdig Secure.
 
 Policies
-===
+--------
+
 Policies are defined by the set of `rules` they comprise and the `actions` to execute when one or some of the rules are triggered. For example, a policy can have rules to detect "secrets exposed in a container", and take actions like "kill the container" and "notify the dev team". You can also define the `scope` where the policy will be applied (host, container or customized).
 
 Rules
-===
+-----
+
 In a general way, a rule is any type of activity that an enterprise would want to detect in its environment. They can be defined from various predefined types, but they all share being handled in a white/black-list format. For example, you could define a rule to detect "secrets exposed in a container", as previously exposed.
 
 This types are the following:
