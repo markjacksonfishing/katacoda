@@ -1,6 +1,6 @@
 Log into Sysdig Secure and go to the `Policies > Runtime Policies` section.
 
-![Menu](/sysdig/courses/secure/secure-lab08/assets/menu.png)
+![Menu](/sysdig/courses/secure/secure-runtime-security/assets/menu.png)
 
 Sysdig Secure ships with hundreds of default policies built around the Falco Open Source project.
 These policies come from our threat research team, the Center for Internet Security (CIS) best practices, etc.
@@ -8,7 +8,7 @@ These policies come from our threat research team, the Center for Internet Secur
 There are over 60 areas you may want to control within your container environment that are looked for out of the box, including if someone modifies a binary directory (whether in the host or in a container),
 if there is a file opened by a privileged container, and many others.
 
-![Default policies](/sysdig/courses/secure/secure-lab08/assets/default_policies.png)
+![Default policies](/sysdig/courses/secure/secure-runtime-security/assets/default_policies.png)
 
 In this screen you can switch on/off any of the define policies, search among all of them and filter by their criticality level.
 
@@ -24,7 +24,7 @@ In a general way, a rule is any type of activity that an enterprise would want t
 
 This types are the following:
 
-![Rule types](/sysdig/courses/secure/secure-lab08/assets/rule_types.png)
+![Rule types](/sysdig/courses/secure/secure-runtime-security/assets/rule_types.png)
 
 With Falco you can create rules for all those types. Its powerful nature allows you to define highly tailored rules for your deployment, or even export others from community.
 
@@ -36,7 +36,7 @@ For example, you can define a syscall-rule blacklisting the "open" syscall (rule
 
 Now will see how to define a new policy. Click on `Add Policy` on the right top of your screen.
 
-![Add policy](/sysdig/courses/secure/secure-lab08/assets/add_policy.png)
+![Add policy](/sysdig/courses/secure/secure-runtime-security/assets/add_policy.png)
 
 By default, scope is targeted to "everywhere", but you can adjust it to the resources of your choice.
 After this, you can export any of the existent rules from Library or create new rules.
@@ -51,7 +51,7 @@ this will give you full visibility into everything that occurred within that win
 
 Remember to click `Save`.
 
-![Shell in container policy](/sysdig/courses/secure/secure-lab08/assets/shell_in_container_policy.png)
+![Shell in container policy](/sysdig/courses/secure/secure-runtime-security/assets/shell_in_container_policy.png)
 
 NOTE: The `Capture` feature is really important from a Kubernetes perspective because you have no control over
 whether or not that pod is still running.  By the time someone from the Security team looks into that incident,
