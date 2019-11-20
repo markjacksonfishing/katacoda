@@ -22,7 +22,7 @@ Rules
 
 In a general way, a rule is any type of activity that an enterprise would want to detect in its environment. They can be defined from various predefined types, but they all share being handled in a white/black-list format. For example, you could define a rule to detect "secrets exposed in a container", as previously exposed.
 
-This types are the following:
+This types are the following (you will be able to choose one of them when creating a new rule):
 
 ![Rule types](/sysdig/courses/secure/secure-runtime-security/assets/rule_types.png)
 
@@ -47,7 +47,7 @@ For example when an certain event occurs, a container could be stopped or paused
 Let's get into practice. Fill in required fields (name, description) and click on `Import from Library` to import the rule `Terminal shell in container` to your policy. One of the possible actions is to start a Sysdig `Capture`, which would dump all the activity before, during, and after any event.
 
 Customize the policy and specify to collect 30 seconds before the event until 20 seconds after it -
-this will give you full visibility into everything that occurred within that window. We also selected to be notified in Slack (the channels where you and your team can be notified are easily configured at your Sysdig settings).
+this will give you full visibility into everything that occurred within that window. We also selected to be notified in Slack (the channels where you and your team can be notified are easily configured at your Sysdig settings). You don't need to select this if you haven't configured it yet.
 
 Remember to click `Save`.
 
