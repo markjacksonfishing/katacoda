@@ -1,3 +1,5 @@
+![Menu](/sysdig/courses/secure/secure-runtime-security/assets/menu.png =100x100)
+
 Let's now play the sysadmin role, and investigate the incident.
 In the `Policy Events` pane of Sysdig Secure we can notice that someone spawned a terminal shell in a container.  Clicking on it you can find more details about the event, including all the Kubernetes labels.
 
