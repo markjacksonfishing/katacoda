@@ -3,21 +3,32 @@ In the `Policy Events` pane of Sysdig Secure we can notice that someone spawned 
 
 ![Shell event](/sysdig/courses/secure/secure-runtime-security/assets/shell_event.png)
 
-To look at what commands were executed, click on the `View commands` button.
+Activity Audit
+--------------
+
+To look at what commands were executed, click on the `Activity Audit` button. Here you'll be able to see in a cronological view the set of commands that we executed on the machine. You can learn more about `Audit Forensics` in an [specific classroom](https://academy.sysdig.com/series/sysdig-secure/activity-audit).
 
 ![Commands Audit](/sysdig/courses/secure/secure-runtime-security/assets/commands_audit.png)
 
-On the left sidebar you can click `Captures`, and you will find the capture for this event.  Click on the the shovel icon
-to open the scap file for that event with Sysdig Inspect.
+Captures
+--------
+
+On the left sidebar you can click `Captures` (or from `View Captures` on the Policy Event Details), and you will find the capture for this event. Click on the the shovel icon to open the scap file for that event with Sysdig Inspect. It will open a new window on your browser.
 
 ![Captures pane](/sysdig/courses/secure/secure-runtime-security/assets/captures_pane.png)
 
-This is similar to the workflow you would do with a pcap file in Wireshark, but this is a scap file and the program is Sysdig Inspector.
-The first thing you would want to do is to set context.
-You can click on the `Sysdig Secure Notifications` tile under `General` to see
-when the event occurred at the bottom of the screen.
+Sysdig Inspect
+--------------
 
-Then you can click some of the tiles, such as `Modified Files` under `File`, `Net Bytes In` under `Network`, and `Executed Commands` in the `Security` column to overlay file activity, network activity and the executed commands.
+This is similar to the workflow you would do with a pcap file in Wireshark, but this is a scap file and the program is Sysdig Inspector.
+
+The first thing you would want to do is to set context. Click on:
+- `Sysdig Secure Notifications` tile under `General`
+- `Modified Files` under `File`
+- `Net Bytes In` under `Network`
+- and `Executed Commands` in the `Security` 
+
+With all of them we'll see at the bottom column  all the overlayed file activity, network activity and the executed commands.
 
 The capture has everything that happened 30 seconds before the event until 20 seconds after it.
 You should see spikes in the graph, a bit after the event, when the commands were executed.

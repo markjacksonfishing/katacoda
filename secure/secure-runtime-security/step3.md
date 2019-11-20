@@ -44,14 +44,14 @@ After this, you can export any of the existent rules from Library or create new 
 Once you have decided what you want to detect, Sysdig can also give you the ability to take action.
 For example when an certain event occurs, a container could be stopped or paused. You can also `Capture` a range of time before and after the event in order to do forensics after its occurence. We will be testing this feature now.
 
-Let's get into practice. Fill in required fields (name, description) and click on `Import from Library` to import the rule `Terminal shell in container` to your policy. One of the possible actions is to start a Sysdig `Capture`, which would dump all the activity before, during, and after any event.
+Let's get into practice. Fill in required fields (name, description) and click on `Import from Library` to import the rule `Terminal shell in container` to your policy. One of the possible actions is to start a Sysdig `Capture`, which would dump all the activity before, during, and after any event. For this example, we'll also set `Scope` to _containers only_.
 
 Customize the policy and specify to collect 30 seconds before the event until 20 seconds after it -
 this will give you full visibility into everything that occurred within that window. We also selected to be notified in Slack (the channels where you and your team can be notified are easily configured at your Sysdig settings). You don't need to select this if you haven't configured it yet.
 
-Remember to click `Save`.
-
 ![Shell in container policy](/sysdig/courses/secure/secure-runtime-security/assets/shell_in_container_policy.png)
+
+Remember to click `Save`. You'll see your brand new policy with the rest of them. At the right you'll see three icons allowing you to edit, duplicate or delete any of the existing policies.
 
 NOTE: The `Capture` feature is really important from a Kubernetes perspective because you have no control over
 whether or not that pod is still running.  By the time someone from the Security team looks into that incident,
