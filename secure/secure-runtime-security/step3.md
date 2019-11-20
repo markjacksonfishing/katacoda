@@ -1,6 +1,6 @@
 Log into Sysdig Secure and go to the `Policies > Runtime Policies` section.
 
-![Menu](/sysdig/courses/secure/secure-runtime-security/assets/menu.png =200x)
+![Menu](/sysdig/courses/secure/secure-runtime-security/assets/menu.png)
 
 Sysdig Secure ships with hundreds of default policies built around the Falco Open Source project.
 These policies come from our threat research team, the Center for Internet Security (CIS) best practices, etc.
