@@ -36,7 +36,10 @@
                 "title": "Investigate the incident",
                 "text": "step5.md"
             }
-        ]
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
     },
     "environment": {
         "showdashboard": true,
