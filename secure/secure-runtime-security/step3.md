@@ -1,14 +1,12 @@
 Log into Sysdig Secure and go to the `Policies > Runtime Policies` section.
 
-![Menu](/sysdig/courses/secure/secure-runtime-security/assets/menu.png)
+![Menu](/sysdig/courses/secure/secure-runtime-security/assets/menu.png =200x)
 
 Sysdig Secure ships with hundreds of default policies built around the Falco Open Source project.
 These policies come from our threat research team, the Center for Internet Security (CIS) best practices, etc.
 
 There are over 60 areas you may want to control within your container environment that are looked for out of the box, including if someone modifies a binary directory (whether in the host or in a container),
 if there is a file opened by a privileged container, and many others.
-
-![Default policies](/sysdig/courses/secure/secure-runtime-security/assets/default_policies.png)
 
 In this screen you can switch on/off any of the define policies, search among all of them and filter by their criticality level.
 
@@ -38,16 +36,16 @@ For example, you can define a syscall-rule blacklisting the "open" syscall (rule
 
 Now will see how to define a new policy. Click on `Add Policy` on the right top of your screen.
 
-![Add policy](/sysdig/courses/secure/secure-runtime-security/assets/add_policy.png)
+![Default policies](/sysdig/courses/secure/secure-runtime-security/assets/default_policies.png)
 
 By default, scope is targeted to "everywhere", but you can adjust it to the resources of your choice.
 After this, you can export any of the existent rules from Library or create new rules.
 
 Once you have decided what you want to detect, Sysdig can also give you the ability to take action.
-For example when an certain event occurs, a container could be stopped or paused. You can also `Capture` a range of time before and after the event in order to do forensics after its occurence. 
+For example when an certain event occurs, a container could be stopped or paused. You can also `Capture` a range of time before and after the event in order to do forensics after its occurence. We will be testing this feature now.
 
-Let's get into practice. Fill in required fields (name, description) and import the rule `Terminal shell in container` to your policy.
-One of the possible actions is to start a Sysdig capture, which would dump all the activity before, during, and after any event.
+Let's get into practice. Fill in required fields (name, description) and click on `Import from Library` to import the rule `Terminal shell in container` to your policy. One of the possible actions is to start a Sysdig `Capture`, which would dump all the activity before, during, and after any event.
+
 Customize the policy and specify to collect 30 seconds before the event until 20 seconds after it -
 this will give you full visibility into everything that occurred within that window. We also selected to be notified in Slack (the channels where you and your team can be notified are easily configured at your Sysdig settings).
 
