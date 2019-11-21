@@ -6,4 +6,4 @@ The pipelines will be executed in the following order:
 4. Triggers the execution of the Sysdig Plugin.
 5. Sysdig executes the scan and generates a report.
 
-![Scenario](/sysdig/courses/secure/secure-lab07/assets/image02a.png)
+![Scenario](/sysdig/courses/secure/secure-image-scanning-and-ci-cd/assets/image02a.png)

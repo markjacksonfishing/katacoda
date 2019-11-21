@@ -2,9 +2,9 @@ Sysdig Secure allows you to configure different policies for image scanning, so 
 
 In Sysdig Secure, go to **Image Scanning** → **Scanning Policies** →  **Policies** → **Default Policy**.
 
-![Scanning Policies](/sysdig/courses/secure/secure-lab07/assets/image15a.png)
+![Scanning Policies](/sysdig/courses/secure/secure-image-scanning-and-ci-cd/assets/image15a.png)
 
-![Policies](/sysdig/courses/secure/secure-lab07/assets/image15b.png)
+![Policies](/sysdig/courses/secure/secure-image-scanning-and-ci-cd/assets/image15b.png)
 
 For this Lab, Sysdig Secure must be configured with the following minimum settings:
 
@@ -15,7 +15,7 @@ Dockerfile      | Instruction   | HEALTHCHECK not exists                        
 Vulnerabilities | Package       | Package type: all; Severity comparison: =; Severity: medium | Warn
 Vulnerabilities | Package       | Package type: all; Severity comparison: >=; Severity: high  | Stop
 
-![Default Policy](/sysdig/courses/secure/secure-lab07/assets/image15c.png)
+![Default Policy](/sysdig/courses/secure/secure-image-scanning-and-ci-cd/assets/image15c.png)
 
 Let's explain this settings:
 
