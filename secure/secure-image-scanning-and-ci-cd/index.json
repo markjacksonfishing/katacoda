@@ -3,7 +3,7 @@
     "description": "We will deploy Jenkins, set up the Sysdig Secure plugin integration, and execute some image build and scan in a pipeline.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
-    "time": "30 minutes",
+    "time": "40 minutes",
     "details": {
         "assets": {
             "host01": [{ "file": "*.sh", "target": "~/", "chmod": "+x" }, { "file": "*.yaml", "target": "~/" }]
@@ -59,7 +59,7 @@
     "environment": {
         "uilayout": "terminal-iframe",
         "showdashboard": true,
-        "dashboards": [{ "name": "Sysdig", "href": "https://app.sysdigcloud.com" },{ "name": "Jenkins", "port": 31337 }]
+        "dashboards": [{ "name": "Sysdig", "href": "https://secure.sysdig.com/" },{ "name": "Jenkins", "port": 31337 }]
     },
     "backend": {
         "imageid": "kubernetes-cluster-running"
