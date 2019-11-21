@@ -1,3 +1,3 @@
-In case one image scan reports that the image contains vulnerabilities, or the policy constraints are not met, we can create an alert to inform about the issue.
+In case one image scan reports that the image contains vulnerabilities, or the policy constraints are not met, we can create an alert to inform about the issue. You can set this functionallity at **Policies > Runtime Policies > Add Policy**. To find more about policies, check other {classrooms](https://www.katacoda.com/sysdig/courses/secure).
 
 ![New Alert](/sysdig/courses/secure/secure-image-scanning-and-ci-cd/assets/image26.png)
