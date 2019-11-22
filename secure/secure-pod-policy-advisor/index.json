@@ -1,5 +1,6 @@
 {
     "pathwayTitle": "Sysdig Secure",
+    "private": true,
     "title": "Sysdig Pod Security Policy Advisor",
     "description": "The easy way to generate and simulate PSPs for your deployments.",
     "difficulty": "easy",
@@ -9,8 +10,8 @@
         "assets": {
             "master": [
                 { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "manifests/*", "target": "~/manifests" },
-                { "file": "manifests/*.sh", "target": "~/manifests", "chmod": "+x" }
+                { "file": "*.sh", "target": "~/", "chmod": "+x" },
+                { "file": "assets/manifests/*", "target": "~/" }
             ]
         },
         "intro": {
