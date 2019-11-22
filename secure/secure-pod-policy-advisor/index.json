@@ -9,9 +9,8 @@
     "details": {
         "assets": {
             "master": [
-                { "file": "helm-account.yaml", "target": "~/" },
-                { "file": "*.sh", "target": "~/", "chmod": "+x" },
-                { "file": "assets/manifests/*", "target": "~/" }
+                { "file": "manifests/*", "target": "~/manifests" },
+                { "file": "manifests/*.sh", "target": "~/manifests", "chmod": "+x" }
             ]
         },
         "intro": {
