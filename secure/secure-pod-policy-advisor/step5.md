@@ -37,10 +37,12 @@ We are going to take the same steps to apply this new deployment into production
 
 2. and `kubectl apply -f deploymentV2.yaml`{{execute}}
 
+This last deploymentV2 is exactly the same as V1, but it states that it has to be runned as **privileged**.
+
 As PSP is not activated yet at our cluster, our deployment will be created smoothly and without complaints (remember that we are still simulating PSP effects on our cluster!). But, here comes the key, the simulation at Sysdig will output an event letting us now that this deployment is conflicting with our defined PSP. 
 
 ![Event](/sysdig/courses/secure/secure-pod-policy-advisor/assets/image2.png)
 
-In a real production environment, this would have been problems for us (services not working, pods not being created, etc.) but here we have taken a step ahead preventing this to happen. 
+In a real production environment, this would have been problems for us (services not working, pods not being created, etc.) but here we have taken a step ahead preventing this to happen. Sysdig warns you before something bad happens.
 
 With this information, we'll be able to edit our deployment (or maybe the PSP) in order to make them work together. Or, as we show in the previous step, we can just generate the optimal PSP definition for our cluster.
