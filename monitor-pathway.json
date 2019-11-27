@@ -1,5 +1,6 @@
 {
     "title": "Sysdig Monitor",
+    "private": true,
     "description": "Learn the basics of Sysdig Monitor",
     "courses": [
         {

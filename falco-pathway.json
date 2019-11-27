@@ -1,5 +1,6 @@
 {
     "title": "Sysdig Falco",
+    "private": true,
     "description": "Learn the basics of Sysdig Falco",
     "courses": [
         {
