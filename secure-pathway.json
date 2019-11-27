@@ -1,5 +1,6 @@
 {
     "title": "Sysdig Secure",
+    "private": true,
     "description": "Learn the basics of Sysdig Secure",
     "courses": [
         {
