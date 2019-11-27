@@ -11,4 +11,4 @@ An Admission Controller is a plugin that intercepts requests to the Kubernetes A
 
 There are a variety of admission controller in K8s ranging from those to deny `exec` be run on privileged containers to automatically attaching region or zone labels to PersistentVolumes.
 
-**Note:** Once the PSP admission controller is enabled in your cluster, every pod is required to be approved by one PSP, this means that you cannot enable PSP constrainsts for just one particular set of pods. It's a cluster-wide configuration and you will need to design a cluster-wide set of PSPs with the different access levels and permissions.
+**Note:** Once the PSP admission controller is enabled in your cluster, every pod is required to be approved by one PSP, this means that you cannot enable PSP constraints for just one particular set of pods. It's a cluster-wide configuration and you will need to design a cluster-wide set of PSPs with the different access levels and permissions.

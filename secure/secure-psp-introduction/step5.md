@@ -15,7 +15,7 @@ spec:
 EOF
 ```{{execute}}
 
-This time the error indicate that the creation of privileged containers is explicitly forbidden.
+This time the error indicates that the creation of privileged containers is explicitly forbidden.
 
 `Error from server (Forbidden): error when creating "STDIN": pods "privileged02" is forbidden: unable to validate against any pod security policy: [spec.containers[0].securityContext.privileged: Invalid value: true: Privileged containers are not allowed]`
 
@@ -33,7 +33,7 @@ and set `privileged: false` to `privileged: true`.
 We need to re-apply the policy with:`example-psp.yaml`
 `kubectl -n psp-example apply -f example-psp.yaml`{{execute}}
 
-If we try again to create a privileged container with the next order:
+Now if we try again to create a privileged container, we'll see that it succeeds:
 
 ```
 kubectl -n psp-example --as=system:serviceaccount:psp-example:fake-user create -f- <<EOF
@@ -49,5 +49,6 @@ spec:
         privileged: true
 EOF
 ```{{execute}}
-
-We'll see that it succeded: `pod/privileged03 created`
+```
+pod/privileged03 created
+```
