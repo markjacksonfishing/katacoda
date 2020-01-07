@@ -26,9 +26,7 @@ Modifiying an existing PSP and reapplying it
 
 We can enable again privileged containers at our cluster to check that this change of behaviour was produced by the PSP.
 
-Let's edit `example-psp.yaml`{{open}}:
-
-and set `privileged: false` to `privileged: true`.
+Let's edit `example-psp.yaml`{{open}}, and set `privileged: false` to `privileged: true`.
 
 We need to re-apply the policy with:`example-psp.yaml`
 `kubectl -n psp-example apply -f example-psp.yaml`{{execute}}
