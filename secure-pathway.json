@@ -35,6 +35,11 @@
             "course_id": "secure-image-scanning-and-ci-cd",
             "title": "Image Scanning and CI/CD Pipeline",
             "description": "We will deploy Jenkins, set up the Sysdig Secure plugin integration, and execute some image build and scan in a pipeline."
+        },
+        {
+            "course_id": "secure-image-scanning-policies-and-assignments",
+            "title": "Image Scanning Policies and Assignments",
+            "description": "Image Scanning Policies and Assignments."
         }
     ]
 }

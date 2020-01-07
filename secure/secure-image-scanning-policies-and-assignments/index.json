@@ -1,0 +1,77 @@
+{
+    "title": "Lab 06: Securing your Images",
+    "description": "Learn how to scan an image against a customizable policy",
+    "difficulty": "easy",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "*.sh", "target": "~/", "chmod": "+x" },
+                { "file": "*.yaml", "target": "~/" },
+                { "file": "manifests/*.yaml", "target": "~/manifests/" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "code": "foreground.sh",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Installing the Sysdig Agent",
+                "text": "step00.md"
+            },
+            {
+                "title": "Login to Secure",
+                "text": "step01.md"
+            },
+            {
+                "title": "Deploy the Demo Application",
+                "text": "step02.md"
+            },
+            {
+                "title": "Assign the NGINX application a policy",
+                "text": "step03.md"
+            },
+            {
+                "title": "Change the policy evaluation severity",
+                "text": "step04.md"
+            },
+            {
+                "title": "Scan all Images",
+                "text": "step05.md"
+            },
+            {
+                "title": "Configure Groupings",
+                "text": "step06.md"
+            },
+            {
+                "title": "Scan Now!",
+                "text": "step07.md"
+            },
+            {
+                "title": "Review the Results",
+                "text": "step08.md"
+            },
+            {
+                "title": "Patch the Image",
+                "text": "step09.md"
+            },
+            {
+                "title": "Rescan and Review",
+                "text": "step10.md"
+            }
+        ]
+    },
+    "environment": {
+        "showdashboard": true,
+        "dashboards": [{ "name": "Sysdig", "href": "https://secure.sysdig.com" }],
+        "uilayout": "terminal-iframe",
+        "uimessage1": "\u001b[32mYou are logged into the master node of your Kubernetes cluster.\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}
