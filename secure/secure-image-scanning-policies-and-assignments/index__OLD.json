@@ -32,12 +32,12 @@
                 "text": "step02.md"
             },
             {
-                  "title": "Log into Sysdig Secure",
-                  "text": "step03.md"
+                  "title": "Setup Lab Environment",
+                  "text": "__step00.md"
               },
             {
-                "title": "Configure a Registry to Scan",
-                "text": "step04.md"
+                "title": "Login to Secure",
+                "text": "__step01.md"
             },
             {
                 "title": "Deploy the Demo Application",
@@ -50,6 +50,30 @@
             {
                 "title": "Change the policy evaluation severity",
                 "text": "step04.md"
+            },
+            {
+                "title": "Scan all Images",
+                "text": "step05.md"
+            },
+            {
+                "title": "Configure Groupings",
+                "text": "step06.md"
+            },
+            {
+                "title": "Scan Now!",
+                "text": "step07.md"
+            },
+            {
+                "title": "Review the Results",
+                "text": "step08.md"
+            },
+            {
+                "title": "Patch the Image",
+                "text": "step09.md"
+            },
+            {
+                "title": "Rescan and Review",
+                "text": "step10.md"
             }
         ]
     },
