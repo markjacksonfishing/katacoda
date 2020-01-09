@@ -25,4 +25,4 @@ Further, periodically scanning a container registry can help ensure any zero day
 
 Sysdig Secure continuously checks against a wide range of vulnerability databases, updating the Runtime scan results with any newly detected CVEs.
 
-For a list of vulnerability databases see ![here](https://docs.sysdig.com/en/image-scanning.html)
+For a list of vulnerability databases see [here](https://docs.sysdig.com/en/image-scanning.html)

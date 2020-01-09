@@ -1,3 +1,5 @@
+Sandbox - https://www.katacoda.com/sysdig/courses/secure/secure-image-scanning-policies-and-assignments
+
 helm install --name sysdig --set sysdig.accessKey=e093943f-cdbc-4d41-b714-f3f5b78b0367,sysdig.settings.tags="cluster:training\,location:europe" stable/sysdig
 
 # Public repository for scanning

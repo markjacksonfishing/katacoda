@@ -1,7 +1,7 @@
 The basic set up for image registry scanning is:
- 1. provide registry information where your images are stored,
- 1. trigger a scan, and
- 1. review the results.
+ 1. Provide registry information where your images are stored,
+ 1. Trigger a scan, and
+ 1. Review the results.
 
 Behind the scenes:
  1. Image contents are analyzed.
@@ -22,4 +22,6 @@ You also have the option to scan and analyze images locally, sending their infra
     - cut down on registry costs
     - simplify the build pipeline
 
-We shall explore the various aspects of Image Scanning by way of some hands-on exercises.  But first we must set up our lab environment.
+We shall explore the various aspects of Image Scanning by way of some hands-on exercises.  
+
+But first we must set up our lab environment.
