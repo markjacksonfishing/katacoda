@@ -1,27 +1,28 @@
-In order to follow this course, you will need a [Sysdig](http://sysdig.com/) Monitor account.
+The Image scanning feature of Sysdig Secure allows you to scan container images, both for known vulnerabilities (for example in os packages and 3rd party libraries) as well as configuration validation.   Configuration validation may include Dockerfile instructions, image contents, attributes, files perms, hashes, secrets, license violations etc.
 
-If you do not have have a Sysdig account, you can set one up by clicking [Not a customer? Try for free](https://sysdig.com/sign-up/) and following the instructions. Refer to the [Getting Up and Running with Sysdig](https://www.katacoda.com/sysdig-devel/courses/scvs/lab01) scenario for further details.
+Scans can be invoked at a number of points in the container lifecycle
+ - As part of a CI/CD pipeline during container development
+ - Against running containers in production or sandbox environments
+ - In a registry
 
-Click on the "Sysdig" tab and log in the Sysdig Monitor web UI. You can click the ![pop-out](/sysdig-devel/courses/scvs/lab06/assets/00_pop_out.png) icon to open this in a new tab in your browser.
+The analysis generates a detailed report of the image contents, including:
+ - Official OS packages
+ - Unofficial OS packages
+ - Configuration files
+ - Credentials files
+ - Localization modules and software-specific installers:
+    - Javascript with NPM
+    - Python PiP
+    - Ruby with GEM
+    - Java/JVM with .jar archives
+ - Image metadata and configuration attributes
 
-Alternatively you can point your browser at <https://secure.sysdig.com>.
+![Scanning Images](/sysdig/courses/secure/secure-image-scanning-policies-and-assignments/assets/scanning01.png)
 
-After logging in, go to your profile Settings, and in the `Agent Installation` tab you will find your Access Key (something like `5ca1ab1e-d3ad-beef-dea1-deba7ab1ed0c`).  Keep it handy, as you will need it to authorize the agent against the backend.
+By scanning images within the context of a CI/CD pipeline you help to enforce security best practices and ensures no images with known vulnerabilities or misconfigurations make it into production.
 
-![Agent key](/sysdig-devel/courses/scvs/lab06/assets/00_access_key.png)
+Further, periodically scanning a container registry can help ensure any zero day vulnerabilities can be caught.
 
-We have set up a Kubernetes cluster just for you.
+Sysdig Secure continuously checks against a wide range of vulnerability databases, updating the Runtime scan results with any newly detected CVEs.
 
-Now click on the 'Terminal' tab. We will install the Sysdig Agent using Helm, a package manager for Kubernetes, which is already installed and initialized.
-
-It only takes a simple command:
-
-`helm install --name sysdig --set sysdig.accessKey=YOUR_OWN_ACCESS_KEY,sysdig.settings.tags="cluster:training\,location:europe" stable/sysdig`
-
-After copying the above command, you can paste it into the terminal using the right button of your mouse.  Remember you have to use **your own access key**.
-
-This will result in a Sysdig Agent Pod being deployed to each node, and thus the ability to monitor any running containers.
-
-Creating the containers may take a little time.  Run the command below, which waits for all pods to be ready.  
-`watch kubectl get pods`  
-When the pods show status `Running`, hit <kbd>Ctrl</kbd>-<kbd>C</kbd> and clear the screen.
+For a list of vulnerability databases see ![here](https://docs.sysdig.com/en/image-scanning.html)

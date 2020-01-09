@@ -19,17 +19,29 @@
             "credits": ""
         },
         "steps": [
-            {
-                "title": "Installing the Sysdig Agent",
+          {
+                "title": "What is Image Scanning?",
                 "text": "step00.md"
             },
             {
+              "title": "How Image Scanning Works",
+              "text": "step01.md"
+          },
+          {
+                "title": "Setup Lab Environment",
+                "text": "step02.md"
+            },
+            {
+                  "title": "Setup Lab Environment",
+                  "text": "__step00.md"
+              },
+            {
                 "title": "Login to Secure",
-                "text": "step01.md"
+                "text": "__step01.md"
             },
             {
                 "title": "Deploy the Demo Application",
-                "text": "step02.md"
+                "text": "__step02.md"
             },
             {
                 "title": "Assign the NGINX application a policy",

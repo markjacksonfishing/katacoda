@@ -1,19 +1,25 @@
-Click on the "Sysdig" tab and log in the Sysdig Secure web UI. You can click the ![pop-out](/sysdig-devel/courses/scvs/lab05/assets/00_pop_out.png) icon to open this in a new tab in your browser.
+The basic set up for image registry scanning is:
+ 1. provide registry information where your images are stored,
+ 1. trigger a scan, and
+ 1. review the results.
 
-Alternatively you can point your browser at <https://secure.sysdig.com>.
+Behind the scenes:
+ 1. Image contents are analyzed.
+ 1. The contents report is evaluated against multiple vulnerability databases.
+ 1. It is then compared against default or user-defined policies.
+ 1. Results are reported, both in Sysdig Secure and (if applicable) in a developer's external CI tool.
 
-If you're currently logged into Sysdig Monitor, then click spade icon in the upper left choose Sysdig Secure - use the same credentials you have been using for Sysdig Monitor so far (not any team scoped login you may have created in the last lab).
+The important thing to note is that the scan is invoked by the Sysdig backend system, and involved the backend downloading the container from the registry.
 
-![Sysdig Secure](/sysdig-devel/courses/scvs/lab06/assets/01_secure.png)
+# Inline Image Scanning
 
-Once logged into Sysdig Secure click on ‘Image Scanning' on the left menu.
+You also have the option to scan and analyze images locally, sending their infrastructure metadata back to the Sysdig platform without providing access to their registry. The feature may be desired in a variety of cases:
+ - Images don't leave their own environment
+ - SaaS users don't send images and proprietary code to Sysdig's SaaS service
+ - Registries don't have to be exposed
+ - Images can be scanned in parallel more easily
+ - Images can be scanned before they hit the registry, which can
+    - cut down on registry costs
+    - simplify the build pipeline
 
-If you click on ‘Image Scanning’ then 'Runtime' on the left, you’ll be taken to a view that shows the current security posture of your environment.
-
-![Image Scanning](/sysdig-devel/courses/scvs/lab06/assets/02_image_scanning.png)
-
-You’ll see a a list of all unscanned images (the exact number of images may vary from the screenshot here).
-
-You can also limit the scope of what is displayed in the same way you can in Sysdig Monitor by clicking on the drop down on the top left hand side which defaults to ‘Hosts & Containers’, or change the groupings with the dropdown.
-
-![Browse by Hosts and Containers](/sysdig-devel/courses/scvs/lab06/assets/03_browse.png)
+We shall explore the various aspects of Image Scanning by way of some hands-on exercises.  But first we must set up our lab environment.
