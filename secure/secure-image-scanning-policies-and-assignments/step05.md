@@ -1,31 +1,12 @@
 
-<!-- Click on this entry to drill down on the scan details.
+Click `Image Scanning` > `Scan Results` screen to see a summary of the scan
 
-![Scan Details](secure-image-scanning-policies-and-assignments/assets/scanning05.png) -->
-Results of completed scans can be obtained by clicking `Image Scanning` > `Scan Results`.
+![Scan Summary](secure-image-scanning-policies-and-assignments/assets/scanning05.png)
 
-To scan an image from the configured repository, click `Scan Image`, and enter the following container name
-
-```
-learnsysdig/dummy-vuln-app
-```
-
-![Scan Image](secure-image-scanning-policies-and-assignments/assets/scanning06.png)
-
-As the name suggests, this container has known vulnerabilities and is designed to fail for illustrative purposes
-
-You will notice the scan is in progress
-
-![Scan Image](secure-image-scanning-policies-and-assignments/assets/scanning07.png)
-
-It will take a few minutes for the scan to complete.  Once complete, browse to `Image Scanning` > `Scan Result`.
-
-# Understanding Scan Results
-
-To the left of the screen you can see the results are split into three categories
-- Scan Policy (and Summary)
-- Vulnerabilities discover
-- OS and 3rd Party libraries found
+You'll notice the information is split into three categories
+- Scan Policy (including 'Summary')
+- Vulnerabilities
+- Content
 
 ![Scan Results](secure-image-scanning-policies-and-assignments/assets/ScanResultsUI.png)
 
