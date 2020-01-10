@@ -48,8 +48,12 @@
                 "text": "step06.md"
             },
             {
-                "title": "Change the policy evaluation severity",
-                "text": "step04.md"
+                "title": "Runtime Scanning",
+                "text": "step07.md"
+            },
+            {
+                "title": "Configuring Scans",
+                "text": "step08.md"
             }
         ]
     },
