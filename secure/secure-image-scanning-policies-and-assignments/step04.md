@@ -30,6 +30,8 @@ Some points to note:
     az acr credentials show
     ```
 
+## Initiating a Scan
+
 Image scans can be initiated and results of completed scans can be viewed from the `Image Scanning` > `Scan Results` screen. Browse to this screen and click `Scan Image` and enter the following container name
 
 ```
