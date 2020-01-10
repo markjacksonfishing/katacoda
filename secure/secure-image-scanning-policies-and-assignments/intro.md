@@ -2,4 +2,15 @@ In this course you will learn what it means to scan an image and why you should 
 
 You will explore and use some standard out-of-the-box policies, including those for NIST and PCI.
 
-{{ToDo - Insert TOC Here}}
+1. What is Image Scanning?
+1. How Image Scanning Works
+1. Setting up the Lab Environment
+1. Logging into Sysdig Secure
+1. Configuring a Registry and Scanning Images
+1. Scan Results
+1. Runtime Scanning
+1. Inline Scanning
+1. Configuring Scan Policies
+1. Configuring Scan Assignments
+1. Manage Scanning Alerts
+1. Global Whitelists and Blacklists
