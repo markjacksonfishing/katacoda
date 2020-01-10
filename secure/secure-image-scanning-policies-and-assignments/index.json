@@ -44,16 +44,28 @@
                 "text": "step05.md"
             },
             {
-                "title": "Inline Scanning",
+                "title": "Runtime Scanning",
                 "text": "step06.md"
             },
             {
-                "title": "Runtime Scanning",
+                "title": "Inline Scanning",
                 "text": "step07.md"
             },
             {
-                "title": "Configuring Scans",
+                "title": "Configuring Scan Policies",
                 "text": "step08.md"
+            },
+            {
+                "title": "Configuring Scan Assignments",
+                "text": "step09.md"
+            },
+            {
+                "title": "Manage Scanning Alerts",
+                "text": "step10.md"
+            },
+            {
+                "title": "Global Whitelists and Blacklists",
+                "text": "step11.md"
             }
         ]
     },

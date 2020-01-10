@@ -17,3 +17,5 @@ Contains
 
 
 `learnsysdig/dummy-vuln-app` Dockerfile - https://github.com/sysdiglabs/dummy-vuln-app/blob/master/Dockerfile
+
+APIToken="93d577a9-e0ed-4d39-95cd-ddd88882a794"

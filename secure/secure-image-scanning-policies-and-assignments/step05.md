@@ -10,7 +10,7 @@ You'll notice the information is split into three categories
 
 ![Scan Results](secure-image-scanning-policies-and-assignments/assets/ScanResultsUI.png)
 
-You'll see under 'Scan Policy' that the scan was invoked using a policy called `DefaultPolicy`.  We will explain a ittle later what this means, and how to configure the policy, but for now if you click on it you will see what is being checked for and the rules if a specific vulnerability is found.  
+You'll see under 'Scan Policy' that the scan was invoked using a policy called `DefaultPolicy`.  We will explain a little later what this means, and how to configure the policy, but for now if you click on it you will see what is being checked for and the rules if a specific vulnerability is found.  
 
 Clicking on 'Summary' you'll see the container has quite a few vulnerabilities, one of which (*exposed ports*) is a high priority and will force the container to stop.  
 
