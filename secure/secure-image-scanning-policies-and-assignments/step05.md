@@ -10,11 +10,13 @@ You'll notice the information is split into three categories
 
 ![Scan Results](secure-image-scanning-policies-and-assignments/assets/ScanResultsUI.png)
 
-Clicking on 'Summary' you'll see the container has quite a few vulnerabilities, one of which (*exposed ports*) is a high priority and will force the container to stop.
+You'll see under 'Scan Policy' that the scan was invoked using a policy called `DefaultPolicy`.  We will explain a ittle later what this means, and how to configure the policy, but for now if you click on it you will see what is being checked for and the rules if a specific vulnerability is found.  
+
+Clicking on 'Summary' you'll see the container has quite a few vulnerabilities, one of which (*exposed ports*) is a high priority and will force the container to stop.  
 
 ![Scan Results](secure-image-scanning-policies-and-assignments/assets/scanning08.1.png)
 
-Clicking on this line you will see the port in question is `TCP/22`.
+Clicking on this line you will see the port in question is `TCP/22`.  
 
 Under *Vulnerabilities* we can drill down and view the specific vulnerabilities relating to the Operating System, as well as 3rd party packages (Python, pycrypto, numpy).
 
