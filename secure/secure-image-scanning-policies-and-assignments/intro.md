@@ -3,4 +3,3 @@ In this course you will learn what it means to scan an image and why you should 
 You will explore and use some standard out-of-the-box policies, including those for NIST and PCI.
 
 {{ToDo - Insert TOC Here}}
-test
