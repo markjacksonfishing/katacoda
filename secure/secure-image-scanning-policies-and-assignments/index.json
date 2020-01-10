@@ -44,8 +44,8 @@
                 "text": "step05.md"
             },
             {
-                "title": "Assign the NGINX application a policy",
-                "text": "step03.md"
+                "title": "Inline Scanning",
+                "text": "step06.md"
             },
             {
                 "title": "Change the policy evaluation severity",
