@@ -1,9 +1,9 @@
 {
-    "title": "Lab 06: Securing your Images",
+    "title": "Image Scanning Policies and Assignments",
     "description": "Learn how to scan an image against a customizable policy",
     "difficulty": "easy",
     "icon": "fa-kubernetes",
-    "time": "30 minutes",
+    "time": "60 minutes",
     "details": {
         "assets": {
             "host01": [
@@ -21,51 +21,51 @@
         "steps": [
           {
                 "title": "What is Image Scanning?",
-                "text": "step00.md"
+                "text": "step01.md"
             },
             {
               "title": "How Image Scanning Works",
-              "text": "step01.md"
+              "text": "step02.md"
           },
           {
                 "title": "Setting up the Lab Environment",
-                "text": "step02.md"
+                "text": "step03.md"
             },
             {
                   "title": "Logging into Sysdig Secure",
-                  "text": "step03.md"
+                  "text": "step04.md"
               },
             {
                 "title": "Configuring a Registry and Scanning Images",
-                "text": "step04.md"
-            },
-            {
-                "title": "Scan Results",
                 "text": "step05.md"
             },
             {
-                "title": "Runtime Scanning",
+                "title": "Scan Results",
                 "text": "step06.md"
             },
             {
-                "title": "Inline Scanning",
+                "title": "Runtime Scanning",
                 "text": "step07.md"
             },
             {
-                "title": "Configuring Scan Policies",
+                "title": "Inline Scanning",
                 "text": "step08.md"
             },
             {
-                "title": "Configuring Scan Assignments",
+                "title": "Configuring Scan Policies",
                 "text": "step09.md"
             },
             {
-                "title": "Manage Scanning Alerts",
+                "title": "Configuring Scan Assignments",
                 "text": "step10.md"
             },
             {
-                "title": "Global Whitelists and Blacklists",
+                "title": "Manage Scanning Alerts",
                 "text": "step11.md"
+            },
+            {
+                "title": "Global Whitelists and Blacklists",
+                "text": "step12.md"
             }
         ]
     },

@@ -1,36 +1,27 @@
-{{Insert new canned lab setup routine}}
+The basic set up for image registry scanning is:
+ 1. Provide registry information where your images are stored,
+ 1. Trigger a scan, and
+ 1. Review the results.
 
+Behind the scenes:
+ 1. Image contents are analyzed.
+ 1. The contents report is evaluated against multiple vulnerability databases.
+ 1. It is then compared against default or user-defined policies.
+ 1. Results are reported, both in Sysdig Secure and (if applicable) in a developer's external CI tool.
 
+The important thing to note is that the scan is invoked by the Sysdig backend system, and involved the backend downloading the container from the registry.
 
+# Inline Image Scanning
 
-In order to follow this course, you will need a [Sysdig Secure](http://secure.sysdig.com/) account.
+You also have the option to scan and analyze images locally, sending their infrastructure metadata back to the Sysdig platform without providing access to their registry. The feature may be desired in a variety of cases:
+ - Images don't leave their own environment
+ - SaaS users don't send images and proprietary code to Sysdig's SaaS service
+ - Registries don't have to be exposed
+ - Images can be scanned in parallel more easily
+ - Images can be scanned before they hit the registry, which can
+    - cut down on registry costs
+    - simplify the build pipeline
 
-If you do not have a Sysdig Account, then you can sign up for a 30 day trial here https://sysdig.com/training-trial-signup/.  You will receive an email with a link guiding you through the setup process.
+We shall explore the various aspects of Image Scanning by way of some hands-on exercises.  
 
-Click on the "Sysdig" tab and log in the Sysdig Secure web UI. You can click the ![pop-out](/sysdig-devel/courses/scvs/lab06/assets/00_pop_out.png) icon to open this in a new tab in your browser.
-
->>New screenshot
-
-Alternatively you can point your browser at <https://secure.sysdig.com>.
-
-After logging in, go to your profile Settings, and in the `Agent Installation` tab you will find your Access Key (something like `5ca1ab1e-d3ad-beef-dea1-deba7ab1ed0c`).  Keep it handy, as you will need it to authorize the agent against the backend.
-
-![Agent key](/sysdig-devel/courses/scvs/lab06/assets/00_access_key.png)
-
-*Note:* There is a similar formatted token called 'Sysdig Secure API Token' on the 'User Profile' page which may cause confusion. Be sure to use the correct token in the 'Agent Installation' tab.
-
-We have set up a Kubernetes cluster just for you.
-
-Now click on the 'Terminal' tab. We will install the Sysdig Agent using Helm, a package manager for Kubernetes, which is already installed and initialized.
-
-It only takes a simple command:
-
-`helm install --name sysdig --set sysdig.accessKey=YOUR_OWN_ACCESS_KEY,sysdig.settings.tags="cluster:training\,location:europe" stable/sysdig`
-
-After copying the above command, you can paste it into the terminal using the right button of your mouse.  Remember you have to use **your own access key**.
-
-This will result in a Sysdig Agent Pod being deployed to each node, and thus the ability to monitor any running containers.
-
-Creating the containers may take a little time.  Run the command below, which waits for all pods to be ready.  
-`watch kubectl get pods`  
-When the pods show status `Running`, hit <kbd>Ctrl</kbd>-<kbd>C</kbd> and clear the screen.
+But first we must set up our lab environment.

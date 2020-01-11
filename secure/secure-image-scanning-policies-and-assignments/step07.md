@@ -1,26 +1,31 @@
-<!-- Inline scanning https://github.com/sysdiglabs/secure-inline-scan -->
+You may also wish to scan images currently running in an environment.
 
-In the preceding examples the scan was initiated from the Web UI. This could also have been initiated by tools like Jenkins as part of CI/CD pipeline. In either case the image is pulled down from the associated repository to the Sysdig backed to be scanned.
+Let's launch a deployment consisting of `nginx` containers. From your home directory, run the following:
 
-In some circumstances this approach may not appropriate or possible, for example for privacy or security reasons.
+`kubectl create ns web-app`
 
-As an alternative you can scan the image on the local node and post the results back to the Sysdig backend.
+`kubectl apply -f manifests/nginx-1.yaml -n web-app`
 
-In order to run inline scans you must use the Sysdig CLI.
-
-<< Cant get inline scanning working
-https://docs.sysdig.com/en/sysdig-cli-for-sysdig-monitor-and-secure.html
+Once deployed, you can check the status to make sure everything is up and running.
 
 ```
-APIToken="fake-e0ed-4d39-95cd-ddd88882fake"
-ACCESSKEY="fake3f-cdbc-4d41-b714-f3f5bfake"
-
-docker run -entrypoint sh -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev
-
-docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev sh
-
-docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev /bin/bash
-
-
-docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev sdc-cli scanning runtime list
+kubectl get pods -n web-app
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-767988fcc8-zk4xr   1/1     Running   0          6s
 ```
+
+Now browse to `Image Scanning` > `Runtime`, and in the 'Browse By' dropdown, select *Kubernetes (Deployments)*
+
+![Runtime Scan](secure-image-scanning-policies-and-assignments/assets/RuntimeScan02.png)
+
+You can highlight the scope you'd like to see the scan status of.  For example, if you select `web-app` you will see only details of image scans of containers in that specific deployment.
+
+![Runtime Scan](secure-image-scanning-policies-and-assignments/assets/RuntimeScan03.png)
+
+<<ToDo - redo 'RuntimeScan03.png' - I'd scanned nginx:1.15.0 & 1.16.0 within the last hour, but students wont have.
+
+Click on the unscanned *nginx:1.15.0* container, and then click 'Scan Now'
+
+![Scan Now](secure-image-scanning-policies-and-assignments/assets/RuntimeScan04.png)
+
+Once complete you can click the container name to see the scan results.

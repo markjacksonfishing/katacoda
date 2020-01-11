@@ -1,25 +1,26 @@
-Let's now not turn our attention to configuring the scan itself. Up to now we've been focusing on configuring image registries, scanning images and scan results.  But what OS and 3rd party vulnerabilities and misconfigurations will get flagged?
+<!-- Inline scanning https://github.com/sysdiglabs/secure-inline-scan -->
 
-Images get scanned against one or more "Policies". These Policies define a group of rules, or checks, that are invoked during the image scan.  You can see the configured scanning policies by selecting `Image Scanning > Policies`.
+In the preceding examples the scan was initiated from the Web UI. This could also have been initiated by tools like Jenkins as part of CI/CD pipeline. In either case the image is pulled down from the associated repository to the Sysdig backed to be scanned.
 
-![Policies](secure-image-scanning-policies-and-assignments/assets/Policies01.png)
+In some circumstances this approach may not appropriate or possible, for example for privacy or security reasons.
 
-By default, all images will get scanned against the "default policy", but this is configurable.  Below is an example of the 'DefaultPolicy'.
+As an alternative you can scan the image on the local node and post the results back to the Sysdig backend.
 
-![DefaultPolicy](secure-image-scanning-policies-and-assignments/assets/DefaultPolicy.png)
+In order to run inline scans you must use the Sysdig CLI.
 
-Each policy consists of a name, as description, and one or more "rules".  Rules consists of a "Gate" and a "Trigger" and an "Action". For a complete description of all the Gates and Triggers, please refer to the [Sysdig Documentation](https://docs.sysdig.com/en/scanning-policy-gates-and-triggers.html).
+<< Cant get inline scanning working
+https://docs.sysdig.com/en/sysdig-cli-for-sysdig-monitor-and-secure.html
 
-Under ‘Image Scanning’ > ‘Policies’, click the menu to the left of *NIST 800-190* policy and select 'Duplicate Policy.'
+```
+APIToken="fake-e0ed-4d39-95cd-ddd88882fake"
+ACCESSKEY="fake3f-cdbc-4d41-b714-f3f5bfake"
 
-![Default Audit Policy - NIST 800-190](secure-image-scanning-policies-and-assignments/assets/Policies05.png)
+docker run -entrypoint sh -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev
 
-This policy interprets `NIST 800-190` controls and provides out of the box rules to detect image misconfiguration.  We will make two changes to this policy
+docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev sh
 
-1. Against the OS vulnerability check, change the `Warn` option to `Stop`
+docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev /bin/bash
 
-2. For the non-OS vulnerability check, click the rules, set the *Severity* to *Medium*, and change the `Warn` option to `Stop`
 
-![Stop Action](secure-image-scanning-policies-and-assignments/assets/Policies06.png).
-
-Click *Save*.
+docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev sdc-cli scanning runtime list
+```

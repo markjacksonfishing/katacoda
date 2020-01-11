@@ -1,27 +1,47 @@
+Sysdig Secure requires credentials in order to pull and analyze images from a registry. To see what registries that have been configured in the system, select `Image Scanning` > `Registry Credentials`.
 
-Click `Image Scanning` > `Scan Results` screen, then click `learnsysdig/dummy-vuln-app` to drill down on the image scan results.
+To create a new registry, click `Add Registry`. For the purposes of this training course we will add a preconfigured Docker Repository.  With that in mind, use the following information to complete the form
 
-![Scan Summary](secure-image-scanning-policies-and-assignments/assets/scanning05.png)
+- Registry/Repository: `learnsysdig`
+- Type: `Docker V2`
+- Username: `learnsysdig`
+- password: `Sysd1g123!`
+- Internal Registry Address: n/a
+- Allow Self Signed: n/a
+- Use Image to Test Credentials: `learnsysdig/nginx:1.17.0`
 
-You'll notice the information is split into three categories
-- Scan Policy (including 'Summary')
-- Vulnerabilities
-- Content
+![Add Registry](secure-image-scanning-policies-and-assignments/assets/addregistry01.png)
 
-![Scan Results](secure-image-scanning-policies-and-assignments/assets/ScanResultsUI.png)
+Some points to note:
+  - There are currently three registry types supported, and each type has unique input fields for the credentials required, i.e.
+    - `username`/`password` for Docker Hub
+    - `Access Key`/`Secret Key` for AWS Elastic Container Registry (ECR)
+    - `JSON key` for Google Container Registry
+  - You must supply the name of a container in the registry in the 'Use Image to Test Credentials' field before you can validate the container registry.
+  - The recommended way to run an image registry for an OpenShift cluster is to run it locally. The Sysdig agent will detect the internal registry names, but for the Anchore engine to pull and scan the image it needs access to the internal registry itself.
+  - *Azure Container Registry* adhere's to the *Docker V2* format, but the username can be identified by the command
 
-You'll see under 'Scan Policy' that the scan was invoked using a policy called `DefaultPolicy`.  We will explain a little later what this means, and how to configure the policy, but for now if you click on it you will see what is being checked for and the rules if a specific vulnerability is found.  
+    ```
+    az acr credentials show --name <registry name>
+    ```
+    and the password by
 
-Clicking on 'Summary' you'll see the container has quite a few vulnerabilities, one of which (*exposed ports*) is a high priority and will force the container to stop.  
+    ```
+    az acr credentials show
+    ```
 
-![Scan Results](secure-image-scanning-policies-and-assignments/assets/scanning08.1.png)
+## Initiating a Scan
 
-Clicking on this line you will see the port in question is `TCP/22`.  
+Image scans can be initiated and results of completed scans can be viewed from the `Image Scanning` > `Scan Results` screen. Browse to this screen and click `Scan Image` and enter the following container name
 
-Under *Vulnerabilities* we can drill down and view the specific vulnerabilities relating to the Operating System, as well as 3rd party packages (Python, pycrypto, numpy).
+```
+learnsysdig/dummy-vuln-app
+```
 
-![Operating System Vulnerabilities](secure-image-scanning-policies-and-assignments/assets/scanning09.png)
+![Scan Image](secure-image-scanning-policies-and-assignments/assets/scanning06.png)
 
-![3rd Party Packages Vulnerabilities](secure-image-scanning-policies-and-assignments/assets/scanning10.png)
+As the name suggests, this container has known vulnerabilities and is designed to fail for illustrative purposes. You will notice the scan is in progress
 
-Under the *Content* heading you will find details on every package installed on the image, along with its version number.  
+![Scan Image](secure-image-scanning-policies-and-assignments/assets/scanning07.png)
+
+It will take a few minutes for the scan to complete.  

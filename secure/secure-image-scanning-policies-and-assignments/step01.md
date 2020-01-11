@@ -1,27 +1,28 @@
-The basic set up for image registry scanning is:
- 1. Provide registry information where your images are stored,
- 1. Trigger a scan, and
- 1. Review the results.
+The Image scanning feature of Sysdig Secure allows you to scan container images, both for known vulnerabilities (for example in os packages and 3rd party libraries) as well as configuration validation.   Configuration validation may include Dockerfile instructions, image contents, attributes, files perms, hashes, secrets, license violations etc.
 
-Behind the scenes:
- 1. Image contents are analyzed.
- 1. The contents report is evaluated against multiple vulnerability databases.
- 1. It is then compared against default or user-defined policies.
- 1. Results are reported, both in Sysdig Secure and (if applicable) in a developer's external CI tool.
+Scans can be invoked at a number of points in the container lifecycle
+ - As part of a CI/CD pipeline during container development
+ - Against running containers in production or sandbox environments
+ - In a registry
 
-The important thing to note is that the scan is invoked by the Sysdig backend system, and involved the backend downloading the container from the registry.
+The analysis generates a detailed report of the image contents, including:
+ - Official OS packages
+ - Unofficial OS packages
+ - Configuration files
+ - Credentials files
+ - Localization modules and software-specific installers:
+    - Javascript with NPM
+    - Python PiP
+    - Ruby with GEM
+    - Java/JVM with .jar archives
+ - Image metadata and configuration attributes
 
-# Inline Image Scanning
+![Scanning Images](/sysdig/courses/secure/secure-image-scanning-policies-and-assignments/assets/scanning01.png)
 
-You also have the option to scan and analyze images locally, sending their infrastructure metadata back to the Sysdig platform without providing access to their registry. The feature may be desired in a variety of cases:
- - Images don't leave their own environment
- - SaaS users don't send images and proprietary code to Sysdig's SaaS service
- - Registries don't have to be exposed
- - Images can be scanned in parallel more easily
- - Images can be scanned before they hit the registry, which can
-    - cut down on registry costs
-    - simplify the build pipeline
+By scanning images within the context of a CI/CD pipeline you help to enforce security best practices and ensures no images with known vulnerabilities or misconfigurations make it into production.
 
-We shall explore the various aspects of Image Scanning by way of some hands-on exercises.  
+Further, periodically scanning a container registry can help ensure any zero day vulnerabilities can be caught.
 
-But first we must set up our lab environment.
+Sysdig Secure continuously checks against a wide range of vulnerability databases, updating the Runtime scan results with any newly detected CVEs.
+
+For a list of vulnerability databases see [here](https://docs.sysdig.com/en/image-scanning.html)

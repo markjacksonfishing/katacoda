@@ -1,31 +1,27 @@
-You may also wish to scan images currently running in an environment.
 
-Let's launch a deployment consisting of `nginx` containers. From your home directory, run the following:
+Click `Image Scanning` > `Scan Results` screen, then click `learnsysdig/dummy-vuln-app` to drill down on the image scan results.
 
-`kubectl create ns web-app`
+![Scan Summary](secure-image-scanning-policies-and-assignments/assets/scanning05.png)
 
-`kubectl apply -f manifests/nginx-1.yaml -n web-app`
+You'll notice the information is split into three categories
+- Scan Policy (including 'Summary')
+- Vulnerabilities
+- Content
 
-Once deployed, you can check the status to make sure everything is up and running.
+![Scan Results](secure-image-scanning-policies-and-assignments/assets/ScanResultsUI.png)
 
-```
-kubectl get pods -n web-app
-NAME                     READY   STATUS    RESTARTS   AGE
-nginx-767988fcc8-zk4xr   1/1     Running   0          6s
-```
+You'll see under 'Scan Policy' that the scan was invoked using a policy called `DefaultPolicy`.  We will explain a little later what this means, and how to configure the policy, but for now if you click on it you will see what is being checked for and the rules if a specific vulnerability is found.  
 
-Now browse to `Image Scanning` > `Runtime`, and in the 'Browse By' dropdown, select *Kubernetes (Deployments)*
+Clicking on 'Summary' you'll see the container has quite a few vulnerabilities, one of which (*exposed ports*) is a high priority and will force the container to stop.  
 
-![Runtime Scan](secure-image-scanning-policies-and-assignments/assets/RuntimeScan02.png)
+![Scan Results](secure-image-scanning-policies-and-assignments/assets/scanning08.1.png)
 
-You can highlight the scope you'd like to see the scan status of.  For example, if you select `web-app` you will see only details of image scans of containers in that specific deployment.
+Clicking on this line you will see the port in question is `TCP/22`.  
 
-![Runtime Scan](secure-image-scanning-policies-and-assignments/assets/RuntimeScan03.png)
+Under *Vulnerabilities* we can drill down and view the specific vulnerabilities relating to the Operating System, as well as 3rd party packages (Python, pycrypto, numpy).
 
-<<ToDo - redo 'RuntimeScan03.png' - I'd scanned nginx:1.15.0 & 1.16.0 within the last hour, but students wont have.
+![Operating System Vulnerabilities](secure-image-scanning-policies-and-assignments/assets/scanning09.png)
 
-Click on the unscanned *nginx:1.15.0* container, and then click 'Scan Now'
+![3rd Party Packages Vulnerabilities](secure-image-scanning-policies-and-assignments/assets/scanning10.png)
 
-![Scan Now](secure-image-scanning-policies-and-assignments/assets/RuntimeScan04.png)
-
-Once complete you can click the container name to see the scan results.
+Under the *Content* heading you will find details on every package installed on the image, along with its version number.  

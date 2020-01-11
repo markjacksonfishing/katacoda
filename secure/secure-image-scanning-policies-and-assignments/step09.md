@@ -1,37 +1,25 @@
-Policies define what OS, 3rd party package or Dockerfile misconfigurations to consider when scanning an image.  We also need to define the scope on which the scan will be invoked. This aspect is configured through `Image Scanning > Policy Assignments`.
+Let's now not turn our attention to configuring the scan itself. Up to now we've been focusing on configuring image registries, scanning images and scan results.  But what OS and 3rd party vulnerabilities and misconfigurations will get flagged?
 
-Unless you use a very simple, single-policy approach to scanning, you will probably assign particular policies to particular registries, repositories, or tags.  
+Images get scanned against one or more "Policies". These Policies define a group of rules, or checks, that are invoked during the image scan.  You can see the configured scanning policies by selecting `Image Scanning > Policies`.
 
-For example:
+![Policies](secure-image-scanning-policies-and-assignments/assets/Policies01.png)
 
-To evaluate all images with a “Prod” tag with your Example Prod Image Policy, use the assignment (`registry/repo/tag`): `*/*/Prod`
+By default, all images will get scanned against the "default policy", but this is configurable.  Below is an example of the 'DefaultPolicy'.
 
-To evaluate all images from `gcr.io` with an Example Google Policy, use the assignment (`registry/repo/tag`): `gcr.io/*/*`
+![DefaultPolicy](secure-image-scanning-policies-and-assignments/assets/DefaultPolicy.png)
 
-From the ‘Image Scanning’ menu select ‘Policy Assignments’.
+Each policy consists of a name, as description, and one or more "rules".  Rules consists of a "Gate" and a "Trigger" and an "Action". For a complete description of all the Gates and Triggers, please refer to the [Sysdig Documentation](https://docs.sysdig.com/en/scanning-policy-gates-and-triggers.html).
 
-![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments01.png)
+Under ‘Image Scanning’ > ‘Policies’, click the menu to the left of *NIST 800-190* policy and select 'Duplicate Policy.'
 
-![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments02.png)
+![Default Audit Policy - NIST 800-190](secure-image-scanning-policies-and-assignments/assets/Policies05.png)
 
-Click on 'Add Policy Assignment' to add a new Policy Assignment and then fill it out in order to pickup our `learnsysdig` repository and assign the policy ‘nist_800-190’. Put a star in other boxes to match against anything. Then click ‘Save’.
+This policy interprets `NIST 800-190` controls and provides out of the box rules to detect image misconfiguration.  We will make two changes to this policy
 
-![Add Policiy Assignment](/sysdig-devel/courses/scvs/lab06/assets/05_add_policy.png)
+1. Against the OS vulnerability check, change the `Warn` option to `Stop`
 
-Click *+Add Policy Assignment*. A new entry line appears at the top of the Assignment page, but can be dragged up/down to alter the priority.
+2. For the non-OS vulnerability check, click the rules, set the *Severity* to *Medium*, and change the `Warn` option to `Stop`
 
-Add a new Policy Assignment and then fill it out in order to pickup the `nginx` repository from the `learnsysdig` registry. Assign the policy ‘nist_800-190 (copy)’ you created earlier. Put a star in other boxes to match against anything.
+![Stop Action](secure-image-scanning-policies-and-assignments/assets/Policies06.png).
 
-Then click ‘Save’ in the top right.
-
- ![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments03.png)
-
- - `Priority`: Priority is the order of evaluation against the assigned policy. Each new assignment is auto-placed at Priority 1. Once a policy assignment is created and saved, you can change its priority order by dragging it into a new position on the list.
-
- - `Registry`:Any registry domain (e.g. quay.io ). Wildcards are supported; an asterisk * specifies any registry.
-
- - `Repository`:Any repository (typically = name of the image). Wildcards are supported; an asterisk * specifies any repository.
-
- - `Tag`: Any tag. Wildcards are supported; an asterisk * specifies any tag.
-
- - `Assigned Policy`: Name of policy to use for evaluation. Select from the drop-down menu.
+Click *Save*.
