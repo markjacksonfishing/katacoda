@@ -24,7 +24,7 @@ Click ‘Add Alert’, then select 'Runtime Alert'.
 
  - The 'Description' is arbitrary text
 
- - For 'Scope' select `kubernetes.deployment.label` `is` `web-app`
+ - For 'Scope' select `kubernetes.namespace.label` `is` `web-app`
 
     Leaving the 'Scope' field blank implies the alert will be raised across the entire infrastructure.  In a live environment you may wish to narrow the scope of the alerts.  The scope may be based on various metadata related to, for example, container, kubernetes, host, cloud or OS specific.
 
@@ -36,6 +36,13 @@ Click ‘Add Alert’, then select 'Runtime Alert'.
 
  - For 'Notification' select a configured notification channel (e.g. email) to be used for alert notifications. If no notification channels have been defined for your Sysdig Secure environment yet, see [Set Up Notification Channels](https://docs.sysdig.com/en/set-up-notification-channels.html).
 
- Click Save.
+Click Save.
+
+Now introduce a new container, and see if it scans and you get a notification. Run the following command
+
+```
+kubectl apply -f manifests/nginx-2.yaml -n web-app
+```
+This updates the `web-app` deployment with a more recent version of `nginx`.
 
 # Repository Alert
