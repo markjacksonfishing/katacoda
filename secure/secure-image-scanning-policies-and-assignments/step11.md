@@ -5,3 +5,5 @@ Examples of when users might implement alerts:
  - I want to know if there are new CVE updates for the 3 different images I handle
 
  - I want to be notified if any of the common images from docker hub that are used all over my organization have a policy status that has changed
+
+ Click on `Image Scanning > Alerts`, then ‘Add Alert’.

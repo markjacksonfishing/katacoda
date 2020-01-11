@@ -24,11 +24,11 @@ Add a new Policy Assignment and then fill it out in order to pickup the `nginx` 
 
 Then click ‘Save’ in the top right.
 
- ![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments03.png)
+![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments03.png)
 
  - `Priority`: Priority is the order of evaluation against the assigned policy. Each new assignment is auto-placed at Priority 1. Once a policy assignment is created and saved, you can change its priority order by dragging it into a new position on the list.
 
- - `Registry`:Any registry domain (e.g. quay.io ). Wildcards are supported; an asterisk * specifies any registry.
+ - `Registry`:Any registry domain (e.g. quay.io). Wildcards are supported; an asterisk * specifies any registry.
 
  - `Repository`:Any repository (typically = name of the image). Wildcards are supported; an asterisk * specifies any repository.
 

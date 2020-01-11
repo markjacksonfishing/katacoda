@@ -24,4 +24,4 @@ Under *Vulnerabilities* we can drill down and view the specific vulnerabilities 
 
 ![3rd Party Packages Vulnerabilities](secure-image-scanning-policies-and-assignments/assets/scanning10.png)
 
-Under the *Content* heading you will find details on every package installed on the image, along with its version number.  
+Similarly, under the *Content* heading you will find details on every package installed on the image, along with its version number.  

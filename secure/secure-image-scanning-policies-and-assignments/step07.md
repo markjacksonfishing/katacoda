@@ -2,9 +2,10 @@ You may also wish to scan images currently running in an environment.
 
 Let's launch a deployment consisting of `nginx` containers. From your home directory, run the following:
 
-`kubectl create ns web-app`
-
-`kubectl apply -f manifests/nginx-1.yaml -n web-app`
+```
+kubectl create ns web-app
+kubectl apply -f manifests/nginx-1.yaml -n web-app
+```
 
 Once deployed, you can check the status to make sure everything is up and running.
 
@@ -15,6 +16,8 @@ nginx-767988fcc8-zk4xr   1/1     Running   0          6s
 ```
 
 Now browse to `Image Scanning` > `Runtime`, and in the 'Browse By' dropdown, select *Kubernetes (Deployments)*
+
+<<ToDo - redo 'RuntimeScan02.png' - Shows "Jhnftz Test" Grouping
 
 ![Runtime Scan](secure-image-scanning-policies-and-assignments/assets/RuntimeScan02.png)
 
