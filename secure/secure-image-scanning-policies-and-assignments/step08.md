@@ -75,7 +75,7 @@ Status is pass
 
 You will notice this scan used the `policyId: default`.
 
-<<I'M NOT SEEING THIS IN THE UI. IS IT SUPPOSED TO GET POSTED BACK?
+<<ToDo I'M NOT SEEING THIS IN THE UI. IS IT SUPPOSED TO GET POSTED BACK?
 
 Now let's view a failing scan. For this we will use the container `learnsysdig/dummy-vuln-app` we seen earlier.
 
@@ -124,9 +124,9 @@ Status is fail
 *Note* If the container version metadata is omitted, then it will assume `:latest`.
 
 
+<<ToDo NEED TO FIGURE WHY CANT SEE THIS SCAN IN SYSDIG SECURE
 
-
-____
+<!-- ____
 <<>>
 In order to run inline scans you must use the Sysdig CLI.
 
@@ -136,4 +136,4 @@ https://docs.sysdig.com/en/sysdig-cli-for-sysdig-monitor-and-secure.html
 
 inline_scan.sh analyze -s <SYSDIG_REMOTE_URL> -k <API Token> [ OPTIONS ] <FULL_IMAGE_TAG>
 
-https://docs.sysdig.com/en/image-scanning.html
+https://docs.sysdig.com/en/image-scanning.html -->
