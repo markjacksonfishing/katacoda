@@ -11,6 +11,11 @@ In order to run inline scans you must use the Sysdig CLI.
 << Cant get inline scanning working
 https://docs.sysdig.com/en/sysdig-cli-for-sysdig-monitor-and-secure.html
 
+
+inline_scan.sh analyze -s <SYSDIG_REMOTE_URL> -k <API Token> [ OPTIONS ] <FULL_IMAGE_TAG>
+
+https://docs.sysdig.com/en/image-scanning.html
+
 ```
 APIToken="fake-e0ed-4d39-95cd-ddd88882fake"
 ACCESSKEY="fake3f-cdbc-4d41-b714-f3f5bfake"

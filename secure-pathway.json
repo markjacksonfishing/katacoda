@@ -20,9 +20,9 @@
             "private": true
         },
         {
-            "course_id": "secure-pod-policy-advisor",
+            "course_id": "secure-policy-editor",
             "title": "Sysdig Secure Pod Policy Advisor",
-            "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying",
+            "description": "Auto-generate Pod Security Policies",
             "private": true
         },
         {
