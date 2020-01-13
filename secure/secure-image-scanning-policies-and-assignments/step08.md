@@ -73,7 +73,9 @@ Scan Report -
 Status is pass
 ```
 
-You will notice this scan used the `default` 'policyId'.
+You will notice this scan used the `policyId: default`.
+
+<<I'M NOT SEEING THIS IN THE UI. IS IT SUPPOSED TO GET POSTED BACK?
 
 Now let's view a failing scan. For this we will use the container `learnsysdig/dummy-vuln-app` we seen earlier.
 
