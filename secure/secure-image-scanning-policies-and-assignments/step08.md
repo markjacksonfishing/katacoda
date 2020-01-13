@@ -73,9 +73,11 @@ Scan Report -
 Status is pass
 ```
 
-Now let's view a failing scan.
+You will notice this scan used the `default` 'policyId'.
 
-```
+Now let's view a failing scan. For this we will use the container `learnsysdig/dummy-vuln-app` we seen earlier.
+
+<!-- ```
 docker pull learnsysdig/dummy-vuln-app
 Using default tag: latest
 latest: Pulling from learnsysdig/dummy-vuln-app
@@ -87,10 +89,34 @@ Digest: sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835
 Status: Downloaded newer image for learnsysdig/dummy-vuln-app:latest
 ```
 
-Once downloaded, invoke the scan
+Once downloaded, invoke the scan -->
 
 ```
-./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P dummy-vuln-app
+master $ ./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P learnsysdig/dummy-vuln-app
+Pulling image -- learnsysdig/dummy-vuln-app
+Using default tag: latest
+latest: Pulling from learnsysdig/dummy-vuln-app
+Digest: sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835
+Status: Image is up to date for learnsysdig/dummy-vuln-app:latest
+
+Using local image for scanning -- docker.io/anchore/inline-scan:v0.5.0
+Scan Report -
+[
+  {
+    "sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835": {
+      "docker.io/learnsysdig/dummy-vuln-app:latest": [
+        {
+          "detail": {},
+          "last_evaluation": "2020-01-13T13:39:14Z",
+          "policyId": "default",
+          "status": "fail"
+        }
+      ]
+    }
+  }
+]
+
+Status is fail
 ```
 
 *Note* If the container version metadata is omitted, then it will assume `:latest`.
@@ -98,11 +124,8 @@ Once downloaded, invoke the scan
 
 
 
-
-
-
 ____
-
+<<>>
 In order to run inline scans you must use the Sysdig CLI.
 
 << Cant get inline scanning working
@@ -112,17 +135,3 @@ https://docs.sysdig.com/en/sysdig-cli-for-sysdig-monitor-and-secure.html
 inline_scan.sh analyze -s <SYSDIG_REMOTE_URL> -k <API Token> [ OPTIONS ] <FULL_IMAGE_TAG>
 
 https://docs.sysdig.com/en/image-scanning.html
-
-```
-APIToken="fake-e0ed-4d39-95cd-ddd88882fake"
-ACCESSKEY="fake3f-cdbc-4d41-b714-f3f5bfake"
-
-docker run -entrypoint sh -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev
-
-docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev sh
-
-docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev /bin/bash
-
-
-docker run -it -e SDC_MONITOR_TOKEN=$ACCESSKEY -e SDC_SECURE_TOKEN=$ACCESSKEY sysdig/sdc-cli:0.1.5Dev sdc-cli scanning runtime list
-```
