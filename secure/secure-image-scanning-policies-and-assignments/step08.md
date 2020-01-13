@@ -47,8 +47,58 @@ As an example we can scan the local copy of `nginx:1.15.0` image.  Invoke the sc
 
 ```
 $ ./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P nginx
+Pulling image -- nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+Digest: sha256:8aa7f6a9585d908a63e5e418dc5d14ae7467d2e36e1ab4f0d8f9d059a3d071ce
+Status: Image is up to date for nginx:latest
+
+Using local image for scanning -- docker.io/anchore/inline-scan:v0.5.0
+Scan Report -
+[
+  {
+    "sha256:89a42c3ba15f09a3fbe39856bddacdf9e94cd03df7403cad4fc105088e268fc9": {
+      "docker.io/nginx:latest": [
+        {
+          "detail": {},
+          "last_evaluation": "2020-01-13T13:24:22Z",
+          "policyId": "default",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+]
+
+Status is pass
+```
+
+Now let's view a failing scan.
 
 ```
+docker pull learnsysdig/dummy-vuln-app
+Using default tag: latest
+latest: Pulling from learnsysdig/dummy-vuln-app
+092586df9206: Pull complete
+aafadb0ad2ef: Pull complete
+a1ebd97ab158: Pull complete
+11971e5302ab: Pull complete
+Digest: sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835
+Status: Downloaded newer image for learnsysdig/dummy-vuln-app:latest
+```
+
+Once downloaded, invoke the scan
+
+```
+./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P dummy-vuln-app
+```
+
+*Note* If the container version metadata is omitted, then it will assume `:latest`.
+
+
+
+
+
 
 
 ____

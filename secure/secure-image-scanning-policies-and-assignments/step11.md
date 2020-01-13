@@ -18,8 +18,6 @@ There are two types of alerts - *Runtime* alert and *Repository* alert.
 
 Click ‘Add Alert’, then select 'Runtime Alert'.
 
-![Runtime Alert](secure-image-scanning-policies-and-assignments/assets/Alert01.png)
-
  - Set the name to 'Training Runtime Alert'
 
  - The 'Description' is arbitrary text
@@ -34,7 +32,11 @@ Click ‘Add Alert’, then select 'Runtime Alert'.
 
   The CVE UPDATE option will send an alert whenever a vulnerability is added, updated, or removed from a running image.
 
- - For 'Notification' select a configured notification channel (e.g. email) to be used for alert notifications. If no notification channels have been defined for your Sysdig Secure environment yet, see [Set Up Notification Channels](https://docs.sysdig.com/en/set-up-notification-channels.html).
+ - For 'Notification' select a configured notification channel (e.g. email) to be used for alert notifications.
+
+  *Note* If no notification channels have been defined for your Sysdig Secure environment yet, see [Set Up Notification Channels](https://docs.sysdig.com/en/set-up-notification-channels.html).
+
+![Runtime Alert](secure-image-scanning-policies-and-assignments/assets/Alert01.png)
 
 Click Save.
 
@@ -43,6 +45,36 @@ Now introduce a new container, and see if it scans and you get a notification. R
 ```
 kubectl apply -f manifests/nginx-2.yaml -n web-app
 ```
-This updates the `web-app` deployment with a more recent version of `nginx`.
+This updates the `web-app` deployment with a more recent version of `nginx`, which should automatically get scanned.
 
 # Repository Alert
+
+Repository Alerts are similar to Runtime Alert, but are invoked when scanning images in a repository as opposed to running in an environment.
+
+For this example we will scan an image in the repository that we have not yet scanned, `learnsysdig/node:10.8.0`.
+
+Click ‘Add Alert’, then select 'Repository Alert'.
+
+- Set the name to 'Training Repository Alert'
+
+- The 'Description' is arbitrary text
+
+- For 'Registry/Repo:Tag' enter `docker.io`, `learnsysdig/node`, and `10.8.0`.
+
+- For 'Trigger', choose `New Image Analyzed`
+
+ - For 'Notification' select a configured notification channel (e.g. email) to be used for alert notifications.
+
+![Repository Alert](secure-image-scanning-policies-and-assignments/assets/Alert02.png)
+
+Click Save.
+
+Now go to `Image Scanning` > `Scan Results`, click `Scan Image` and enter the image details, i.e. `learnsysdig/node:10.8.0`
+
+![Scan Node Image](secure-image-scanning-policies-and-assignments/assets/Alert03.png)
+
+You should see a note that the scan is "in progress".  
+
+Once complete you can click on the image name to drill down on the scan results.  
+
+Shortly after you should receive an email alert.
