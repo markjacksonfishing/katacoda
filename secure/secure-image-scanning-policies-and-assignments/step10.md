@@ -1,37 +1,153 @@
-Policies define what OS, 3rd party package or Dockerfile misconfigurations to consider when scanning an image.  We also need to define the scope on which the scan will be invoked. This aspect is configured through `Image Scanning > Policy Assignments`.
+<!-- Inline scanning https://github.com/sysdiglabs/secure-inline-scan -->
 
-Unless you use a very simple, single-policy approach to scanning, you will probably assign particular policies to particular registries, repositories, or tags.  
+In the preceding examples the scan was initiated from the Web UI. This could also have been initiated by tools like Jenkins as part of CI/CD pipeline. In either case the image is pulled down from the associated repository to the Sysdig backed to be scanned.
 
-For example:
+In some circumstances this approach may not appropriate or possible, perhaps for privacy or security reasons.
 
-To evaluate all images with a “Prod” tag with your Example Prod Image Policy, use the assignment (`registry/repo/tag`): `*/*/Prod`
+As an alternative you can scan the image on the local node and post the infrastructure metadata back to the Sysdig platform without providing access to the registry.
 
-To evaluate all images from `gcr.io` with an Example Google Policy, use the assignment (`registry/repo/tag`): `gcr.io/*/*`
+<!-- There are a few prerequisites in order to be able to scan images locally
 
-From the ‘Image Scanning’ menu select ‘Policy Assignments’.
+ - Sysdig Secure and the ability to connect to the Sysdig installation
+ - Docker engine
+ - Access to DockerHub
+ - Bash -->
 
-![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments01.png)
+Before invoking an inline scan we need to set up Scanning Policy assignment. Browse to `Image Scanning > Policy Assignments`. Set the following values
 
-![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments02.png)
+ - Registry - `*` (i.e. 'all')
+ - Repository - `localbuild/learnsysdig/*`
+ - Tag - `*` (i.e. 'all')
+ - Assigned Policy - `Default Audit Policy - NIST 800-190 (training)`
+ - Audits - ""
 
-Click on 'Add Policy Assignment' to add a new Policy Assignment and then fill it out in order to pickup our `learnsysdig` repository and assign the policy ‘nist_800-190’. Put a star in other boxes to match against anything. Then click ‘Save’.
+![Inline Scan Policy Assignment](secure-image-scanning-policies-and-assignments/assets/Inline01.png)
 
-![Add Policiy Assignment](/sysdig-devel/courses/scvs/lab06/assets/05_add_policy.png)
+With this policy assignment, all inline scans will invoke the `Default Audit Policy - NIST 800-190 (training)` policy.
 
-Click *+Add Policy Assignment*. A new entry line appears at the top of the Assignment page, but can be dragged up/down to alter the priority.
+In order to invoke an inline scan you must first download the `inline_scan.sh` script.
 
-Add a new Policy Assignment and then fill it out in order to pickup the `nginx` repository from the `learnsysdig` registry. Assign the policy ‘nist_800-190 (copy)’ you created earlier. Put a star in other boxes to match against anything.
+```
+wget https://raw.githubusercontent.com/sysdiglabs/secure-inline-scan/master/inline_scan.sh
+chmod +x inline_scan.sh
+```
 
-Then click ‘Save’ in the top right.
+You can get help on using the tools using `./inline_scan.sh help`
 
-![Policy Assignments](secure-image-scanning-policies-and-assignments/assets/Assignments03.png)
+```
+master $ ./inline_scan.sh help
 
- - `Priority`: Priority is the order of evaluation against the assigned policy. Each new assignment is auto-placed at Priority 1. Once a policy assignment is created and saved, you can change its priority order by dragging it into a new position on the list.
+Sysdig Inline Scanner/Analyzer --
 
- - `Registry`:Any registry domain (e.g. quay.io). Wildcards are supported; an asterisk * specifies any registry.
+  Wrapper script for performing vulnerability scan or image analysis on local docker images, utilizing the Sysdig inline_scan container.
+  For more detailed usage instructions use the -h option after specifying scan or analyze.
 
- - `Repository`:Any repository (typically = name of the image). Wildcards are supported; an asterisk * specifies any repository.
+    Usage: inline_scan.sh <analyze> [ OPTIONS ]
+```
 
- - `Tag`: Any tag. Wildcards are supported; an asterisk * specifies any tag.
+Before using the tool you need to obtain your Sysdig API Token.  Go to `Settings` > `User Profile` and copy the *Sysdig Secure API Token*.
 
- - `Assigned Policy`: Name of policy to use for evaluation. Select from the drop-down menu.
+![Sysdig Secure API Token](secure-image-scanning-policies-and-assignments/assets/sysdig_api_token.png)
+
+You might wish to set this as an environment variable
+
+```
+APIKEY='FAKE77a9-e0ed-4d39-95cd-ddd88882FAKE'
+```
+
+As an example we can scan the local copy of `nginx:1.15.0` image.  Invoke the scan as follows
+
+```
+$ ./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P nginx
+
+Pulling image -- nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+Digest: sha256:8aa7f6a9585d908a63e5e418dc5d14ae7467d2e36e1ab4f0d8f9d059a3d071ce
+Status: Image is up to date for nginx:latest
+
+Using local image for scanning -- docker.io/anchore/inline-scan:v0.5.0
+Scan Report -
+[
+  {
+    "sha256:89a42c3ba15f09a3fbe39856bddacdf9e94cd03df7403cad4fc105088e268fc9": {
+      "docker.io/nginx:latest": [
+        {
+          "detail": {},
+          "last_evaluation": "2020-01-13T13:24:22Z",
+          "policyId": "default",
+          "status": "pass"
+        }
+      ]
+    }
+  }
+]
+
+Status is pass
+```
+
+You will notice this scan used the `policyId: default`.
+
+<<ToDo I'M NOT SEEING THIS IN THE UI. IS IT SUPPOSED TO GET POSTED BACK?
+
+Now let's view a failing scan. For this we will use the container `learnsysdig/dummy-vuln-app` we seen earlier.
+
+<!-- ```
+docker pull learnsysdig/dummy-vuln-app
+Using default tag: latest
+latest: Pulling from learnsysdig/dummy-vuln-app
+092586df9206: Pull complete
+aafadb0ad2ef: Pull complete
+a1ebd97ab158: Pull complete
+11971e5302ab: Pull complete
+Digest: sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835
+Status: Downloaded newer image for learnsysdig/dummy-vuln-app:latest
+```
+
+Once downloaded, invoke the scan -->
+
+```
+$ ./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P learnsysdig/dummy-vuln-app
+
+Pulling image -- learnsysdig/dummy-vuln-app
+Using default tag: latest
+latest: Pulling from learnsysdig/dummy-vuln-app
+Digest: sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835
+Status: Image is up to date for learnsysdig/dummy-vuln-app:latest
+
+Using local image for scanning -- docker.io/anchore/inline-scan:v0.5.0
+Scan Report -
+[
+  {
+    "sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835": {
+      "docker.io/learnsysdig/dummy-vuln-app:latest": [
+        {
+          "detail": {},
+          "last_evaluation": "2020-01-13T13:39:14Z",
+          "policyId": "default",
+          "status": "fail"
+        }
+      ]
+    }
+  }
+]
+
+Status is fail
+```
+
+*Note* If the container version metadata is omitted, then it will assume `:latest`.
+
+
+<<ToDo NEED TO FIGURE WHY CANT SEE THIS SCAN IN SYSDIG SECURE
+
+<!-- ____
+<<>>
+In order to run inline scans you must use the Sysdig CLI.
+
+<< Cant get inline scanning working
+https://docs.sysdig.com/en/sysdig-cli-for-sysdig-monitor-and-secure.html
+
+
+inline_scan.sh analyze -s <SYSDIG_REMOTE_URL> -k <API Token> [ OPTIONS ] <FULL_IMAGE_TAG>
+
+https://docs.sysdig.com/en/image-scanning.html -->
