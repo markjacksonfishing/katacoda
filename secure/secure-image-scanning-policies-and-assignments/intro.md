@@ -1,6 +1,6 @@
 In this course you will learn what it means to scan an image and why you should do.  You will also discover the anatomy of a scanning policy, how to create and modify policies, and how to scan containers, both running and those in a repository.  
 
-Topics covered will include
+Topics covered include
 
 1. What is Image Scanning?
 1. How Image Scanning Works

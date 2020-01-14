@@ -23,7 +23,7 @@ You can highlight the scope you'd like to see the scan status of.  For example, 
 
 ![Runtime Scan](secure-image-scanning-policies-and-assignments/assets/RuntimeScan03.png)
 
-<<ToDo - redo 'RuntimeScan03.png' - I'd scanned nginx:1.15.0 & 1.16.0 within the last hour, but students wont have.
+<!-- <<ToDo - redo 'RuntimeScan03.png' - I'd scanned nginx:1.15.0 & 1.16.0 within the last hour, but students wont have. -->
 
 Click on the unscanned *nginx:1.15.0* container, and then click 'Scan Now'
 
