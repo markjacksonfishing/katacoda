@@ -9,8 +9,8 @@ Topics covered include
 1. Configuring a Registry and Scanning Images
 1. Scan Results
 1. Runtime Scanning
-1. Inline Scanning
 1. Configuring Scan Policies
 1. Configuring Scan Assignments
+1. Inline Scanning
 1. Manage Scanning Alerts
 1. Global Whitelists and Blacklists

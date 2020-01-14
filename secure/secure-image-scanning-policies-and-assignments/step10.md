@@ -58,13 +58,7 @@ APIKEY='FAKE77a9-e0ed-4d39-95cd-ddd88882FAKE'
 As an example we can scan the local copy of `nginx:1.15.0` image.  Invoke the scan as follows
 
 ```
-$ ./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P nginx
-
-Pulling image -- nginx
-Using default tag: latest
-latest: Pulling from library/nginx
-Digest: sha256:8aa7f6a9585d908a63e5e418dc5d14ae7467d2e36e1ab4f0d8f9d059a3d071ce
-Status: Image is up to date for nginx:latest
+$ ./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY learnsysdig/nginx:1.15.0
 
 Using local image for scanning -- docker.io/anchore/inline-scan:v0.5.0
 Scan Report -
@@ -92,6 +86,8 @@ You will notice this scan used the `policyId: default`.
 
 Now let's view a failing scan. For this we will use the container `learnsysdig/dummy-vuln-app` we seen earlier.
 
+*Note* since we're using Sysdig Secure SaaS service, then we dont need to pass the `-s` flag.
+
 <!-- ```
 docker pull learnsysdig/dummy-vuln-app
 Using default tag: latest
@@ -107,13 +103,7 @@ Status: Downloaded newer image for learnsysdig/dummy-vuln-app:latest
 Once downloaded, invoke the scan -->
 
 ```
-$ ./inline_scan.sh analyze -s https://secure.sysdig.com -k $APIKEY -P learnsysdig/dummy-vuln-app
-
-Pulling image -- learnsysdig/dummy-vuln-app
-Using default tag: latest
-latest: Pulling from learnsysdig/dummy-vuln-app
-Digest: sha256:6cc44ba161425a205443aba8439052d1d25d6073e24d13efdc2b54a2b3bbb835
-Status: Image is up to date for learnsysdig/dummy-vuln-app:latest
+$ ./inline_scan.sh analyze -k $APIKEY learnsysdig/dummy-vuln-app
 
 Using local image for scanning -- docker.io/anchore/inline-scan:v0.5.0
 Scan Report -
