@@ -40,6 +40,11 @@
             "course_id": "secure-image-scanning-policies-and-assignments",
             "title": "Image Scanning Policies and Assignments",
             "description": "Image Scanning Policies and Assignments."
+        },
+        {
+            "course_id": "secure-image-profiles",
+            "title": "Secure Image Profiles",
+            "description": "Secure Image Profiles."
         }
     ]
 }
