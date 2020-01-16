@@ -9,6 +9,9 @@
             "host01": [
                 { "file": "*.sh", "target": "~/", "chmod": "+x" },
                 { "file": "*.yaml", "target": "~/" },
+                { "file": "dockerpull.sh", "target": "~/dockerpull.sh" },
+                { "file": "pushtodockerhub.sh", "target": "~/pushtodockerhub.sh" },
+                { "file": "retagimages.sh", "target": "~/retagimages.sh" },
                 { "file": "manifests/*.yaml", "target": "~/manifests/" },
                 { "file": "manifests/dummy-vuln-app/*", "target": "~/manifests/dummy-vuln-app/" },
                 { "file": "manifests/hello-world/*", "target": "~/manifests/hello-world/" }
