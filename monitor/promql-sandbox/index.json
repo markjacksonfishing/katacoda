@@ -1,0 +1,36 @@
+{
+    "pathwayTitle": "Sysdig Monitor",
+    "title": "PromQL Sandbox",
+    "description": "A playground for PromQL.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "PromQL Sandbox",
+                "text": "step1.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "uilayout": "editor-terminal",
+        "uimessage1": "\u001b[32mYou are logged into a PromQL sandbox.\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}
