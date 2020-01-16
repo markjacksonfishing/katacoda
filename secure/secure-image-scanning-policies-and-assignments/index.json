@@ -10,7 +10,7 @@
                 { "file": "*.sh", "target": "~/", "chmod": "+x" },
                 { "file": "*.yaml", "target": "~/" },
                 { "file": "manifests/*.yaml", "target": "~/manifests/" }
-        ]
+            ]
         },
         "intro": {
             "text": "intro.md",
