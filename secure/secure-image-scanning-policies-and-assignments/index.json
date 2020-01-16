@@ -9,7 +9,7 @@
             "host01": [
                 { "file": "*.sh", "target": "~/", "chmod": "+x" },
                 { "file": "*.yaml", "target": "~/" },
-                { "file": "manifests/*", "target": "~/manifests/" }
+                { "file": "manifests/*.yaml", "target": "~/manifests/" }
         ]
         },
         "intro": {
