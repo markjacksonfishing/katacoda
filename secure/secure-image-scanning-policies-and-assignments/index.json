@@ -20,13 +20,9 @@
         },
         "steps": [
           {
-                "title": "What is Image Scanning?",
+                "title": "What is Image Scanning and where to setup the scan process",
                 "text": "step01.md"
             },
-            {
-              "title": "How Image Scanning Works",
-              "text": "step02.md"
-          },
           {
                 "title": "Setting up the Lab Environment",
                 "text": "step03.md"
