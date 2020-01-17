@@ -1,0 +1,61 @@
+{
+    "pathwayTitle": "Sysdig Monitor",
+    "private": true,
+    "title": "PromQL Sandbox",
+    "description": "A playground for PromQL - v2 in Katacoda.",
+    "difficulty": "medium",
+    "icon": "fa-kubernetes",
+    "time": "30 minutes",
+    "details": {
+        "assets": {
+            "host01": [
+                { "file": "*.sh", "target": "~/", "chmod": "+x" }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Welcome",
+                "text": "step01.md"
+            },
+            {
+                "title": "PromQL Theory: Selectors",
+                "text": "step02.md"
+            },
+            {
+                "title": "PromQL Theory: Functions",
+                "text": "step03.md"
+            },
+            {
+                "title": "Aggregators and Operators",
+                "text": "step04.md"
+            },
+            {
+                "title": "PromQL in Practice",
+                "text": "step05.md"
+            },
+            {
+                "title": "Accessing PromQL",
+                "text": "step06.md"
+            },
+            {
+                "title": "Review",
+                "text": "step07.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "uilayout": "editor-terminal",
+        "uimessage1": "\u001b[32mYou are logged into a PromQL sandbox.\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}

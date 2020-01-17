@@ -27,6 +27,11 @@
             "course_id": "promql-sandbox",
             "title": "PromQL Sandbox",
             "description": "A Sandbox for PromQL"
+        },
+        {
+            "course_id": "promql-sandbox-v2",
+            "title": "PromQL Sandbox - version 2 (Katacoda)",
+            "description": "A Sandbox for PromQL"
         }
     ]
 }
