@@ -53,7 +53,7 @@
     },
     "environment": {
         "uilayout": "terminal",
-        "uimessage1": "\u001b[32mUndstanding PromQL.\u001b[m\r\n"
+        "uimessage1": "\u001b[32mUnderstanding PromQL.\u001b[m\r\n"
     },
     "backend": {
         "imageid": "ubuntu"
