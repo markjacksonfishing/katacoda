@@ -1,7 +1,7 @@
 {
     "pathwayTitle": "Sysdig Monitor",
     "private": true,
-    "title": "PromQL Sandbox",
+    "title": "Understanding PromQL",
     "description": "A playground for PromQL - v2 in Katacoda.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
@@ -52,8 +52,8 @@
         }
     },
     "environment": {
-        "uilayout": "editor-terminal",
-        "uimessage1": "\u001b[32mYou are logged into a PromQL sandbox.\u001b[m\r\n"
+        "uilayout": "terminal",
+        "uimessage1": "\u001b[32mUndstanding PromQL.\u001b[m\r\n"
     },
     "backend": {
         "imageid": "ubuntu"
