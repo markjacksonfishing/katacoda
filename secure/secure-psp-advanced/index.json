@@ -20,11 +20,11 @@
         },
         "steps": [
             {
-                "title": "PSP Step 1",
+                "title": "K8s PSPs vs. Sysdig PSP Advisor",
                 "text": "step01.md"
             },
             {
-                "title": "PSP Step 2",
+                "title": "Pre-requirements (I): Enabling Auditing",
                 "text": "step02.md"
             }
         ],

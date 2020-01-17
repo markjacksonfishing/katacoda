@@ -3,6 +3,7 @@ This course covers how to manually enable Pod Security Policies (PSPs from here 
 # Table of contents
 
 Intro.md - Introduction
+
 Step01.md - K8s PSPs vs. Sysdig PSP Advisor
 Step02.md Pre-requirements (I): Enabling Auditing
 Step03.md - Pre-requirements (II): Install the agent
