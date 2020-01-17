@@ -45,6 +45,11 @@
             "course_id": "secure-image-profiles",
             "title": "Secure Image Profiles",
             "description": "Secure Image Profiles."
+        },
+        {
+            "course_id": "secure-psp-advanced",
+            "title": "How to successfully use Kubernetes Pod Policy Advisor and not die trying",
+            "description": "How to successfully use Kubernetes Pod Policy Advisor and not die trying"
         }
     ]
 }
