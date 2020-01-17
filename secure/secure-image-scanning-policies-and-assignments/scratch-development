@@ -18,7 +18,7 @@ Contains
 
 `learnsysdig/dummy-vuln-app` Dockerfile - https://github.com/sysdiglabs/dummy-vuln-app/blob/master/Dockerfile
 
-APIKEY="93d577a9-e0ed-4d39-95cd-ddd88882a794"
+APIKEY='93d577a9-e0ed-4d39-95cd-ddd88882a794'
 
 inline_scan.sh analyze -s https://secure.sysdig.com -k 93d577a9-e0ed-4d39-95cd-ddd88882a794 prom/prometheus
 
