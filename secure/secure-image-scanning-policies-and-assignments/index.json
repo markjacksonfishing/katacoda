@@ -11,7 +11,8 @@
                 { "file": "*.yaml", "target": "~/" },
                 { "file": "manifests/*.yaml", "target": "~/manifests/" },
                 { "file": "manifests/dummy-vuln-app/*", "target": "~/manifests/dummy-vuln-app/" },
-                { "file": "manifests/hello-world/*", "target": "~/manifests/hello-world/" }
+                { "file": "manifests/python-app/*", "target": "~/manifests/python-app/" },
+                { "file": "manifests/java-app/*", "target": "~/manifests/java-app/" }
             ]
         },
         "intro": {

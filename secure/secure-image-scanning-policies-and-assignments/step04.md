@@ -2,9 +2,9 @@ Click on the "Sysdig" tab and log in the Sysdig Secure web UI. You can click the
 
 Alternatively you can point your browser at <https://secure.sysdig.com>.
 
-Once logged into Sysdig Secure click on ‘Image Scanning' on the left menu.
+<!-- Once logged into Sysdig Secure click on ‘Image Scanning' on the left menu.
 
-![Image Scanning UI](secure-image-scanning-policies-and-assignments/assets/ScanningUI01.png)
+![Image Scanning UI](secure-image-scanning-policies-and-assignments/assets/ScanningUI01.png) -->
 
 Click 'Runtime' to view the current security status of your environment.
 

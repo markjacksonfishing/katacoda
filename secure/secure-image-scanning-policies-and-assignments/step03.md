@@ -54,6 +54,9 @@ Now push the containers to Docker Hub.
 ```{{execute}}
 
 Let’s also  create a container from scratch and load it into our repository.  We will return to this container later in the course and update the version
+
+```
 source ./.reponame
-cd manifests/hello-world
+cd manifests/python-app
 docker build -t $REPONAME/hello-world .
+```{{execute}}

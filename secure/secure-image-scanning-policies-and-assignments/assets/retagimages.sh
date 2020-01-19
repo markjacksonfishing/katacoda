@@ -11,6 +11,8 @@ docker tag learnsysdig/nginx:1.15.0 $REPONAME/nginx:1.15.0
 docker tag learnsysdig/nginx:1.16.0 $REPONAME/nginx:1.16.0
 docker tag learnsysdig/nginx:1.17.0 $REPONAME/nginx:1.17.0
 docker tag learnsysdig/dummy-vuln-app $REPONAME/dummy-vuln-app
+docker tag learnsysdig/python-app:0.1.0 $REPONAME/python-app:0.1.0
+docker tag learnsysdig/java-app:0.1.0 $REPONAME/java-app:0.1.0
 
 
 echo "Images retagged"
