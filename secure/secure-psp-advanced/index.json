@@ -8,9 +8,9 @@
     "time": "45 minutes",
     "details": {
         "assets": {
-            "master": [
-                { "file": "./*", "target": "~/" },
-                { "file": "audit-policy.yaml", "target": "~/", "chmod": "+x" }
+            "host01": [
+                { "file": "*.sh", "target": "~/", "chmod": "+x" },
+                { "file": "*.yaml", "target": "~/" },
             ]
         },
         "intro": {
