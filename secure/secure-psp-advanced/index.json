@@ -9,7 +9,7 @@
     "details": {
         "assets": {
             "master": [
-                { "file": "./*", "target": "~/files/*" }
+                { "file": "./*", "target": "~/*" }
             ]
         },
         "intro": {
