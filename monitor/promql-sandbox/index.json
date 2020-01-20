@@ -1,6 +1,7 @@
 {
     "pathwayTitle": "Sysdig Monitor",
     "title": "PromQL Sandbox",
+    "private": true,
     "description": "A playground for PromQL.",
     "difficulty": "medium",
     "icon": "fa-kubernetes",
@@ -27,8 +28,10 @@
         }
     },
     "environment": {
-        "uilayout": "editor-terminal",
-        "uimessage1": "\u001b[32mYou are logged into a PromQL sandbox.\u001b[m\r\n"
+      "showdashboard": true,
+      "dashboards": [{ "name": "Sysdig Secure", "href": "https://secure.sysdig.com" }],
+      "uilayout": "editor-terminal",
+      "uimessage1": "\u001b[32mYou are logged into a PromQL sandbox.\u001b[m\r\n"
     },
     "backend": {
         "imageid": "ubuntu"

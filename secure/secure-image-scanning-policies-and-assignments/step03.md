@@ -1,4 +1,27 @@
-{{Insert new canned lab setup routine}}
+There are multiple ways to install the sysdig-agent -we will use Helm Charts. You can review [Sysdig Documentation](https://docs.sysdig.com/en/agent-installation.html) to learn more about other installation methods.  
+
+First, let’s install and update Helm and create a new namespace for the agent.
+
+```
+curl -fsSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+helm version
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo update
+kubectl create ns sysdig-agent
+```{{execute}}
+
+For the next step you will require your own specific *Access Key*. You can find it on Sysdig configuration > Agent-key.
+
+```
+helm install training \
+    --set sysdig.accessKey=FAKECAKEacceskeyInsertYoursHereFAKECAKE \
+    --set sysdig.settings.tags="role:training\,location:universe" \
+    --namespace sysdig-agent \
+    stable/sysdig
+```{{execute}}
+
+It is as easy as that - you’ll now have the agent working in your cluster with Dynamic Auditing configured. It could take a few minutes to start running - in the meantime you can check at your Sysdig Dashboard that you can observe your cluster.
+
 
 # Set Up a Container Registry
 To perform the following lab exercises we will need a container repository.  This section will take you through setting up your own repository in Docker Hub and populating it with a number of containers.
