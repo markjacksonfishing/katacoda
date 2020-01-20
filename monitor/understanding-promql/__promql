@@ -7,6 +7,13 @@ set -x
 #maybe would be interesting also including Grafana
 #tested again 2020-16-01 and still worked :D
 
+# Run Node exporter
+docker run -d \
+  --net="host" \
+  --pid="host" \
+  -v "/:/host:ro,rslave" \
+  quay.io/prometheus/node-exporter \
+  --path.rootfs=/host
 
 #scenario base: ubuntu machine 16.04 (enought with this version, it has all dependences needed)
 # https://www.katacoda.com/scenario-examples/courses/environment-usages/ubuntu
