@@ -9,8 +9,7 @@
     "details": {
         "assets": {
             "master": [
-                { "file": "./*", "target": "~/" },
-                { "file": "./*.sh", "target": "~/files", "chmod": "+x" }
+                { "file": "./*", "target": "~/files/*" }
             ]
         },
         "intro": {
