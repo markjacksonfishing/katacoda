@@ -13,7 +13,7 @@ Create a temporary permissive PSP for our app<br/>
 PSP generation from deployment app<br/>
 Deploy application<br/>
 Replace with new PSP<br/>
-Last step:alternatives to this workflow<br/>
+Last step: alternatives to this workflow<br/>
 Finish: last comments<br/>
 
 # Requirements

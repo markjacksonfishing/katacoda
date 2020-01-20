@@ -1,2 +1,2 @@
 mkdir -p files
-mv files/./
+mv files/ ./

@@ -8,7 +8,7 @@ kubectl get pods -A
 
 You should see a set of Kubernetes resources running and no other deployments.
 
-# What is Audit?f
+# What is Audit?
 Audit registers chronologically a set of events that have happened on the system, tagged by individual users, administrators or other components of the system. It’s performed by *kube-apiserver* and it’s one of the most useful features concerning security. It can register requests to the Kubernetes API in each of its different stages:
  - **RequestReceived**: events triggered when request has been received and it has been delegated down the handler chain.
  - **ResponseStarted**: the response headers are sent, but not the response body.
