@@ -9,8 +9,9 @@
     "details": {
         "assets": {
             "master": [
-                { "file": "manifests/*", "target": "~/manifests" },
-                { "file": "manifests/*.sh", "target": "~/manifests", "chmod": "+x" }
+                { "file": "*.sh", "target": "~/", "chmod": "+x" },
+                { "file": "*.yaml", "target": "~/" },
+                { "file": "./apps/*", "target": "~/apps/" }
             ]
         },
         "intro": {
