@@ -53,7 +53,9 @@
     },
     "environment": {
         "showdashboard": true,
-        "dashboards": [{"name": "Prometheus", "port": 9100}],
+        "dashboards": [{"name": "Prometheus", "port": 9090}],
+        "showdashboard": true,
+        "dashboards": [{"name": "Node Exporter", "port": 9100}],
         "uilayout": "terminal",
         "uisettings": "yaml",
         "uimessage1": "\u001b[32mUnderstanding PromQL.\u001b[m\r\n"
