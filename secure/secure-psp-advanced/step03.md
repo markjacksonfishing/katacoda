@@ -1,4 +1,4 @@
-There are multiple ways to install the sysdig-agent. One of our favourites is using Helm Charts. You can review our [documentation](https://docs.sysdig.com/en/agent-installation.html) or [katacoda scenarios](www.academy.sysdig.com) to learn more about other installation methods.  
+There are multiple ways to install the sysdig-agent. One of our favourites is using Helm Charts. You can review our [documentation](https://docs.sysdig.com/en/agent-installation.html) or [materials] (www.academy.sysdig.com) to learn more about other installation methods.  
 
 First, let’s install and update Helm and create a new namespace for the agent. And create a namespace for the agent.
 
@@ -12,9 +12,17 @@ kubectl create ns sysdig-agent
 
 You can install the `sysdig-agent` using Helm. Remember to update the accessKey (you can find it on Sysdig configuration > Agent-key) and any tag you want to include to identify it.
 
+Create a variable with your accessKey with: 
+
+```
+AGENTKEY=FAKECAKEacceskeyInsertYoursHereFAKECAKE
+```
+
+and then install the agent with: 
+
 ```
 helm install training \
-    --set sysdig.accessKey=FAKECAKEacceskeyInsertYoursHereFAKECAKE \
+    --set sysdig.accessKey=$AGENTKEY \
     --set sysdig.settings.tags="role:training\,location:universe" \
     --set auditLog.dynamicBackend.enabled=true \
     --set auditLog.enabled=true \

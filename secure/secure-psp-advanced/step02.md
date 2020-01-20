@@ -1,31 +1,31 @@
-In order to grant access to the sysdig-agent to parse cluster-level information (deployment definitions and other events) we need to enable K8s Audit. Also, it is a good idea to have it working, as a record of *who did what* on your cluster. There are some steps we need to take in order to prepare the cluster for Auditing and Pod Security Policies.
+In order to grant access to the *sysdig-agent* to parse cluster-level information (deployment definitions and other events) we need to enable *K8s Audit*. Also, it is a good idea to have it working, as a record of *who did what* on your cluster. There are some steps we need to take in order to prepare the cluster for **Auditing** and **Pod Security Policies**.
 
 First, check that all the pods are prepared and running in the cluster:
 
 ```
 kubectl get pods -A
-```
+```{{execute}}
 
 You should see a set of Kubernetes resources running and no other deployments.
 
-# What is Audit?
+# What is Audit?f
 Audit registers chronologically a set of events that have happened on the system, tagged by individual users, administrators or other components of the system. It’s performed by *kube-apiserver* and it’s one of the most useful features concerning security. It can register requests to the Kubernetes API in each of its different stages:
- - RequestReceived: events triggered when request has been received and it has been delegated down the handler chain.
- - ResponseStarted: the response headers are sent, but not the response body.
- - ResponseComplete: response body has been completed.
- - Panic: when a panic occurred.
+ - **RequestReceived**: events triggered when request has been received and it has been delegated down the handler chain.
+ - **ResponseStarted**: the response headers are sent, but not the response body.
+ - **ResponseComplete**: response body has been completed.
+ - **Panic**: when a panic occurred.
 
 For every event matching a rule, we can define its level of detailed:
- - None: not logging at all.
- - Metadata: it logs request metadata..
- - Request: event metadata + request body.
- - RequestResponse: log event metadata + request body + response bodies.
+ - **None**: not logging at all.
+ - **Metadata**: it logs request metadata..
+ - **Request**: event metadata + request body.
+ - **RequestResponse**: log event metadata + request body + response bodies.
 
 # Audit sink configuration
-Before we can use K8s Auditing we must first define an audit-policy. As an example, examine the file <<filename here>> to see the different levels of recording for every event:
+Before we can use K8s Auditing we must first define an audit-policy. As an example, examine the file <<audit-policy>> to see the different levels of recording for every event:
 
 ```
-cat filename
+cat audit-policy
 ```{{execute}}
 
 
@@ -42,7 +42,7 @@ cat filename
 These lines shown means that this rule will record log event metadata, request and response bodies of all the requests modifying *secrets* or *configmaps* on the cluster.
 
 
-*Note* Be careful to adhere to the correct indenting spaces if you edit this file!
+*Note*. Be careful to adhere to the correct indenting spaces if you edit this file!
 
 
 Policy documents reside in the directory `/etc/kubernetes/policies`, so let’s create this directory and move the policy file into place:
@@ -50,7 +50,7 @@ Policy documents reside in the directory `/etc/kubernetes/policies`, so let’s 
 
 ```
 mkdir /etc/kubernetes/policies
-mv pspSketch/audit-policy.yaml /etc/kubernetes/policies/audit-policy.yaml
+mv ./audit-policy.yaml /etc/kubernetes/policies/audit-policy.yaml
 ```{{execute}}
 
 Now that we have an audit-policy defined, we need to apply it at the cluster.  At the moment (kubernetes 1.18), it is not possible to apply the audit-policy with a `kubectl apply ...` command. We’ll also need to define other options and where to mount the folder with our audit-policy.
@@ -102,11 +102,11 @@ We consider debugging your cluster a good skill, so in the next step we are goin
 
 ## Further steps: debugging the apiserver (optional)
 
-Here, you can try to break it (if you have not already done) and debug misbehavior of such an important k8s component as the `k8s-apiserver`.
+Here, you can try to break it (if you have not already done) and debug misbehavior of such an important k8s component as the *kube-apiserver*.
 
-In this section, we will troubleshoot `k8s-apiserver` not starting after the previous configuration change.  However, troubleshooting Kubernetes, and `k8s-apiserver` in particular, is a valuable skill, so you may wish to manually break it (as illustrated below), and follow through the steps.
+In this section, we will troubleshoot *kube-apiserver* not starting after the previous configuration change.  However, troubleshooting Kubernetes, and *kube-apiserver* in particular, is a valuable skill, so you may wish to manually break it (as illustrated below), and follow through the steps.
 
-If you didn’t break the `k8s-apiserver` after updating the configuration in the previous step, we propose you to
+If you didn’t break the *kube-apiserver* after updating the configuration in the previous step, we propose you to
 
 a) modify the `kube-apiserver.yaml` file without including the volume mounting information for the policy, or
 b) misspell any of the other parameters of the apiserver, like: `audit-policy-file` to `audit-policy-fooflie`.
@@ -117,7 +117,7 @@ After breaking, you will notice that you can’t see the `kube-apiserver` with `
 
 First, you can use docker logs. As the name of the container will be different every time, you need to execute te following command to discover the name of the container running the apiserver
 
-``
+```
 docker ps
 ```{{execute}}
 
