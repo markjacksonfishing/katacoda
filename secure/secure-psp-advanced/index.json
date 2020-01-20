@@ -26,6 +26,42 @@
             {
                 "title": "Pre-requirements (I): Enabling Auditing",
                 "text": "step02.md"
+            },
+                        {
+                "title": "Pre-requirements (II): Install the agent",
+                "text": "step03.md"
+            },
+                        {
+                "title": "Pre-requirements (III): PSPs enablement",
+                "text": "step04.md"
+            },
+                        {
+                "title": "Defining a default restrictive PSP",
+                "text": "step05.md"
+            },
+                        {
+                "title": "Defining a permissive PSP for system-wide services",
+                "text": "step06.md"
+            },
+                        {
+                "title": "Create a temporary permissive PSP for our app",
+                "text": "step07.md"
+            },
+                        {
+                "title": "PSP generation from deployment app",
+                "text": "step08.md"
+            },
+                        {
+                "title": "Deploy application",
+                "text": "step09.md"
+            },
+                        {
+                "title": "Replace with new PSP",
+                "text": "step10.md"
+            },
+                        {
+                "title": "Last step:alternatives to this workflow",
+                "text": "step11.md"
             }
         ],
         "finish": {

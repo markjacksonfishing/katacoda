@@ -23,6 +23,7 @@ For every event matching a rule, we can define its level of detailed:
 
 # Audit sink configuration
 Before we can use K8s Auditing we must first define an audit-policy. As an example, examine the file <<filename here>> to see the different levels of recording for every event:
+
 ```
 cat filename
 ```{{execute}}
@@ -45,6 +46,7 @@ These lines shown means that this rule will record log event metadata, request a
 
 
 Policy documents reside in the directory `/etc/kubernetes/policies`, so let’s create this directory and move the policy file into place:
+
 
 ```
 mkdir /etc/kubernetes/policies
