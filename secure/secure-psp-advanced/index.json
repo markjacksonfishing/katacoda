@@ -9,7 +9,8 @@
     "details": {
         "assets": {
             "master": [
-                { "file": "./*", "target": "~/*" }
+                { "file": "./*", "target": "~/" },
+                { "file": "audit-policy.yaml", "target": "~/", "chmod": "+x" }
             ]
         },
         "intro": {
