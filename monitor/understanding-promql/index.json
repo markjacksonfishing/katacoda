@@ -54,7 +54,7 @@
     "environment": {
         "showdashboard": true,
         "dashboards": [{"name": "Prometheus", "port": 9100}],
-        "uilayout": "terminal",
+        "uilayout": "terminal-terminal",
         "uisettings": "yaml",
         "uimessage1": "\u001b[32mUnderstanding PromQL.\u001b[m\r\n"
     },
